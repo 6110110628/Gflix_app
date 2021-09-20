@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/components/text_field_container.dart';
-import 'package:flutter_auth/constants.dart';
+import 'package:form_field_validator/form_field_validator.dart';
 
 class RoundedInputField extends StatelessWidget {
   final String hintText;
@@ -16,7 +16,11 @@ class RoundedInputField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFieldContainer(
-      child: TextField(
+      child: TextFormField(
+        validator: MultiValidator([
+          RequiredValidator(errorText: "กรุณาป้อนอีเมลด้วยครับ"),
+          EmailValidator(errorText: "รูปแบบอีเมลไม่ถูกต้อง")
+        ]),
         onChanged: onChanged,
         cursorColor: Color.fromRGBO(255, 0, 0, 1), //kPrimaryColor,
         decoration: InputDecoration(

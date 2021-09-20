@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/components/text_field_container.dart';
-import 'package:flutter_auth/constants.dart';
+import 'package:form_field_validator/form_field_validator.dart';
 
 class RoundedPasswordField extends StatelessWidget {
   final ValueChanged<String> onChanged;
@@ -12,7 +12,8 @@ class RoundedPasswordField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFieldContainer(
-      child: TextField(
+      child: TextFormField(
+        validator: RequiredValidator(errorText: "กรุณาป้อนรหัสผ่านด้วยครับ"),
         obscureText: true,
         onChanged: onChanged,
         cursorColor: Color.fromRGBO(255, 0, 0, 1), //kPrimaryColor,
