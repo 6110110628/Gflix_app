@@ -84,6 +84,7 @@ class Body extends StatelessWidget {
                                 Fluttertoast.showToast(
                                     msg: e.message,
                                     gravity: ToastGravity.CENTER);
+                                formkey.currentState.reset();
                               }
                             }
                           }),
