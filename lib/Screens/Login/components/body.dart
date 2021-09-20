@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/Screens/Index/index.dart';
+import 'package:flutter_auth/Screens/Gflix/index.dart';
 import 'package:flutter_auth/Screens/Login/components/background.dart';
 import 'package:flutter_auth/Screens/Signup/components/or_divider.dart';
 import 'package:flutter_auth/Screens/Signup/components/social_icon.dart';
@@ -14,6 +14,7 @@ import 'package:flutter_auth/model/profile.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
+// ignore: must_be_immutable
 class Body extends StatelessWidget {
   final formkey = GlobalKey<FormState>();
   Profile profile = Profile();
@@ -63,7 +64,7 @@ class Body extends StatelessWidget {
                       ),
                       RoundedButton(
                           text: "LOGIN",
-                          color: Color.fromRGBO(64, 64, 64, 1), //gray-black
+                          color: Colors.red, //gray-black
                           press: () async {
                             if (formkey.currentState.validate()) {
                               formkey.currentState.save();
@@ -88,9 +89,9 @@ class Body extends StatelessWidget {
                           }),
                       SizedBox(height: size.height * 0.03),
                       AlreadyHaveAnAccountCheck(
-                        login: false,
+                        login: true,
                         press: () {
-                          Navigator.push(
+                          Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
                               builder: (context) {

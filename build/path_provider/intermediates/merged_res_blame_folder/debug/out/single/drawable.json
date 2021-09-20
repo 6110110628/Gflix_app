@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Users\\ASUS\\Desktop\\login-flutter-ui\\build\\path_provider\\intermediates\\merged_res\\debug\\drawable\\notification_icon_background.xml",
+        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\3ead1d3ee83164dad2ff90fe7dfbd590\\transformed\\core-1.1.0\\res\\drawable\\notification_icon_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\Desktop\\login-flutter-ui\\build\\path_provider\\intermediates\\merged_res\\debug\\drawable\\notification_bg.xml",
+        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\3ead1d3ee83164dad2ff90fe7dfbd590\\transformed\\core-1.1.0\\res\\drawable\\notification_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\Desktop\\login-flutter-ui\\build\\path_provider\\intermediates\\merged_res\\debug\\drawable\\notification_tile_bg.xml",
+        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\3ead1d3ee83164dad2ff90fe7dfbd590\\transformed\\core-1.1.0\\res\\drawable\\notification_tile_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\Desktop\\login-flutter-ui\\build\\path_provider\\intermediates\\merged_res\\debug\\drawable\\notification_bg_low.xml",
+        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\3ead1d3ee83164dad2ff90fe7dfbd590\\transformed\\core-1.1.0\\res\\drawable\\notification_bg_low.xml"
+    }
+]

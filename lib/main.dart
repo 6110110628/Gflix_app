@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/Screens/Welcome/welcome_screen.dart';
-import 'package:flutter_auth/constants.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,8 +11,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Auth',
       theme: ThemeData(
-        primaryColor: kPrimaryColor,
-        scaffoldBackgroundColor: Colors.white,
+        primaryColor: Colors.grey,
+        scaffoldBackgroundColor: Color.fromRGBO(64, 64, 64, 64),
       ),
       home: WelcomeScreen(),
     );

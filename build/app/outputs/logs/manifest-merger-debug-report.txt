@@ -8,6 +8,7 @@ MERGED from C:\Users\ASUS\Desktop\login-flutter-ui\android\app\src\main\AndroidM
 MERGED from [:firebase_auth] C:\Users\ASUS\Desktop\login-flutter-ui\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:firebase_core] C:\Users\ASUS\Desktop\login-flutter-ui\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:fluttertoast] C:\Users\ASUS\Desktop\login-flutter-ui\build\fluttertoast\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:path_provider] C:\Users\ASUS\Desktop\login-flutter-ui\build\path_provider\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:17:1-83:12
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\ASUS\.gradle\caches\transforms-3\e2af57dd5c654f55ca1e876902460fee\transformed\jetified-firebase-auth-interop-20.0.0\AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.firebase:firebase-common:20.0.0] C:\Users\ASUS\.gradle\caches\transforms-3\fda62ea292ca95dbe070662929235f36\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:15:1-40:12
@@ -132,6 +133,8 @@ MERGED from [:firebase_core] C:\Users\ASUS\Desktop\login-flutter-ui\build\fireba
 MERGED from [:firebase_core] C:\Users\ASUS\Desktop\login-flutter-ui\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:fluttertoast] C:\Users\ASUS\Desktop\login-flutter-ui\build\fluttertoast\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:fluttertoast] C:\Users\ASUS\Desktop\login-flutter-ui\build\fluttertoast\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] C:\Users\ASUS\Desktop\login-flutter-ui\build\path_provider\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] C:\Users\ASUS\Desktop\login-flutter-ui\build\path_provider\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:21:5-44
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:21:5-44
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\ASUS\.gradle\caches\transforms-3\e2af57dd5c654f55ca1e876902460fee\transformed\jetified-firebase-auth-interop-20.0.0\AndroidManifest.xml:5:5-44

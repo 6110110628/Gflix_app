@@ -28,6 +28,8 @@ dependencies:
   firebase_core: ^1.6.0
   firebase_auth: ^3.1.1
   fluttertoast: ^8.0.8
+  tmdb_api:
+  google_fonts:
 
 dev_dependencies:
   flutter_test:

@@ -3,7 +3,6 @@ import 'package:flutter_auth/Screens/Login/login_screen.dart';
 import 'package:flutter_auth/Screens/Signup/signup_screen.dart';
 import 'package:flutter_auth/Screens/Welcome/components/background.dart';
 import 'package:flutter_auth/components/rounded_button.dart';
-import 'package:flutter_auth/constants.dart';
 import 'package:flutter_svg/svg.dart';
 
 class Body extends StatelessWidget {
@@ -18,7 +17,8 @@ class Body extends StatelessWidget {
           children: <Widget>[
             Text(
               "WELCOME TO GFLIX",
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  fontWeight: FontWeight.bold, fontSize: 30, color: Colors.red),
             ),
             SizedBox(height: size.height * 0.05),
             SvgPicture.asset(
@@ -28,6 +28,7 @@ class Body extends StatelessWidget {
             SizedBox(height: size.height * 0.05),
             RoundedButton(
               text: "LOGIN",
+              color: Colors.red,
               press: () {
                 Navigator.push(
                   context,
@@ -41,8 +42,8 @@ class Body extends StatelessWidget {
             ),
             RoundedButton(
               text: "SIGN UP",
-              color: kPrimaryLightColor,
-              textColor: Colors.black,
+              color: Color.fromRGBO(64, 64, 64, 1),
+              //textColor: Colors.black,
               press: () {
                 Navigator.push(
                   context,

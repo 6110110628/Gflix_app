@@ -13,6 +13,7 @@ import 'package:flutter_auth/model/profile.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
+// ignore: must_be_immutable
 class Body extends StatelessWidget {
   final formkey = GlobalKey<FormState>();
   Profile profile = Profile();
@@ -62,7 +63,7 @@ class Body extends StatelessWidget {
                       ),
                       RoundedButton(
                           text: "SIGNUP",
-                          color: Color.fromRGBO(64, 64, 64, 1), //gray-black
+                          color: Colors.orange,
                           press: () async {
                             if (formkey.currentState.validate()) {
                               formkey.currentState.save();
@@ -104,7 +105,7 @@ class Body extends StatelessWidget {
                       AlreadyHaveAnAccountCheck(
                         login: false,
                         press: () {
-                          Navigator.push(
+                          Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
                               builder: (context) {
