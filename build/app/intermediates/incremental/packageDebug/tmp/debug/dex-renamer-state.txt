@@ -1,4 +1,4 @@
-#Mon Sep 20 17:50:26 ICT 2021
-base.0=C\:\\Users\\ASUS\\Desktop\\login-flutter-ui\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Mon Oct 04 09:18:04 ICT 2021
+base.0=C\:\\src\\Gflix_app\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

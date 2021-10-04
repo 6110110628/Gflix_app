@@ -31,7 +31,8 @@ class TrendingMovies extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Description(
+                                builder: (context) => new Description(
+                                      id: trending[index]['id'],
                                       name: trending[index]['title'],
                                       bannerurl:
                                           'https://image.tmdb.org/t/p/w500' +
@@ -42,8 +43,7 @@ class TrendingMovies extends StatelessWidget {
                                       description: trending[index]['overview'],
                                       vote: trending[index]['vote_average']
                                           .toString(),
-                                      launch_on: trending[index]
-                                          ['release_date'],
+                                      launchOn: trending[index]['release_date'],
                                     )));
                       },
                       child: Container(

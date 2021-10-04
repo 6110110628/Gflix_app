@@ -30,6 +30,7 @@ dependencies:
   fluttertoast: ^8.0.8
   tmdb_api:
   google_fonts:
+  cached_network_image: ^3.1.0
 
 dev_dependencies:
   flutter_test:
