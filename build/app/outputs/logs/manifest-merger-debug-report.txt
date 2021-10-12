@@ -6,15 +6,18 @@ INJECTED from C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml:1:1-30:1
 INJECTED from C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml:1:1-30:12
 MERGED from C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml:1:1-30:12
 MERGED from [:firebase_auth] C:\src\Gflix_app\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-15:12
+MERGED from [:cloud_firestore] C:\src\Gflix_app\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:firebase_core] C:\src\Gflix_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:sqflite] C:\src\Gflix_app\build\sqflite\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:fluttertoast] C:\src\Gflix_app\build\fluttertoast\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:path_provider] C:\src\Gflix_app\build\path_provider\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:17:1-83:12
+MERGED from [com.google.firebase:firebase-firestore:23.0.3] C:\Users\phooc\.gradle\caches\transforms-3\0847f267ae8f4179253f41684a046f71\transformed\jetified-firebase-firestore-23.0.3\AndroidManifest.xml:2:1-26:12
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\phooc\.gradle\caches\transforms-3\e2af57dd5c654f55ca1e876902460fee\transformed\jetified-firebase-auth-interop-20.0.0\AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.firebase:firebase-common:20.0.0] C:\Users\phooc\.gradle\caches\transforms-3\fda62ea292ca95dbe070662929235f36\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:15:1-40:12
 MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] C:\Users\phooc\.gradle\caches\transforms-3\dbb1e0e793bc398e4701acb56ba9b6a9\transformed\jetified-play-services-auth-api-phone-17.4.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] C:\Users\phooc\.gradle\caches\transforms-3\17b042cf97ccb3ffee043f18161ae50f\transformed\jetified-play-services-safetynet-17.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-database-collection:18.0.0] C:\Users\phooc\.gradle\caches\transforms-3\41252a536ad6b006189dd0a79a3b0b0b\transformed\jetified-firebase-database-collection-18.0.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-base:17.1.0] C:\Users\phooc\.gradle\caches\transforms-3\04734857b5ed174dc0953427412d8a79\transformed\jetified-play-services-base-17.1.0\AndroidManifest.xml:17:1-29:12
 MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\phooc\.gradle\caches\transforms-3\461534071d3a91fad2ce2289e8f6366f\transformed\jetified-play-services-tasks-17.0.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-basement:17.1.0] C:\Users\phooc\.gradle\caches\transforms-3\d62d21780e50c1cee65a5c4902f77159\transformed\jetified-play-services-basement-17.1.0\AndroidManifest.xml:17:1-28:12
@@ -45,6 +48,8 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\phooc\.gradl
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\phooc\.gradle\caches\transforms-3\753ca837cc438eef6123d95a52616cc3\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\phooc\.gradle\caches\transforms-3\ede85541936fd0295791e0999a41ce67\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\phooc\.gradle\caches\transforms-3\a553b0ceb630df01d408c332db9983ce\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [io.grpc:grpc-android:1.28.0] C:\Users\phooc\.gradle\caches\transforms-3\2b362c6ff4f237ece3f4965f3b94800c\transformed\jetified-grpc-android-1.28.0\AndroidManifest.xml:2:1-13:12
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\phooc\.gradle\caches\transforms-3\4731006e3f6a83b3c7e9f1e54bb2a2b6\transformed\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:2:1-11:12
 INJECTED from C:\src\Gflix_app\android\app\src\debug\AndroidManifest.xml:1:1-7:12
 INJECTED from C:\src\Gflix_app\android\app\src\debug\AndroidManifest.xml:1:1-7:12
 INJECTED from C:\src\Gflix_app\android\app\src\debug\AndroidManifest.xml:1:1-7:12
@@ -66,10 +71,14 @@ application
 ADDED from C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml:8:5-29:19
 MERGED from [:firebase_auth] C:\src\Gflix_app\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_auth] C:\src\Gflix_app\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-13:19
+MERGED from [:cloud_firestore] C:\src\Gflix_app\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-13:19
+MERGED from [:cloud_firestore] C:\src\Gflix_app\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_core] C:\src\Gflix_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_core] C:\src\Gflix_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:26:5-81:19
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:26:5-81:19
+MERGED from [com.google.firebase:firebase-firestore:23.0.3] C:\Users\phooc\.gradle\caches\transforms-3\0847f267ae8f4179253f41684a046f71\transformed\jetified-firebase-firestore-23.0.3\AndroidManifest.xml:16:5-24:19
+MERGED from [com.google.firebase:firebase-firestore:23.0.3] C:\Users\phooc\.gradle\caches\transforms-3\0847f267ae8f4179253f41684a046f71\transformed\jetified-firebase-firestore-23.0.3\AndroidManifest.xml:16:5-24:19
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\phooc\.gradle\caches\transforms-3\e2af57dd5c654f55ca1e876902460fee\transformed\jetified-firebase-auth-interop-20.0.0\AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\phooc\.gradle\caches\transforms-3\e2af57dd5c654f55ca1e876902460fee\transformed\jetified-firebase-auth-interop-20.0.0\AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.firebase:firebase-common:20.0.0] C:\Users\phooc\.gradle\caches\transforms-3\fda62ea292ca95dbe070662929235f36\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:25:5-38:19
@@ -130,6 +139,8 @@ INJECTED from C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml
 INJECTED from C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml
 MERGED from [:firebase_auth] C:\src\Gflix_app\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_auth] C:\src\Gflix_app\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:cloud_firestore] C:\src\Gflix_app\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:cloud_firestore] C:\src\Gflix_app\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] C:\src\Gflix_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] C:\src\Gflix_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:sqflite] C:\src\Gflix_app\build\sqflite\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
@@ -140,6 +151,8 @@ MERGED from [:path_provider] C:\src\Gflix_app\build\path_provider\intermediates\
 MERGED from [:path_provider] C:\src\Gflix_app\build\path_provider\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:21:5-44
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:21:5-44
+MERGED from [com.google.firebase:firebase-firestore:23.0.3] C:\Users\phooc\.gradle\caches\transforms-3\0847f267ae8f4179253f41684a046f71\transformed\jetified-firebase-firestore-23.0.3\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:firebase-firestore:23.0.3] C:\Users\phooc\.gradle\caches\transforms-3\0847f267ae8f4179253f41684a046f71\transformed\jetified-firebase-firestore-23.0.3\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\phooc\.gradle\caches\transforms-3\e2af57dd5c654f55ca1e876902460fee\transformed\jetified-firebase-auth-interop-20.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\phooc\.gradle\caches\transforms-3\e2af57dd5c654f55ca1e876902460fee\transformed\jetified-firebase-auth-interop-20.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-common:20.0.0] C:\Users\phooc\.gradle\caches\transforms-3\fda62ea292ca95dbe070662929235f36\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:20:5-22:41
@@ -148,6 +161,8 @@ MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] C:\User
 MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] C:\Users\phooc\.gradle\caches\transforms-3\dbb1e0e793bc398e4701acb56ba9b6a9\transformed\jetified-play-services-auth-api-phone-17.4.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] C:\Users\phooc\.gradle\caches\transforms-3\17b042cf97ccb3ffee043f18161ae50f\transformed\jetified-play-services-safetynet-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] C:\Users\phooc\.gradle\caches\transforms-3\17b042cf97ccb3ffee043f18161ae50f\transformed\jetified-play-services-safetynet-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-database-collection:18.0.0] C:\Users\phooc\.gradle\caches\transforms-3\41252a536ad6b006189dd0a79a3b0b0b\transformed\jetified-firebase-database-collection-18.0.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-database-collection:18.0.0] C:\Users\phooc\.gradle\caches\transforms-3\41252a536ad6b006189dd0a79a3b0b0b\transformed\jetified-firebase-database-collection-18.0.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.android.gms:play-services-base:17.1.0] C:\Users\phooc\.gradle\caches\transforms-3\04734857b5ed174dc0953427412d8a79\transformed\jetified-play-services-base-17.1.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-base:17.1.0] C:\Users\phooc\.gradle\caches\transforms-3\04734857b5ed174dc0953427412d8a79\transformed\jetified-play-services-base-17.1.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\phooc\.gradle\caches\transforms-3\461534071d3a91fad2ce2289e8f6366f\transformed\jetified-play-services-tasks-17.0.0\AndroidManifest.xml:5:5-44
@@ -208,6 +223,10 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\phooc\.gradle\ca
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\phooc\.gradle\caches\transforms-3\ede85541936fd0295791e0999a41ce67\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] C:\Users\phooc\.gradle\caches\transforms-3\a553b0ceb630df01d408c332db9983ce\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] C:\Users\phooc\.gradle\caches\transforms-3\a553b0ceb630df01d408c332db9983ce\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [io.grpc:grpc-android:1.28.0] C:\Users\phooc\.gradle\caches\transforms-3\2b362c6ff4f237ece3f4965f3b94800c\transformed\jetified-grpc-android-1.28.0\AndroidManifest.xml:7:5-9:41
+MERGED from [io.grpc:grpc-android:1.28.0] C:\Users\phooc\.gradle\caches\transforms-3\2b362c6ff4f237ece3f4965f3b94800c\transformed\jetified-grpc-android-1.28.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\phooc\.gradle\caches\transforms-3\4731006e3f6a83b3c7e9f1e54bb2a2b6\transformed\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\phooc\.gradle\caches\transforms-3\4731006e3f6a83b3c7e9f1e54bb2a2b6\transformed\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:7:5-9:41
 INJECTED from C:\src\Gflix_app\android\app\src\debug\AndroidManifest.xml
 INJECTED from C:\src\Gflix_app\android\app\src\debug\AndroidManifest.xml
 	android:targetSdkVersion
@@ -220,14 +239,20 @@ uses-permission#android.permission.INTERNET
 ADDED from C:\src\Gflix_app\android\app\src\debug\AndroidManifest.xml:6:5-66
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:23:5-67
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-firestore:23.0.3] C:\Users\phooc\.gradle\caches\transforms-3\0847f267ae8f4179253f41684a046f71\transformed\jetified-firebase-firestore-23.0.3\AndroidManifest.xml:14:5-67
+MERGED from [com.google.firebase:firebase-firestore:23.0.3] C:\Users\phooc\.gradle\caches\transforms-3\0847f267ae8f4179253f41684a046f71\transformed\jetified-firebase-firestore-23.0.3\AndroidManifest.xml:14:5-67
 	android:name
 		ADDED from C:\src\Gflix_app\android\app\src\debug\AndroidManifest.xml:6:22-64
 service#com.google.firebase.components.ComponentDiscoveryService
 ADDED from [:firebase_auth] C:\src\Gflix_app\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:8:9-12:19
+MERGED from [:cloud_firestore] C:\src\Gflix_app\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:8:9-12:19
+MERGED from [:cloud_firestore] C:\src\Gflix_app\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:8:9-12:19
 MERGED from [:firebase_core] C:\src\Gflix_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:8:9-12:19
 MERGED from [:firebase_core] C:\src\Gflix_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:8:9-12:19
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:74:9-80:19
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:74:9-80:19
+MERGED from [com.google.firebase:firebase-firestore:23.0.3] C:\Users\phooc\.gradle\caches\transforms-3\0847f267ae8f4179253f41684a046f71\transformed\jetified-firebase-firestore-23.0.3\AndroidManifest.xml:17:9-23:19
+MERGED from [com.google.firebase:firebase-firestore:23.0.3] C:\Users\phooc\.gradle\caches\transforms-3\0847f267ae8f4179253f41684a046f71\transformed\jetified-firebase-firestore-23.0.3\AndroidManifest.xml:17:9-23:19
 MERGED from [com.google.firebase:firebase-common:20.0.0] C:\Users\phooc\.gradle\caches\transforms-3\fda62ea292ca95dbe070662929235f36\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:33:9-37:35
 MERGED from [com.google.firebase:firebase-common:20.0.0] C:\Users\phooc\.gradle\caches\transforms-3\fda62ea292ca95dbe070662929235f36\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:33:9-37:35
 	android:exported
@@ -244,6 +269,12 @@ ADDED from [:firebase_auth] C:\src\Gflix_app\build\firebase_auth\intermediates\m
 		ADDED from [:firebase_auth] C:\src\Gflix_app\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:11:17-82
 	android:name
 		ADDED from [:firebase_auth] C:\src\Gflix_app\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:10:17-124
+meta-data#com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar
+ADDED from [:cloud_firestore] C:\src\Gflix_app\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-11:85
+	android:value
+		ADDED from [:cloud_firestore] C:\src\Gflix_app\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:11:17-82
+	android:name
+		ADDED from [:cloud_firestore] C:\src\Gflix_app\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:10:17-134
 meta-data#com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar
 ADDED from [:firebase_core] C:\src\Gflix_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-11:85
 	android:value
@@ -252,6 +283,10 @@ ADDED from [:firebase_core] C:\src\Gflix_app\build\firebase_core\intermediates\m
 		ADDED from [:firebase_core] C:\src\Gflix_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:10:17-124
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-firestore:23.0.3] C:\Users\phooc\.gradle\caches\transforms-3\0847f267ae8f4179253f41684a046f71\transformed\jetified-firebase-firestore-23.0.3\AndroidManifest.xml:13:5-79
+MERGED from [com.google.firebase:firebase-firestore:23.0.3] C:\Users\phooc\.gradle\caches\transforms-3\0847f267ae8f4179253f41684a046f71\transformed\jetified-firebase-firestore-23.0.3\AndroidManifest.xml:13:5-79
+MERGED from [io.grpc:grpc-android:1.28.0] C:\Users\phooc\.gradle\caches\transforms-3\2b362c6ff4f237ece3f4965f3b94800c\transformed\jetified-grpc-android-1.28.0\AndroidManifest.xml:11:5-79
+MERGED from [io.grpc:grpc-android:1.28.0] C:\Users\phooc\.gradle\caches\transforms-3\2b362c6ff4f237ece3f4965f3b94800c\transformed\jetified-grpc-android-1.28.0\AndroidManifest.xml:11:5-79
 	android:name
 		ADDED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:24:22-76
 activity#com.google.firebase.auth.internal.GenericIdpActivity
@@ -322,6 +357,12 @@ ADDED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\cac
 		ADDED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:79:17-82
 	android:name
 		ADDED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:78:17-109
+meta-data#com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar
+ADDED from [com.google.firebase:firebase-firestore:23.0.3] C:\Users\phooc\.gradle\caches\transforms-3\0847f267ae8f4179253f41684a046f71\transformed\jetified-firebase-firestore-23.0.3\AndroidManifest.xml:20:13-22:85
+	android:value
+		ADDED from [com.google.firebase:firebase-firestore:23.0.3] C:\Users\phooc\.gradle\caches\transforms-3\0847f267ae8f4179253f41684a046f71\transformed\jetified-firebase-firestore-23.0.3\AndroidManifest.xml:22:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-firestore:23.0.3] C:\Users\phooc\.gradle\caches\transforms-3\0847f267ae8f4179253f41684a046f71\transformed\jetified-firebase-firestore-23.0.3\AndroidManifest.xml:21:17-111
 provider#com.google.firebase.provider.FirebaseInitProvider
 ADDED from [com.google.firebase:firebase-common:20.0.0] C:\Users\phooc\.gradle\caches\transforms-3\fda62ea292ca95dbe070662929235f36\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:26:9-31:39
 	android:authorities
