@@ -228,6 +228,7 @@ class _DescriptionState extends State<Description> {
                             itemCount: snapshot.data.docs.length,
                             itemBuilder: (BuildContext context, int index) {
                               reviewsResultsGFlix = {
+                                "id": snapshot.data.docs[index].reference.id,
                                 "content": snapshot.data.docs[index]["text"],
                                 "author_details": {
                                   "username": snapshot.data.docs[index]

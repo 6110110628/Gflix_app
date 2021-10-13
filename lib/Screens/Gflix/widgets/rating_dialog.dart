@@ -6,6 +6,8 @@ import 'package:flutter_auth/Screens/Gflix/widgets/review_tile.dart';
 import 'package:flutter_auth/model/RatingReview.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:tmdb_api/tmdb_api.dart';
 
 class MyDialog extends StatefulWidget {
   final int movieId;
@@ -32,7 +34,7 @@ class _MyDialogState extends State<MyDialog> {
     myReview.rating = 6.0;
     myReview.movieId = widget.movieId;
     myReview.text = '';
-    myReview.email = 'realchanin@gmail.com';
+    myReview.email = auth.currentUser.email;
     myReview.date = DateTime.now();
     super.initState();
   }
@@ -118,14 +120,21 @@ class _MyDialogState extends State<MyDialog> {
                     ),
                     onPressed: () async {
                       myReview.date = DateTime.now();
-                      _reviewCollection.add({
-                        "movieId": myReview.movieId,
-                        "email": myReview.email,
-                        "text": myReview.text,
-                        "rating": myReview.rating,
-                        "date": myReview.date
-                      });
-                      Navigator.pop(context);
+                      try {
+                        _reviewCollection.add({
+                          "movieId": myReview.movieId,
+                          "email": myReview.email,
+                          "text": myReview.text,
+                          "rating": myReview.rating,
+                          "date": myReview.date
+                        }).then((value) => Fluttertoast.showToast(
+                            msg: "Review successfully added.",
+                            gravity: ToastGravity.CENTER));
+                        Navigator.pop(context);
+                      } catch (e) {
+                        Fluttertoast.showToast(
+                            msg: e.message, gravity: ToastGravity.CENTER);
+                      }
                     },
                   ),
                 ],

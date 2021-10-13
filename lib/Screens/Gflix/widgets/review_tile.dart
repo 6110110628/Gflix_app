@@ -1,6 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/Screens/Gflix/utils/text.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class Review extends StatefulWidget {
   const Review({Key key, this.reviewResults, this.userEmail}) : super(key: key);
@@ -14,7 +16,8 @@ class _ReviewState extends State<Review> {
   String firstHalf;
   String secondHalf;
   bool flag = true;
-
+  CollectionReference _reviewCollection =
+      FirebaseFirestore.instance.collection("reviews");
   @override
   void initState() {
     super.initState();
@@ -32,6 +35,78 @@ class _ReviewState extends State<Review> {
     }
     print(
         "${widget.userEmail} == ${widget.reviewResults["author_details"]["username"]}");
+    print("Docs id : ${widget.reviewResults["id"]}");
+  }
+
+  void _showDeleteDialog() {
+    showDialog(
+        context: context,
+        builder: (_) {
+          return AlertDialog(
+            scrollable: true,
+            content: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                modified_text(text: "Delete", size: 25, color: Colors.black),
+                SizedBox(
+                  height: 15,
+                ),
+                modified_text(
+                    text: "Delete your review permanently?",
+                    size: 15,
+                    color: Colors.black),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    MaterialButton(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0)),
+                      color: Colors.white,
+                      padding: EdgeInsets.only(left: 5, right: 5),
+                      child: Text(
+                        'Cancel',
+                        style: TextStyle(color: Colors.black, fontSize: 15),
+                      ),
+                      onPressed: () async {
+                        Navigator.pop(context);
+                      },
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    MaterialButton(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0)),
+                      color: Colors.red,
+                      padding: EdgeInsets.only(left: 5, right: 5),
+                      child: Text(
+                        'Delete',
+                        style: TextStyle(color: Colors.white, fontSize: 15),
+                      ),
+                      onPressed: () async {
+                        try {
+                          await _reviewCollection
+                              .doc(widget.reviewResults["id"])
+                              .delete()
+                              .then((value) => Fluttertoast.showToast(
+                                  msg: "Deleted",
+                                  gravity: ToastGravity.CENTER));
+                        } catch (e) {
+                          Fluttertoast.showToast(
+                              msg: e.message, gravity: ToastGravity.CENTER);
+                        }
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ],
+                )
+              ],
+            ),
+          );
+        });
   }
 
   @override
@@ -181,7 +256,9 @@ class _ReviewState extends State<Review> {
               widget.userEmail ==
                       widget.reviewResults["author_details"]["username"]
                   ? IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        _showDeleteDialog();
+                      },
                       icon: const Icon(Icons.delete),
                       color: Colors.white70,
                     )
