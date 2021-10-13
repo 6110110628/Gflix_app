@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/Screens/Gflix/utils/text.dart';
 import 'package:flutter_auth/Screens/Gflix/widgets/rating_dialog.dart';
@@ -30,6 +31,7 @@ class _DescriptionState extends State<Description> {
   final String apikey = '58872d641e47bcf01e8b47c75e020623';
   final String readaccesstoken =
       'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1ODg3MmQ2NDFlNDdiY2YwMWU4YjQ3Yzc1ZTAyMDYyMyIsInN1YiI6IjYxM2U3ZTVjOTE3NDViMDA5MWU3OGI5NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.q-bvvinn7hwRIRHRRQtfgQRWsbhITyfALcho9Y8zhJk';
+  final auth = FirebaseAuth.instance;
   List reviewsResultsTMDB;
   Map reviewsResultsGFlix;
   double _rating = 3.0;
@@ -44,7 +46,7 @@ class _DescriptionState extends State<Description> {
     result = FirebaseFirestore.instance
         .collection("reviews")
         .where("movieId", isEqualTo: widget.id);
-    userEmail = "realchanin@gmail.com";
+    userEmail = auth.currentUser.email;
     super.initState();
   }
 

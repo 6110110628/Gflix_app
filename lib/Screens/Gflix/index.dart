@@ -48,7 +48,7 @@ class _IndexScreenState extends State<IndexScreen> {
 
   @override
   Widget build(BuildContext context) {
-    //final auth = FirebaseAuth.instance;
+    final auth = FirebaseAuth.instance;
     return Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
@@ -70,12 +70,12 @@ class _IndexScreenState extends State<IndexScreen> {
                 style: TextStyle(color: Colors.grey),
               ),
               onPressed: () {
-                // auth.signOut().then((value) {
-                //   Navigator.pushReplacement(context,
-                //       MaterialPageRoute(builder: (context) {
-                //     return WelcomeScreen();
-                //   }));
-                // });
+                auth.signOut().then((value) {
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) {
+                    return WelcomeScreen();
+                  }));
+                });
               },
               style: ElevatedButton.styleFrom(
                 primary: Colors.black,
