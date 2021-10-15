@@ -1,10 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\src\\Gflix_app\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rBR\\values-pt-rBR.xml",
+            "outputFile": "C:\\Users\\ASUS\\Desktop\\Gflix_app\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rBR\\values-pt-rBR.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\phooc\\.gradle\\caches\\transforms-3\\3ead1d3ee83164dad2ff90fe7dfbd590\\transformed\\core-1.1.0\\res\\values-pt-rBR\\values-pt-rBR.xml",
+                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\d62d21780e50c1cee65a5c4902f77159\\transformed\\jetified-play-services-basement-17.1.0\\res\\values-pt-rBR\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "251",
+                        "endColumns": "203",
+                        "endOffsets": "454"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "1275",
+                        "endColumns": "203",
+                        "endOffsets": "1474"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\3ead1d3ee83164dad2ff90fe7dfbd590\\transformed\\core-1.1.0\\res\\values-pt-rBR\\values-pt-rBR.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\phooc\\.gradle\\caches\\transforms-3\\04734857b5ed174dc0953427412d8a79\\transformed\\jetified-play-services-base-17.1.0\\res\\values-pt-rBR\\values.xml",
+                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\04734857b5ed174dc0953427412d8a79\\transformed\\jetified-play-services-base-17.1.0\\res\\values-pt-rBR\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -35,23 +52,6 @@
                         "startOffsets": "105,212,392,521,631,857,989,1141,1479,1708,1818,2013,2145,2361,2548,2647,2743",
                         "endColumns": "106,179,128,109,225,131,151,133,228,109,194,131,215,186,98,95,112",
                         "endOffsets": "207,387,516,626,852,984,1136,1270,1703,1813,2008,2140,2356,2543,2642,2738,2851"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\phooc\\.gradle\\caches\\transforms-3\\d62d21780e50c1cee65a5c4902f77159\\transformed\\jetified-play-services-basement-17.1.0\\res\\values-pt-rBR\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "251",
-                        "endColumns": "203",
-                        "endOffsets": "454"
-                    },
-                    "to": {
-                        "startLines": "10",
-                        "startColumns": "4",
-                        "startOffsets": "1275",
-                        "endColumns": "203",
-                        "endOffsets": "1474"
                     }
                 }
             ]

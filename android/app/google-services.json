@@ -1,62 +1,33 @@
 {
   "project_info": {
-    "project_number": "561666756722",
-    "project_id": "gflix-login",
-    "storage_bucket": "gflix-login.appspot.com"
+    "project_number": "1050406998294",
+    "project_id": "gflix-login-9a4dd",
+    "storage_bucket": "gflix-login-9a4dd.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:561666756722:android:369d1e38550b861deaf2eb",
+        "mobilesdk_app_id": "1:1050406998294:android:f3806fbfa994a85c9cc037",
         "android_client_info": {
           "package_name": "com.example.flutter_auth"
         }
       },
       "oauth_client": [
         {
-          "client_id": "561666756722-74cmhto7u23283ch8odf3g22jfjg0s54.apps.googleusercontent.com",
+          "client_id": "1050406998294-0vrrc50osaufranc91hko0b1r3vtjffe.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCTNda5NO7A3JSKFa7-zefGZGCCdlmpPwo"
+          "current_key": "AIzaSyCIasfZZxygS5JbaPI1THydiijvc0BaXTk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "561666756722-74cmhto7u23283ch8odf3g22jfjg0s54.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:561666756722:android:3d2cc5b4ae2abf30eaf2eb",
-        "android_client_info": {
-          "package_name": "com.flutterthailand.loginsystem"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "561666756722-74cmhto7u23283ch8odf3g22jfjg0s54.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCTNda5NO7A3JSKFa7-zefGZGCCdlmpPwo"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "561666756722-74cmhto7u23283ch8odf3g22jfjg0s54.apps.googleusercontent.com",
+              "client_id": "1050406998294-0vrrc50osaufranc91hko0b1r3vtjffe.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -1,18 +1,18 @@
 [
     {
-        "merged": "C:\\src\\Gflix_app\\build\\path_provider\\intermediates\\merged_res\\debug\\layout-v21\\notification_action_tombstone.xml",
-        "source": "C:\\Users\\phooc\\.gradle\\caches\\transforms-3\\3ead1d3ee83164dad2ff90fe7dfbd590\\transformed\\core-1.1.0\\res\\layout-v21\\notification_action_tombstone.xml"
+        "merged": "C:\\Users\\ASUS\\Desktop\\Gflix_app\\build\\path_provider\\intermediates\\merged_res\\debug\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\3ead1d3ee83164dad2ff90fe7dfbd590\\transformed\\core-1.1.0\\res\\layout-v21\\notification_template_icon_group.xml"
     },
     {
-        "merged": "C:\\src\\Gflix_app\\build\\path_provider\\intermediates\\merged_res\\debug\\layout-v21\\notification_template_custom_big.xml",
-        "source": "C:\\Users\\phooc\\.gradle\\caches\\transforms-3\\3ead1d3ee83164dad2ff90fe7dfbd590\\transformed\\core-1.1.0\\res\\layout-v21\\notification_template_custom_big.xml"
+        "merged": "C:\\Users\\ASUS\\Desktop\\Gflix_app\\build\\path_provider\\intermediates\\merged_res\\debug\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\3ead1d3ee83164dad2ff90fe7dfbd590\\transformed\\core-1.1.0\\res\\layout-v21\\notification_action.xml"
     },
     {
-        "merged": "C:\\src\\Gflix_app\\build\\path_provider\\intermediates\\merged_res\\debug\\layout-v21\\notification_action.xml",
-        "source": "C:\\Users\\phooc\\.gradle\\caches\\transforms-3\\3ead1d3ee83164dad2ff90fe7dfbd590\\transformed\\core-1.1.0\\res\\layout-v21\\notification_action.xml"
+        "merged": "C:\\Users\\ASUS\\Desktop\\Gflix_app\\build\\path_provider\\intermediates\\merged_res\\debug\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\3ead1d3ee83164dad2ff90fe7dfbd590\\transformed\\core-1.1.0\\res\\layout-v21\\notification_action_tombstone.xml"
     },
     {
-        "merged": "C:\\src\\Gflix_app\\build\\path_provider\\intermediates\\merged_res\\debug\\layout-v21\\notification_template_icon_group.xml",
-        "source": "C:\\Users\\phooc\\.gradle\\caches\\transforms-3\\3ead1d3ee83164dad2ff90fe7dfbd590\\transformed\\core-1.1.0\\res\\layout-v21\\notification_template_icon_group.xml"
+        "merged": "C:\\Users\\ASUS\\Desktop\\Gflix_app\\build\\path_provider\\intermediates\\merged_res\\debug\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\3ead1d3ee83164dad2ff90fe7dfbd590\\transformed\\core-1.1.0\\res\\layout-v21\\notification_template_custom_big.xml"
     }
 ]
