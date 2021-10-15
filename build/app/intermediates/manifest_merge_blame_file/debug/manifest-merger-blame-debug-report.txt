@@ -31,8 +31,8 @@
 25        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 25-->[androidx.core:core:1.1.0] C:\Users\phooc\.gradle\caches\transforms-3\3ead1d3ee83164dad2ff90fe7dfbd590\transformed\core-1.1.0\AndroidManifest.xml:24:18-86
 26        android:debuggable="true"
-27        android:icon="@mipmap/ic_launcher"
-27-->C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml:11:9-43
+27        android:icon="@mipmap/launcher_icon"
+27-->C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml:11:9-45
 28        android:label="GFlix" >
 28-->C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml:10:9-30
 29        <activity
