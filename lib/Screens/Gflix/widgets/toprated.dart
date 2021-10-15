@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/Screens/Gflix/description.dart';
 import 'package:flutter_auth/Screens/Gflix/utils/text.dart';
 
 class TopRatedMovies extends StatelessWidget {
@@ -24,31 +25,58 @@ class TopRatedMovies extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   itemCount: toprated.length,
                   itemBuilder: (context, index) {
-                    return Container(
-                      width: 140,
-                      child: Column(
-                        children: [
-                          Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: NetworkImage(
-                                    'https://image.tmdb.org/t/p/w500' +
-                                        toprated[index]['poster_path']),
+                    return InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => new Description(
+                                      id: toprated[index]['id'],
+                                      name: toprated[index]['title'] == null
+                                          ? toprated[index]['name']
+                                          : toprated[index]['title'],
+                                      bannerurl:
+                                          'https://image.tmdb.org/t/p/w500' +
+                                              toprated[index]['backdrop_path'],
+                                      posterurl:
+                                          'https://image.tmdb.org/t/p/w500' +
+                                              toprated[index]['poster_path'],
+                                      description: toprated[index]['overview'],
+                                      vote: toprated[index]['vote_average']
+                                          .toString(),
+                                      launchOn: toprated[index]
+                                                  ['release_date'] ==
+                                              null
+                                          ? toprated[index]['first_air_date']
+                                          : toprated[index]['release_date'],
+                                    )));
+                      },
+                      child: Container(
+                        width: 140,
+                        child: Column(
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: NetworkImage(
+                                      'https://image.tmdb.org/t/p/w500' +
+                                          toprated[index]['poster_path']),
+                                ),
                               ),
+                              height: 200,
                             ),
-                            height: 200,
-                          ),
-                          SizedBox(height: 10),
-                          Container(
-                            child: modified_text(
-                              size: 15,
-                              text: toprated[index]['title'] != null
-                                  ? toprated[index]['title']
-                                  : 'Loading',
-                              color: Colors.white,
-                            ),
-                          )
-                        ],
+                            SizedBox(height: 10),
+                            Container(
+                              child: modified_text(
+                                size: 15,
+                                text: toprated[index]['title'] != null
+                                    ? toprated[index]['title']
+                                    : 'Loading',
+                                color: Colors.white,
+                              ),
+                            )
+                          ],
+                        ),
                       ),
                     );
                   }))

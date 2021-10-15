@@ -33,8 +33,8 @@
 26        android:debuggable="true"
 27        android:icon="@mipmap/ic_launcher"
 27-->C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml:11:9-43
-28        android:label="flutter_auth" >
-28-->C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml:10:9-37
+28        android:label="GFlix" >
+28-->C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml:10:9-30
 29        <activity
 29-->C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml:12:9-23:20
 30            android:name="com.example.flutter_auth.MainActivity"

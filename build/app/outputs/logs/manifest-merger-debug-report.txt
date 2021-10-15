@@ -98,7 +98,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\ph
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.1.0] C:\Users\phooc\.gradle\caches\transforms-3\3ead1d3ee83164dad2ff90fe7dfbd590\transformed\core-1.1.0\AndroidManifest.xml:24:18-86
 	android:label
-		ADDED from C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml:10:9-37
+		ADDED from C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml:10:9-30
 	android:icon
 		ADDED from C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml:11:9-43
 	android:name

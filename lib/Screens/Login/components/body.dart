@@ -75,10 +75,10 @@ class Body extends StatelessWidget {
                                         password: profile.password)
                                     .then((value) {
                                   formkey.currentState.reset();
-                                  Navigator.pushReplacement(context,
+                                  Navigator.pushAndRemoveUntil(context,
                                       MaterialPageRoute(builder: (context) {
                                     return IndexScreen();
-                                  }));
+                                  }), (Route<dynamic> route) => false);
                                 });
                               } on FirebaseAuthException catch (e) {
                                 Fluttertoast.showToast(

@@ -59,8 +59,16 @@ class _DescriptionState extends State<Description> {
       ),
     );
     Map reviews = await tmdbWithCustomLogs.v3.movies.getReviews(widget.id);
+    if (reviews == null) {
+      reviews = await tmdbWithCustomLogs.v3.tv.getReviews(widget.id);
+    }
     reviewsResultsTMDB = reviews['results'];
-    return reviewsResultsTMDB;
+    List empty = [];
+    if (reviewsResultsTMDB == null) {
+      return empty;
+    } else {
+      return reviewsResultsTMDB;
+    }
   }
 
   void _showRatingAppDialog() {

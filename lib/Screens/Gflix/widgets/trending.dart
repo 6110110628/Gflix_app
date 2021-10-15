@@ -33,7 +33,9 @@ class TrendingMovies extends StatelessWidget {
                             MaterialPageRoute(
                                 builder: (context) => new Description(
                                       id: trending[index]['id'],
-                                      name: trending[index]['title'],
+                                      name: trending[index]['title'] == null
+                                          ? trending[index]['name']
+                                          : trending[index]['title'],
                                       bannerurl:
                                           'https://image.tmdb.org/t/p/w500' +
                                               trending[index]['backdrop_path'],
@@ -43,7 +45,11 @@ class TrendingMovies extends StatelessWidget {
                                       description: trending[index]['overview'],
                                       vote: trending[index]['vote_average']
                                           .toString(),
-                                      launchOn: trending[index]['release_date'],
+                                      launchOn: trending[index]
+                                                  ['release_date'] ==
+                                              null
+                                          ? trending[index]['first_air_date']
+                                          : trending[index]['release_date'],
                                     )));
                       },
                       child: Container(
@@ -64,9 +70,9 @@ class TrendingMovies extends StatelessWidget {
                             Container(
                               child: modified_text(
                                 size: 15,
-                                text: trending[index]['title'] != null
-                                    ? trending[index]['title']
-                                    : 'Loading',
+                                text: trending[index]['title'] == null
+                                    ? trending[index]['name']
+                                    : trending[index]['title'],
                                 color: Colors.white,
                               ),
                             )
