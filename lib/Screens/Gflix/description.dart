@@ -40,6 +40,9 @@ class _DescriptionState extends State<Description> {
   String firstHalf;
   String secondHalf;
   String userEmail;
+  bool _pinned = true;
+  bool _snap = false;
+  bool _floating = false;
   @override
   void initState() {
     loadReviews();
@@ -83,182 +86,205 @@ class _DescriptionState extends State<Description> {
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Scaffold(
-        backgroundColor: Colors.black,
-        body: Container(
-          child: ListView(physics: AlwaysScrollableScrollPhysics(), children: [
-            Container(
-                height: 250,
-                child: Stack(children: [
-                  Positioned(
-                    child: Container(
-                      height: 250,
-                      width: MediaQuery.of(context).size.width,
-                      child: Image.network(
-                        widget.bannerurl,
-                        fit: BoxFit.cover,
-                      ),
+          backgroundColor: Colors.black,
+          body: CustomScrollView(
+            slivers: <Widget>[
+              SliverAppBar(
+                backgroundColor: Colors.red,
+                pinned: _pinned,
+                snap: _snap,
+                floating: _floating,
+                expandedHeight: 160.0,
+                flexibleSpace: FlexibleSpaceBar(
+                  title: modified_text(
+                      text: widget.name != null ? widget.name : 'Not Loaded',
+                      size: 24,
+                      color: Colors.white),
+                  background: DecoratedBox(
+                    position: DecorationPosition.foreground,
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                            begin: Alignment.bottomCenter,
+                            end: Alignment.center,
+                            colors: <Color>[Colors.black, Colors.transparent])),
+                    child: Image.network(
+                      widget.bannerurl,
+                      fit: BoxFit.cover,
                     ),
                   ),
-                ])),
-            SizedBox(height: 15),
-            Container(
-                padding: EdgeInsets.all(10),
-                child: modified_text(
-                    text: widget.name != null ? widget.name : 'Not Loaded',
-                    size: 24,
-                    color: Colors.white)),
-            Container(
-                padding: EdgeInsets.only(left: 10),
-                child: modified_text(
-                  text: 'Releasing On - ' + widget.launchOn,
-                  size: 14,
-                  color: Colors.white,
-                )),
-            Row(
-              children: [
-                Container(
-                  height: 200,
-                  width: 100,
-                  child: Image.network(widget.posterurl),
                 ),
-                Flexible(
-                  child: Container(
-                      padding: EdgeInsets.all(10),
-                      child: modified_text(
-                        text: widget.description,
-                        size: 18,
-                        color: Colors.white,
-                      )),
-                ),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(8, 10, 8, 0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  modified_text(text: 'Review', size: 17, color: Colors.white),
-                  MaterialButton(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0)),
-                    color: Colors.red,
-                    padding: EdgeInsets.only(left: 5, right: 5),
-                    child: Text(
-                      'Rating',
-                      style: TextStyle(color: Colors.white, fontSize: 15),
-                    ),
-                    onPressed: _showRatingAppDialog,
-                  ),
-                  modified_text(
-                    text: '⭐ Average Rating - ' + widget.vote,
-                    color: Colors.white,
-                  )
-                ],
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(8, 0, 8, 10),
-              child: FutureBuilder(
-                  future:
-                      loadReviews(), // a previously-obtained Future<String> or null
-                  builder:
-                      (BuildContext context, AsyncSnapshot<List> snapshot) {
-                    if (!snapshot.hasData) {
-                      return Center(
-                          child: CircularProgressIndicator(color: Colors.red));
-                    }
-                    if (snapshot.data.isEmpty) {
-                      return SizedBox();
-                    }
-                    return Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
+              SliverToBoxAdapter(
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                          padding: EdgeInsets.only(left: 10, top: 10),
+                          child: modified_text(
+                            text: 'Releasing On - ' + widget.launchOn,
+                            size: 14,
+                            color: Colors.white,
+                          )),
+                      Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 20),
+                            child: Container(
+                              height: 200,
+                              width: 100,
+                              child: Image.network(widget.posterurl),
+                            ),
+                          ),
+                          Flexible(
+                            child: Container(
+                                padding: EdgeInsets.all(10),
+                                child: modified_text(
+                                  text: widget.description,
+                                  size: 18,
+                                  color: Colors.white,
+                                )),
+                          ),
+                        ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(8, 10, 8, 0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             modified_text(
-                              text: 'From  ',
-                              size: 15,
-                              color: Colors.white,
-                            ),
-                            SvgPicture.asset(
-                              'assets/icons/tmdb_logo.svg',
-                              height: 15.0,
-                              fit: BoxFit.cover,
-                            ),
-                          ],
-                        ),
-                        ListView.builder(
-                            physics: BouncingScrollPhysics(),
-                            shrinkWrap: true,
-                            itemCount: reviewsResultsTMDB.length,
-                            itemBuilder: (BuildContext context, int index) {
-                              return Review(
-                                  reviewResults: reviewsResultsTMDB[index],
-                                  userEmail: userEmail);
-                            }),
-                      ],
-                    );
-                  }),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: StreamBuilder(
-                  stream: result.snapshots(),
-                  builder: (context, AsyncSnapshot snapshot) {
-                    if (!snapshot.hasData) {
-                      return Center(
-                          child: CircularProgressIndicator(color: Colors.red));
-                    }
-                    if (snapshot.data.docs.isEmpty) {
-                      return SizedBox();
-                    }
-
-                    return Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            modified_text(
-                              text: 'on  ',
-                              size: 15,
-                              color: Colors.white,
-                            ),
-                            modified_text(
-                              text: 'GFlix',
-                              size: 25,
+                                text: 'Review', size: 17, color: Colors.white),
+                            MaterialButton(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10.0)),
                               color: Colors.red,
+                              padding: EdgeInsets.only(left: 5, right: 5),
+                              child: Text(
+                                'Rating',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 15),
+                              ),
+                              onPressed: _showRatingAppDialog,
                             ),
+                            modified_text(
+                              text: '⭐ Average Rating - ' + widget.vote,
+                              color: Colors.white,
+                            )
                           ],
                         ),
-                        ListView.builder(
-                            physics: BouncingScrollPhysics(),
-                            shrinkWrap: true,
-                            itemCount: snapshot.data.docs.length,
-                            itemBuilder: (BuildContext context, int index) {
-                              reviewsResultsGFlix = {
-                                "id": snapshot.data.docs[index].reference.id,
-                                "content": snapshot.data.docs[index]["text"],
-                                "author_details": {
-                                  "username": snapshot.data.docs[index]
-                                      ["email"],
-                                  "rating": snapshot.data.docs[index]["rating"]
-                                },
-                                "created_at": snapshot.data.docs[index]["date"]
-                                    .toDate()
-                                    .toString()
-                              };
-                              return Review(
-                                reviewResults: reviewsResultsGFlix,
-                                userEmail: userEmail,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(8, 0, 8, 10),
+                        child: FutureBuilder(
+                            future:
+                                loadReviews(), // a previously-obtained Future<String> or null
+                            builder: (BuildContext context,
+                                AsyncSnapshot<List> snapshot) {
+                              if (!snapshot.hasData) {
+                                return Center(
+                                    child: CircularProgressIndicator(
+                                        color: Colors.red));
+                              }
+                              if (snapshot.data.isEmpty) {
+                                return SizedBox();
+                              }
+                              return Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      modified_text(
+                                        text: 'From  ',
+                                        size: 15,
+                                        color: Colors.white,
+                                      ),
+                                      SvgPicture.asset(
+                                        'assets/icons/tmdb_logo.svg',
+                                        height: 15.0,
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ],
+                                  ),
+                                  ListView.builder(
+                                      physics: BouncingScrollPhysics(),
+                                      shrinkWrap: true,
+                                      itemCount: reviewsResultsTMDB.length,
+                                      itemBuilder:
+                                          (BuildContext context, int index) {
+                                        return Review(
+                                            reviewResults:
+                                                reviewsResultsTMDB[index],
+                                            userEmail: userEmail);
+                                      }),
+                                ],
                               );
-                            })
-                      ],
-                    );
-                  }),
-            )
-          ]),
-        ),
-      ),
+                            }),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: StreamBuilder(
+                            stream: result.snapshots(),
+                            builder: (context, AsyncSnapshot snapshot) {
+                              if (!snapshot.hasData) {
+                                return Center(
+                                    child: CircularProgressIndicator(
+                                        color: Colors.red));
+                              }
+                              if (snapshot.data.docs.isEmpty) {
+                                return SizedBox();
+                              }
+
+                              return Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      modified_text(
+                                        text: 'on  ',
+                                        size: 15,
+                                        color: Colors.white,
+                                      ),
+                                      modified_text(
+                                        text: 'GFlix',
+                                        size: 25,
+                                        color: Colors.red,
+                                      ),
+                                    ],
+                                  ),
+                                  ListView.builder(
+                                      physics: BouncingScrollPhysics(),
+                                      shrinkWrap: true,
+                                      itemCount: snapshot.data.docs.length,
+                                      itemBuilder:
+                                          (BuildContext context, int index) {
+                                        reviewsResultsGFlix = {
+                                          "id": snapshot
+                                              .data.docs[index].reference.id,
+                                          "content": snapshot.data.docs[index]
+                                              ["text"],
+                                          "author_details": {
+                                            "username": snapshot
+                                                .data.docs[index]["email"],
+                                            "rating": snapshot.data.docs[index]
+                                                ["rating"]
+                                          },
+                                          "created_at": snapshot
+                                              .data.docs[index]["date"]
+                                              .toDate()
+                                              .toString()
+                                        };
+                                        return Review(
+                                          reviewResults: reviewsResultsGFlix,
+                                          userEmail: userEmail,
+                                        );
+                                      })
+                                ],
+                              );
+                            }),
+                      )
+                    ]),
+              ),
+            ],
+          )),
     );
   }
 }
