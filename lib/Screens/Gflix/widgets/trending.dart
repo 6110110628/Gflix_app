@@ -50,6 +50,7 @@ class TrendingMovies extends StatelessWidget {
                                               null
                                           ? trending[index]['first_air_date']
                                           : trending[index]['release_date'],
+                                      mediaType: trending[index]['media_type'],
                                     )));
                       },
                       child: Container(

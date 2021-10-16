@@ -6,9 +6,18 @@ import 'package:flutter_auth/Screens/Gflix/widgets/rating_dialog.dart';
 import 'package:flutter_auth/Screens/Gflix/widgets/review_tile.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tmdb_api/tmdb_api.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 class Description extends StatefulWidget {
-  final String name, description, bannerurl, posterurl, vote, launchOn;
+  final String name,
+      description,
+      bannerurl,
+      posterurl,
+      vote,
+      launchOn,
+      mediaType;
   final int id;
 
   const Description(
@@ -20,7 +29,8 @@ class Description extends StatefulWidget {
       this.posterurl,
       this.vote,
       // ignore: non_constant_identifier_names
-      this.launchOn})
+      this.launchOn,
+      this.mediaType})
       : super(key: key);
 
   @override
@@ -43,9 +53,11 @@ class _DescriptionState extends State<Description> {
   bool _pinned = true;
   bool _snap = false;
   bool _floating = false;
+  String videoId;
   @override
   void initState() {
     loadReviews();
+    loadVideo();
     result = FirebaseFirestore.instance
         .collection("reviews")
         .where("movieId", isEqualTo: widget.id);
@@ -66,12 +78,60 @@ class _DescriptionState extends State<Description> {
       reviews = await tmdbWithCustomLogs.v3.tv.getReviews(widget.id);
     }
     reviewsResultsTMDB = reviews['results'];
+
     List empty = [];
     if (reviewsResultsTMDB == null) {
       return empty;
     } else {
       return reviewsResultsTMDB;
     }
+  }
+
+  Future<List> loadVideoResults(String language) async {
+    final videoURL =
+        'https://api.themoviedb.org/3/${widget.mediaType}/${widget.id}/videos?api_key=$apikey&language=$language';
+    final response = await http.get(Uri.parse(videoURL));
+    var temp = utf8.decode(response.bodyBytes);
+    Map<String, dynamic> js = jsonDecode(temp);
+    // print('loadVideoResults : ' + js['results']);
+    return js['results'];
+  }
+
+  Future<String> getVideoId(List results) async {
+    List videoOfficial = results
+        .where((element) =>
+            element["site"] == "YouTube" &&
+            (element["type"] == "Trailer" || element["type"] == "Teaser"))
+        .toList();
+    videoId = videoOfficial[0]["key"];
+    // String videoLink = "https://youtu.be/" + videoOfficial[0]["key"];
+    print("videoLink : https://youtu.be/" + videoId);
+    return videoId;
+  }
+
+  Future<String> loadVideo() async {
+    List results = await loadVideoResults('th-TH');
+    if (results == null || results.length == 0) {
+      results = await loadVideoResults('en-US');
+      return getVideoId(results);
+    } else {
+      results = await loadVideoResults('th-TH');
+      return getVideoId(results);
+    }
+  }
+
+  Widget youtubePlayer() {
+    YoutubePlayerController _controller = YoutubePlayerController(
+      initialVideoId: videoId,
+      params: YoutubePlayerParams(
+        showControls: true,
+        showFullscreenButton: true,
+      ),
+    );
+    return YoutubePlayerIFrame(
+      controller: _controller,
+      aspectRatio: 16 / 9,
+    );
   }
 
   void _showRatingAppDialog() {
@@ -121,7 +181,12 @@ class _DescriptionState extends State<Description> {
                       Container(
                           padding: EdgeInsets.only(left: 10, top: 10),
                           child: modified_text(
-                            text: 'Releasing On - ' + widget.launchOn,
+                            text: 'Releasing On : ' +
+                                widget.launchOn.substring(8, 10) +
+                                '/' +
+                                widget.launchOn.substring(5, 7) +
+                                '/' +
+                                widget.launchOn.substring(0, 4),
                             size: 14,
                             color: Colors.white,
                           )),
@@ -147,12 +212,36 @@ class _DescriptionState extends State<Description> {
                         ],
                       ),
                       Padding(
+                          padding: const EdgeInsets.all(10),
+                          child: FutureBuilder(
+                            future: loadVideo(),
+                            builder:
+                                (BuildContext context, AsyncSnapshot snapshot) {
+                              if (snapshot.hasData) {
+                                return youtubePlayer();
+                              } else {
+                                return Container();
+                              }
+                            },
+                          )),
+                      Padding(
                         padding: const EdgeInsets.fromLTRB(8, 10, 8, 0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            modified_text(
-                                text: 'Review', size: 17, color: Colors.white),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                modified_text(
+                                    text: 'Review',
+                                    size: 17,
+                                    color: Colors.white),
+                                modified_text(
+                                  text: '⭐ Average Rating : ' + widget.vote,
+                                  color: Colors.white,
+                                )
+                              ],
+                            ),
                             MaterialButton(
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10.0)),
@@ -165,15 +254,11 @@ class _DescriptionState extends State<Description> {
                               ),
                               onPressed: _showRatingAppDialog,
                             ),
-                            modified_text(
-                              text: '⭐ Average Rating - ' + widget.vote,
-                              color: Colors.white,
-                            )
                           ],
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.fromLTRB(8, 0, 8, 10),
+                        padding: const EdgeInsets.fromLTRB(8, 15, 8, 10),
                         child: FutureBuilder(
                             future:
                                 loadReviews(), // a previously-obtained Future<String> or null
@@ -185,9 +270,12 @@ class _DescriptionState extends State<Description> {
                                         color: Colors.red));
                               }
                               if (snapshot.data.isEmpty) {
-                                return SizedBox();
+                                return SizedBox(
+                                  height: 0,
+                                );
                               }
                               return Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
@@ -205,6 +293,7 @@ class _DescriptionState extends State<Description> {
                                     ],
                                   ),
                                   ListView.builder(
+                                      padding: EdgeInsets.only(top: 0),
                                       physics: BouncingScrollPhysics(),
                                       shrinkWrap: true,
                                       itemCount: reviewsResultsTMDB.length,
@@ -251,6 +340,7 @@ class _DescriptionState extends State<Description> {
                                     ],
                                   ),
                                   ListView.builder(
+                                      padding: EdgeInsets.only(top: 0),
                                       physics: BouncingScrollPhysics(),
                                       shrinkWrap: true,
                                       itemCount: snapshot.data.docs.length,

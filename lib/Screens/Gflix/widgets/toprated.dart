@@ -31,25 +31,24 @@ class TopRatedMovies extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                                 builder: (context) => new Description(
-                                      id: toprated[index]['id'],
-                                      name: toprated[index]['title'] == null
-                                          ? toprated[index]['name']
-                                          : toprated[index]['title'],
-                                      bannerurl:
-                                          'https://image.tmdb.org/t/p/w500' +
-                                              toprated[index]['backdrop_path'],
-                                      posterurl:
-                                          'https://image.tmdb.org/t/p/w500' +
-                                              toprated[index]['poster_path'],
-                                      description: toprated[index]['overview'],
-                                      vote: toprated[index]['vote_average']
-                                          .toString(),
-                                      launchOn: toprated[index]
-                                                  ['release_date'] ==
-                                              null
-                                          ? toprated[index]['first_air_date']
-                                          : toprated[index]['release_date'],
-                                    )));
+                                    id: toprated[index]['id'],
+                                    name: toprated[index]['title'] == null
+                                        ? toprated[index]['name']
+                                        : toprated[index]['title'],
+                                    bannerurl:
+                                        'https://image.tmdb.org/t/p/w500' +
+                                            toprated[index]['backdrop_path'],
+                                    posterurl:
+                                        'https://image.tmdb.org/t/p/w500' +
+                                            toprated[index]['poster_path'],
+                                    description: toprated[index]['overview'],
+                                    vote: toprated[index]['vote_average']
+                                        .toString(),
+                                    launchOn:
+                                        toprated[index]['release_date'] == null
+                                            ? toprated[index]['first_air_date']
+                                            : toprated[index]['release_date'],
+                                    mediaType: 'movie')));
                       },
                       child: Container(
                         width: 140,

@@ -32,20 +32,20 @@ class TV extends StatelessWidget {
                             MaterialPageRoute(builder: (context) {
                           print("index : $index");
                           return new Description(
-                            id: tv[index]['id'],
-                            name: tv[index]['title'] == null
-                                ? tv[index]['name']
-                                : tv[index]['title'],
-                            bannerurl: 'https://image.tmdb.org/t/p/w500' +
-                                tv[index]['backdrop_path'],
-                            posterurl: 'https://image.tmdb.org/t/p/w500' +
-                                tv[index]['poster_path'],
-                            description: tv[index]['overview'],
-                            vote: tv[index]['vote_average'].toString(),
-                            launchOn: tv[index]['release_date'] == null
-                                ? tv[index]['first_air_date']
-                                : tv[index]['release_date'],
-                          );
+                              id: tv[index]['id'],
+                              name: tv[index]['title'] == null
+                                  ? tv[index]['name']
+                                  : tv[index]['title'],
+                              bannerurl: 'https://image.tmdb.org/t/p/w500' +
+                                  tv[index]['backdrop_path'],
+                              posterurl: 'https://image.tmdb.org/t/p/w500' +
+                                  tv[index]['poster_path'],
+                              description: tv[index]['overview'],
+                              vote: tv[index]['vote_average'].toString(),
+                              launchOn: tv[index]['release_date'] == null
+                                  ? tv[index]['first_air_date']
+                                  : tv[index]['release_date'],
+                              mediaType: 'tv');
                         }));
                       },
                       child: Container(
