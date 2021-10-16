@@ -88,6 +88,7 @@ class _ReviewState extends State<Review> {
                       ),
                       onPressed: () async {
                         try {
+                          Navigator.pop(context);
                           await _reviewCollection
                               .doc(widget.reviewResults["id"])
                               .delete()
@@ -95,10 +96,10 @@ class _ReviewState extends State<Review> {
                                   msg: "Deleted",
                                   gravity: ToastGravity.CENTER));
                         } catch (e) {
+                          Navigator.pop(context);
                           Fluttertoast.showToast(
                               msg: e.message, gravity: ToastGravity.CENTER);
                         }
-                        Navigator.pop(context);
                       },
                     ),
                   ],
