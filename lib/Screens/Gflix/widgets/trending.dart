@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/Screens/Gflix/utils/text.dart';
 
@@ -54,18 +55,43 @@ class TrendingMovies extends StatelessWidget {
                                     )));
                       },
                       child: Container(
-                        width: 140,
+                        alignment: Alignment.topRight,
+                        width: 170,
                         child: Column(
                           children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: NetworkImage(
-                                      'https://image.tmdb.org/t/p/w500' +
-                                          trending[index]['poster_path']),
+                            Stack(
+                              fit: StackFit.loose,
+                              clipBehavior: Clip.none,
+                              children: <Widget>[
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(5.0),
+                                  child: Image.network(
+                                    'https://image.tmdb.org/t/p/w500' +
+                                        trending[index]['poster_path'],
+                                    height: 220.0,
+                                    width: 150.0,
+                                    fit: BoxFit.contain,
+                                  ),
                                 ),
-                              ),
-                              height: 200,
+                                Positioned(
+                                    bottom: -20,
+                                    left: -15,
+                                    child: Text(
+                                      '${index + 1}',
+                                      style: TextStyle(
+                                        letterSpacing: -8,
+                                        fontSize: 80,
+                                        color: Colors.white,
+                                        shadows: <Shadow>[
+                                          Shadow(
+                                            offset: Offset(3.0, 3.0),
+                                            blurRadius: 10.0,
+                                            color: Colors.black,
+                                          ),
+                                        ],
+                                      ),
+                                    )),
+                              ],
                             ),
                             SizedBox(height: 5),
                             Container(
