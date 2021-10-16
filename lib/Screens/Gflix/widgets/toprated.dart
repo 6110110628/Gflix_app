@@ -66,14 +66,13 @@ class TopRatedMovies extends StatelessWidget {
                             ),
                             SizedBox(height: 10),
                             Container(
-                              child: modified_text(
-                                size: 15,
-                                text: toprated[index]['title'] != null
-                                    ? toprated[index]['title']
-                                    : 'Loading',
-                                color: Colors.white,
-                              ),
-                            )
+                                child: Text(
+                              toprated[index]['title'] != null
+                                  ? toprated[index]['title']
+                                  : 'Loading',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
+                            ))
                           ],
                         ),
                       ),

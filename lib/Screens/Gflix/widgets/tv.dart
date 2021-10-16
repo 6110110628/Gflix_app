@@ -67,14 +67,13 @@ class TV extends StatelessWidget {
                             ),
                             SizedBox(height: 5),
                             Container(
-                              child: modified_text(
-                                size: 15,
-                                text: tv[index]['original_name'] != null
-                                    ? tv[index]['original_name']
-                                    : 'Loading',
-                                color: Colors.white,
-                              ),
-                            )
+                                child: Text(
+                              tv[index]['original_name'] != null
+                                  ? tv[index]['original_name']
+                                  : 'Loading',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
+                            ))
                           ],
                         ),
                       ),

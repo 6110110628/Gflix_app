@@ -95,14 +95,13 @@ class TrendingMovies extends StatelessWidget {
                             ),
                             SizedBox(height: 5),
                             Container(
-                              child: modified_text(
-                                size: 15,
-                                text: trending[index]['title'] == null
-                                    ? trending[index]['name']
-                                    : trending[index]['title'],
-                                color: Colors.white,
-                              ),
-                            )
+                                child: Text(
+                              trending[index]['title'] == null
+                                  ? trending[index]['name']
+                                  : trending[index]['title'],
+                              textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
+                            ))
                           ],
                         ),
                       ),
