@@ -4,9 +4,11 @@ import 'package:flutter_auth/Screens/Gflix/utils/text.dart';
 import 'package:flutter_auth/Screens/Gflix/widgets/toprated.dart';
 import 'package:flutter_auth/Screens/Gflix/widgets/trending.dart';
 import 'package:flutter_auth/Screens/Gflix/widgets/tv.dart';
+import 'package:flutter_auth/Screens/Login/components/google_sign_in.dart';
 import 'package:flutter_auth/Screens/Welcome/welcome_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:provider/provider.dart';
 import 'package:tmdb_api/tmdb_api.dart';
 
 class IndexScreen extends StatefulWidget {

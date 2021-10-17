@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/Screens/Gflix/index.dart';
 import 'package:flutter_auth/Screens/Login/components/background.dart';
+import 'package:flutter_auth/Screens/Login/components/google_sign_in.dart';
 import 'package:flutter_auth/Screens/Signup/components/or_divider.dart';
 import 'package:flutter_auth/Screens/Signup/components/social_icon.dart';
 import 'package:flutter_auth/Screens/Signup/signup_screen.dart';
@@ -13,6 +14,7 @@ import 'package:flutter_auth/components/rounded_password_field.dart';
 import 'package:flutter_auth/model/profile.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:provider/provider.dart';
 
 // ignore: must_be_immutable
 class Body extends StatelessWidget {
@@ -116,7 +118,18 @@ class Body extends StatelessWidget {
                           ),
                           SocalIcon(
                             iconSrc: "assets/icons/google-plus.svg",
-                            press: () {},
+                            press: () {
+                              final provider =
+                                  Provider.of<GoogleSignInProvider>(context,
+                                      listen: false);
+                              provider.googleLogin().then((value) {
+                                profile.LoginWithGoogle = true;
+                                Navigator.pushAndRemoveUntil(context,
+                                    MaterialPageRoute(builder: (context) {
+                                  return IndexScreen();
+                                }), (Route<dynamic> route) => false);
+                              });
+                            },
                           ),
                         ],
                       )

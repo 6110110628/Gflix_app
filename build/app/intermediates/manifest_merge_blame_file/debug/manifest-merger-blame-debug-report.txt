@@ -261,20 +261,43 @@
 149-->[com.google.firebase:firebase-common:20.0.0] C:\Users\ASUS\.gradle\caches\transforms-3\fda62ea292ca95dbe070662929235f36\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:31:13-36
 150
 151        <activity
-151-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\ASUS\.gradle\caches\transforms-3\04734857b5ed174dc0953427412d8a79\transformed\jetified-play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
-152            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-152-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\ASUS\.gradle\caches\transforms-3\04734857b5ed174dc0953427412d8a79\transformed\jetified-play-services-base-17.1.0\AndroidManifest.xml:24:13-79
-153            android:exported="false"
-153-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\ASUS\.gradle\caches\transforms-3\04734857b5ed174dc0953427412d8a79\transformed\jetified-play-services-base-17.1.0\AndroidManifest.xml:25:13-37
-154            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-154-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\ASUS\.gradle\caches\transforms-3\04734857b5ed174dc0953427412d8a79\transformed\jetified-play-services-base-17.1.0\AndroidManifest.xml:26:13-72
-155
-156        <meta-data
-156-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\ASUS\.gradle\caches\transforms-3\d62d21780e50c1cee65a5c4902f77159\transformed\jetified-play-services-basement-17.1.0\AndroidManifest.xml:23:9-25:69
-157            android:name="com.google.android.gms.version"
-157-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\ASUS\.gradle\caches\transforms-3\d62d21780e50c1cee65a5c4902f77159\transformed\jetified-play-services-basement-17.1.0\AndroidManifest.xml:24:13-58
-158            android:value="@integer/google_play_services_version" />
-158-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\ASUS\.gradle\caches\transforms-3\d62d21780e50c1cee65a5c4902f77159\transformed\jetified-play-services-basement-17.1.0\AndroidManifest.xml:25:13-66
-159    </application>
-160
-161</manifest>
+151-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\1ef7f5f17b6a6f7ed54e7749e83f385c\transformed\jetified-play-services-auth-16.0.1\AndroidManifest.xml:23:9-27:75
+152            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+152-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\1ef7f5f17b6a6f7ed54e7749e83f385c\transformed\jetified-play-services-auth-16.0.1\AndroidManifest.xml:24:13-93
+153            android:excludeFromRecents="true"
+153-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\1ef7f5f17b6a6f7ed54e7749e83f385c\transformed\jetified-play-services-auth-16.0.1\AndroidManifest.xml:25:13-46
+154            android:exported="false"
+154-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\1ef7f5f17b6a6f7ed54e7749e83f385c\transformed\jetified-play-services-auth-16.0.1\AndroidManifest.xml:26:13-37
+155            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+155-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\1ef7f5f17b6a6f7ed54e7749e83f385c\transformed\jetified-play-services-auth-16.0.1\AndroidManifest.xml:27:13-72
+156        <!--
+157            Service handling Google Sign-In user revocation. For apps that do not integrate with
+158            Google Sign-In, this service will never be started.
+159        -->
+160        <service
+160-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\1ef7f5f17b6a6f7ed54e7749e83f385c\transformed\jetified-play-services-auth-16.0.1\AndroidManifest.xml:33:9-36:110
+161            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+161-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\1ef7f5f17b6a6f7ed54e7749e83f385c\transformed\jetified-play-services-auth-16.0.1\AndroidManifest.xml:34:13-89
+162            android:exported="true"
+162-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\1ef7f5f17b6a6f7ed54e7749e83f385c\transformed\jetified-play-services-auth-16.0.1\AndroidManifest.xml:35:13-36
+163            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
+163-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\1ef7f5f17b6a6f7ed54e7749e83f385c\transformed\jetified-play-services-auth-16.0.1\AndroidManifest.xml:36:13-107
+164
+165        <activity
+165-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\ASUS\.gradle\caches\transforms-3\04734857b5ed174dc0953427412d8a79\transformed\jetified-play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+166            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+166-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\ASUS\.gradle\caches\transforms-3\04734857b5ed174dc0953427412d8a79\transformed\jetified-play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+167            android:exported="false"
+167-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\ASUS\.gradle\caches\transforms-3\04734857b5ed174dc0953427412d8a79\transformed\jetified-play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+168            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+168-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\ASUS\.gradle\caches\transforms-3\04734857b5ed174dc0953427412d8a79\transformed\jetified-play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+169
+170        <meta-data
+170-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\ASUS\.gradle\caches\transforms-3\d62d21780e50c1cee65a5c4902f77159\transformed\jetified-play-services-basement-17.1.0\AndroidManifest.xml:23:9-25:69
+171            android:name="com.google.android.gms.version"
+171-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\ASUS\.gradle\caches\transforms-3\d62d21780e50c1cee65a5c4902f77159\transformed\jetified-play-services-basement-17.1.0\AndroidManifest.xml:24:13-58
+172            android:value="@integer/google_play_services_version" />
+172-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\ASUS\.gradle\caches\transforms-3\d62d21780e50c1cee65a5c4902f77159\transformed\jetified-play-services-basement-17.1.0\AndroidManifest.xml:25:13-66
+173    </application>
+174
+175</manifest>

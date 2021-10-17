@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\Users\\ASUS\\Desktop\\Gflix_app\\build\\google_sign_in\\intermediates\\merged_res\\debug\\color\\common_google_signin_btn_tint.xml",
+        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\b7e6b23e2217dc837bddc15d42545caa\\transformed\\jetified-play-services-base-16.0.1\\res\\color\\common_google_signin_btn_tint.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\Desktop\\Gflix_app\\build\\google_sign_in\\intermediates\\merged_res\\debug\\color\\common_google_signin_btn_text_light.xml",
+        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\b7e6b23e2217dc837bddc15d42545caa\\transformed\\jetified-play-services-base-16.0.1\\res\\color\\common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\ASUS\\Desktop\\Gflix_app\\build\\google_sign_in\\intermediates\\merged_res\\debug\\color\\common_google_signin_btn_text_dark.xml",
+        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\b7e6b23e2217dc837bddc15d42545caa\\transformed\\jetified-play-services-base-16.0.1\\res\\color\\common_google_signin_btn_text_dark.xml"
+    }
+]
