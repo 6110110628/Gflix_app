@@ -12,22 +12,22 @@
 12         to allow setting breakpoints, to provide hot reload, etc.
 13    -->
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->C:\src\Gflix_app\android\app\src\debug\AndroidManifest.xml:6:5-66
-14-->C:\src\Gflix_app\android\app\src\debug\AndroidManifest.xml:6:22-64
+14-->C:\Users\ASUS\Desktop\Gflix_app\android\app\src\debug\AndroidManifest.xml:6:5-66
+14-->C:\Users\ASUS\Desktop\Gflix_app\android\app\src\debug\AndroidManifest.xml:6:22-64
 15
 16    <queries>
-16-->[:flutter_inappwebview] C:\src\Gflix_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-11:15
+16-->[:flutter_inappwebview] C:\Users\ASUS\Desktop\Gflix_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-11:15
 17        <intent>
-17-->[:flutter_inappwebview] C:\src\Gflix_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:8:9-10:18
+17-->[:flutter_inappwebview] C:\Users\ASUS\Desktop\Gflix_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:8:9-10:18
 18            <action android:name="android.support.customtabs.action.CustomTabsService" />
-18-->[:flutter_inappwebview] C:\src\Gflix_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-90
-18-->[:flutter_inappwebview] C:\src\Gflix_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:9:21-87
+18-->[:flutter_inappwebview] C:\Users\ASUS\Desktop\Gflix_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-90
+18-->[:flutter_inappwebview] C:\Users\ASUS\Desktop\Gflix_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:9:21-87
 19        </intent>
 20    </queries>
 21
 22    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-22-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:24:5-79
-22-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:24:22-76
+22-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:24:5-79
+22-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:24:22-76
 23    <!--
 24 io.flutter.app.FlutterApplication is an android.app.Application that
 25         calls FlutterMain.startInitialization(this); in its onCreate method.
@@ -36,39 +36,39 @@
 28         FlutterApplication and put your custom class here.
 29    -->
 30    <application
-30-->C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml:8:5-29:19
+30-->C:\Users\ASUS\Desktop\Gflix_app\android\app\src\main\AndroidManifest.xml:8:5-29:19
 31        android:name="io.flutter.app.FlutterApplication"
-31-->C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml:9:9-57
+31-->C:\Users\ASUS\Desktop\Gflix_app\android\app\src\main\AndroidManifest.xml:9:9-57
 32        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-32-->[androidx.core:core:1.3.0] C:\Users\phooc\.gradle\caches\transforms-3\182c983f68a72a41e4d0b8f9b111ed6f\transformed\core-1.3.0\AndroidManifest.xml:24:18-86
+32-->[androidx.core:core:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-3\182c983f68a72a41e4d0b8f9b111ed6f\transformed\core-1.3.0\AndroidManifest.xml:24:18-86
 33        android:debuggable="true"
 34        android:icon="@mipmap/launcher_icon"
-34-->C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml:11:9-45
+34-->C:\Users\ASUS\Desktop\Gflix_app\android\app\src\main\AndroidManifest.xml:11:9-45
 35        android:label="GFlix" >
-35-->C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml:10:9-30
+35-->C:\Users\ASUS\Desktop\Gflix_app\android\app\src\main\AndroidManifest.xml:10:9-30
 36        <activity
-36-->C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml:12:9-23:20
+36-->C:\Users\ASUS\Desktop\Gflix_app\android\app\src\main\AndroidManifest.xml:12:9-23:20
 37            android:name="com.example.flutter_auth.MainActivity"
-37-->C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml:13:13-41
+37-->C:\Users\ASUS\Desktop\Gflix_app\android\app\src\main\AndroidManifest.xml:13:13-41
 38            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-38-->C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml:16:13-163
+38-->C:\Users\ASUS\Desktop\Gflix_app\android\app\src\main\AndroidManifest.xml:16:13-163
 39            android:hardwareAccelerated="true"
-39-->C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml:17:13-47
+39-->C:\Users\ASUS\Desktop\Gflix_app\android\app\src\main\AndroidManifest.xml:17:13-47
 40            android:launchMode="singleTop"
-40-->C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml:14:13-43
+40-->C:\Users\ASUS\Desktop\Gflix_app\android\app\src\main\AndroidManifest.xml:14:13-43
 41            android:theme="@style/LaunchTheme"
-41-->C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml:15:13-47
+41-->C:\Users\ASUS\Desktop\Gflix_app\android\app\src\main\AndroidManifest.xml:15:13-47
 42            android:windowSoftInputMode="adjustResize" >
-42-->C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml:18:13-55
+42-->C:\Users\ASUS\Desktop\Gflix_app\android\app\src\main\AndroidManifest.xml:18:13-55
 43            <intent-filter>
-43-->C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml:19:13-22:29
+43-->C:\Users\ASUS\Desktop\Gflix_app\android\app\src\main\AndroidManifest.xml:19:13-22:29
 44                <action android:name="android.intent.action.MAIN" />
-44-->C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml:20:17-68
-44-->C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml:20:25-66
+44-->C:\Users\ASUS\Desktop\Gflix_app\android\app\src\main\AndroidManifest.xml:20:17-68
+44-->C:\Users\ASUS\Desktop\Gflix_app\android\app\src\main\AndroidManifest.xml:20:25-66
 45
 46                <category android:name="android.intent.category.LAUNCHER" />
-46-->C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml:21:17-76
-46-->C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml:21:27-74
+46-->C:\Users\ASUS\Desktop\Gflix_app\android\app\src\main\AndroidManifest.xml:21:17-76
+46-->C:\Users\ASUS\Desktop\Gflix_app\android\app\src\main\AndroidManifest.xml:21:27-74
 47            </intent-filter>
 48        </activity>
 49        <!--
@@ -76,205 +76,205 @@
 51             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
 52        -->
 53        <meta-data
-53-->C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml:26:9-28:33
+53-->C:\Users\ASUS\Desktop\Gflix_app\android\app\src\main\AndroidManifest.xml:26:9-28:33
 54            android:name="flutterEmbedding"
-54-->C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml:27:13-44
+54-->C:\Users\ASUS\Desktop\Gflix_app\android\app\src\main\AndroidManifest.xml:27:13-44
 55            android:value="2" />
-55-->C:\src\Gflix_app\android\app\src\main\AndroidManifest.xml:28:13-30
+55-->C:\Users\ASUS\Desktop\Gflix_app\android\app\src\main\AndroidManifest.xml:28:13-30
 56
 57        <service
-57-->[:firebase_auth] C:\src\Gflix_app\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:8:9-12:19
+57-->[:firebase_auth] C:\Users\ASUS\Desktop\Gflix_app\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:8:9-12:19
 58            android:name="com.google.firebase.components.ComponentDiscoveryService"
-58-->[:firebase_auth] C:\src\Gflix_app\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:8:18-89
+58-->[:firebase_auth] C:\Users\ASUS\Desktop\Gflix_app\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:8:18-89
 59            android:directBootAware="true"
-59-->[com.google.firebase:firebase-common:20.0.0] C:\Users\phooc\.gradle\caches\transforms-3\fda62ea292ca95dbe070662929235f36\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:35:13-43
+59-->[com.google.firebase:firebase-common:20.0.0] C:\Users\ASUS\.gradle\caches\transforms-3\fda62ea292ca95dbe070662929235f36\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:35:13-43
 60            android:exported="false" >
-60-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:76:13-37
+60-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:76:13-37
 61            <meta-data
-61-->[:firebase_auth] C:\src\Gflix_app\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-11:85
+61-->[:firebase_auth] C:\Users\ASUS\Desktop\Gflix_app\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-11:85
 62                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
-62-->[:firebase_auth] C:\src\Gflix_app\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:10:17-124
+62-->[:firebase_auth] C:\Users\ASUS\Desktop\Gflix_app\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:10:17-124
 63                android:value="com.google.firebase.components.ComponentRegistrar" />
-63-->[:firebase_auth] C:\src\Gflix_app\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:11:17-82
+63-->[:firebase_auth] C:\Users\ASUS\Desktop\Gflix_app\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:11:17-82
 64            <meta-data
-64-->[:cloud_firestore] C:\src\Gflix_app\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-11:85
+64-->[:cloud_firestore] C:\Users\ASUS\Desktop\Gflix_app\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-11:85
 65                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
-65-->[:cloud_firestore] C:\src\Gflix_app\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:10:17-134
+65-->[:cloud_firestore] C:\Users\ASUS\Desktop\Gflix_app\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:10:17-134
 66                android:value="com.google.firebase.components.ComponentRegistrar" />
-66-->[:cloud_firestore] C:\src\Gflix_app\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:11:17-82
+66-->[:cloud_firestore] C:\Users\ASUS\Desktop\Gflix_app\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:11:17-82
 67            <meta-data
-67-->[:firebase_core] C:\src\Gflix_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-11:85
+67-->[:firebase_core] C:\Users\ASUS\Desktop\Gflix_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-11:85
 68                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
-68-->[:firebase_core] C:\src\Gflix_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:10:17-124
+68-->[:firebase_core] C:\Users\ASUS\Desktop\Gflix_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:10:17-124
 69                android:value="com.google.firebase.components.ComponentRegistrar" />
-69-->[:firebase_core] C:\src\Gflix_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:11:17-82
+69-->[:firebase_core] C:\Users\ASUS\Desktop\Gflix_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:11:17-82
 70            <meta-data
-70-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:77:13-79:85
+70-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:77:13-79:85
 71                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-71-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:78:17-109
+71-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:78:17-109
 72                android:value="com.google.firebase.components.ComponentRegistrar" />
-72-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:79:17-82
+72-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:79:17-82
 73            <meta-data
-73-->[com.google.firebase:firebase-firestore:23.0.3] C:\Users\phooc\.gradle\caches\transforms-3\0847f267ae8f4179253f41684a046f71\transformed\jetified-firebase-firestore-23.0.3\AndroidManifest.xml:20:13-22:85
+73-->[com.google.firebase:firebase-firestore:23.0.3] C:\Users\ASUS\.gradle\caches\transforms-3\0847f267ae8f4179253f41684a046f71\transformed\jetified-firebase-firestore-23.0.3\AndroidManifest.xml:20:13-22:85
 74                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-74-->[com.google.firebase:firebase-firestore:23.0.3] C:\Users\phooc\.gradle\caches\transforms-3\0847f267ae8f4179253f41684a046f71\transformed\jetified-firebase-firestore-23.0.3\AndroidManifest.xml:21:17-111
+74-->[com.google.firebase:firebase-firestore:23.0.3] C:\Users\ASUS\.gradle\caches\transforms-3\0847f267ae8f4179253f41684a046f71\transformed\jetified-firebase-firestore-23.0.3\AndroidManifest.xml:21:17-111
 75                android:value="com.google.firebase.components.ComponentRegistrar" />
-75-->[com.google.firebase:firebase-firestore:23.0.3] C:\Users\phooc\.gradle\caches\transforms-3\0847f267ae8f4179253f41684a046f71\transformed\jetified-firebase-firestore-23.0.3\AndroidManifest.xml:22:17-82
+75-->[com.google.firebase:firebase-firestore:23.0.3] C:\Users\ASUS\.gradle\caches\transforms-3\0847f267ae8f4179253f41684a046f71\transformed\jetified-firebase-firestore-23.0.3\AndroidManifest.xml:22:17-82
 76        </service>
 77
 78        <activity
-78-->[:flutter_inappwebview] C:\src\Gflix_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:14:9-17:47
+78-->[:flutter_inappwebview] C:\Users\ASUS\Desktop\Gflix_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:14:9-17:47
 79            android:name="com.pichillilorenzo.flutter_inappwebview.in_app_browser.InAppBrowserActivity"
-79-->[:flutter_inappwebview] C:\src\Gflix_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-104
+79-->[:flutter_inappwebview] C:\Users\ASUS\Desktop\Gflix_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-104
 80            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density"
-80-->[:flutter_inappwebview] C:\src\Gflix_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:16:13-137
+80-->[:flutter_inappwebview] C:\Users\ASUS\Desktop\Gflix_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:16:13-137
 81            android:theme="@style/AppTheme" />
-81-->[:flutter_inappwebview] C:\src\Gflix_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-44
+81-->[:flutter_inappwebview] C:\Users\ASUS\Desktop\Gflix_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-44
 82        <activity
-82-->[:flutter_inappwebview] C:\src\Gflix_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:18:9-20:55
+82-->[:flutter_inappwebview] C:\Users\ASUS\Desktop\Gflix_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:18:9-20:55
 83            android:name="com.pichillilorenzo.flutter_inappwebview.chrome_custom_tabs.ChromeCustomTabsActivity"
-83-->[:flutter_inappwebview] C:\src\Gflix_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:19:13-112
+83-->[:flutter_inappwebview] C:\Users\ASUS\Desktop\Gflix_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:19:13-112
 84            android:theme="@style/ThemeTransparent" />
-84-->[:flutter_inappwebview] C:\src\Gflix_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:20:13-52
+84-->[:flutter_inappwebview] C:\Users\ASUS\Desktop\Gflix_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:20:13-52
 85
 86        <receiver android:name="com.pichillilorenzo.flutter_inappwebview.chrome_custom_tabs.ActionBroadcastReceiver" />
-86-->[:flutter_inappwebview] C:\src\Gflix_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:22:9-120
-86-->[:flutter_inappwebview] C:\src\Gflix_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:22:19-117
+86-->[:flutter_inappwebview] C:\Users\ASUS\Desktop\Gflix_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:22:9-120
+86-->[:flutter_inappwebview] C:\Users\ASUS\Desktop\Gflix_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:22:19-117
 87
 88        <meta-data
-88-->[:flutter_inappwebview] C:\src\Gflix_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:24:9-26:36
+88-->[:flutter_inappwebview] C:\Users\ASUS\Desktop\Gflix_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:24:9-26:36
 89            android:name="io.flutter.embedded_views_preview"
-89-->[:flutter_inappwebview] C:\src\Gflix_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:25:13-61
+89-->[:flutter_inappwebview] C:\Users\ASUS\Desktop\Gflix_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:25:13-61
 90            android:value="true" />
-90-->[:flutter_inappwebview] C:\src\Gflix_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:26:13-33
+90-->[:flutter_inappwebview] C:\Users\ASUS\Desktop\Gflix_app\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:26:13-33
 91
 92        <activity
-92-->[:url_launcher] C:\src\Gflix_app\build\url_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:8:9-11:74
+92-->[:url_launcher] C:\Users\ASUS\Desktop\Gflix_app\build\url_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:8:9-11:74
 93            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
-93-->[:url_launcher] C:\src\Gflix_app\build\url_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-74
+93-->[:url_launcher] C:\Users\ASUS\Desktop\Gflix_app\build\url_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-74
 94            android:exported="false"
-94-->[:url_launcher] C:\src\Gflix_app\build\url_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:10:13-37
+94-->[:url_launcher] C:\Users\ASUS\Desktop\Gflix_app\build\url_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:10:13-37
 95            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-95-->[:url_launcher] C:\src\Gflix_app\build\url_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-71
+95-->[:url_launcher] C:\Users\ASUS\Desktop\Gflix_app\build\url_launcher\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-71
 96        <activity
-96-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:27:9-44:20
+96-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:27:9-44:20
 97            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
-97-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:28:13-80
+97-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:28:13-80
 98            android:excludeFromRecents="true"
-98-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:29:13-46
+98-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:29:13-46
 99            android:exported="true"
-99-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:30:13-36
+99-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:30:13-36
 100            android:launchMode="singleTask"
-100-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:31:13-44
+100-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:31:13-44
 101            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-101-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:32:13-72
+101-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:32:13-72
 102            <intent-filter>
-102-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:33:13-43:29
+102-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:33:13-43:29
 103                <action android:name="android.intent.action.VIEW" />
-103-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:34:17-69
-103-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:34:25-66
+103-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:34:17-69
+103-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:34:25-66
 104
 105                <category android:name="android.intent.category.DEFAULT" />
-105-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:36:17-76
-105-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:36:27-73
+105-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:36:17-76
+105-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:36:27-73
 106                <category android:name="android.intent.category.BROWSABLE" />
-106-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:37:17-78
-106-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:37:27-75
+106-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:37:17-78
+106-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:37:27-75
 107
 108                <data
-108-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:39:17-42:51
+108-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:39:17-42:51
 109                    android:host="firebase.auth"
-109-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:40:21-49
+109-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:40:21-49
 110                    android:path="/"
-110-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:41:21-37
+110-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:41:21-37
 111                    android:scheme="genericidp" />
-111-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:42:21-48
+111-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:42:21-48
 112            </intent-filter>
 113        </activity>
 114        <activity
-114-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:45:9-62:20
+114-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:45:9-62:20
 115            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
-115-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:46:13-79
+115-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:46:13-79
 116            android:excludeFromRecents="true"
-116-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:47:13-46
+116-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:47:13-46
 117            android:exported="true"
-117-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:48:13-36
+117-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:48:13-36
 118            android:launchMode="singleTask"
-118-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:49:13-44
+118-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:49:13-44
 119            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-119-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:50:13-72
+119-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:50:13-72
 120            <intent-filter>
-120-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:51:13-61:29
+120-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:51:13-61:29
 121                <action android:name="android.intent.action.VIEW" />
-121-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:34:17-69
-121-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:34:25-66
+121-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:34:17-69
+121-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:34:25-66
 122
 123                <category android:name="android.intent.category.DEFAULT" />
-123-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:36:17-76
-123-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:36:27-73
+123-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:36:17-76
+123-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:36:27-73
 124                <category android:name="android.intent.category.BROWSABLE" />
-124-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:37:17-78
-124-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:37:27-75
+124-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:37:17-78
+124-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:37:27-75
 125
 126                <data
-126-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:39:17-42:51
+126-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:39:17-42:51
 127                    android:host="firebase.auth"
-127-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:40:21-49
+127-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:40:21-49
 128                    android:path="/"
-128-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:41:21-37
+128-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:41:21-37
 129                    android:scheme="recaptcha" />
-129-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:42:21-48
+129-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:42:21-48
 130            </intent-filter>
 131        </activity>
 132
 133        <service
-133-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:64:9-73:19
+133-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:64:9-73:19
 134            android:name="com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService"
-134-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:65:13-101
+134-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:65:13-101
 135            android:enabled="true"
-135-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:66:13-35
+135-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:66:13-35
 136            android:exported="false" >
-136-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:67:13-37
+136-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:67:13-37
 137            <intent-filter>
-137-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:68:13-72:29
+137-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:68:13-72:29
 138                <action android:name="com.google.firebase.auth.api.gms.service.START" />
-138-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:69:17-89
-138-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:69:25-86
+138-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:69:17-89
+138-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:69:25-86
 139
 140                <category android:name="android.intent.category.DEFAULT" />
-140-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:36:17-76
-140-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\phooc\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:36:27-73
+140-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:36:17-76
+140-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\ASUS\.gradle\caches\transforms-3\4795bf5f9b596aed5689de58b8befddc\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:36:27-73
 141            </intent-filter>
 142        </service>
 143
 144        <provider
-144-->[com.google.firebase:firebase-common:20.0.0] C:\Users\phooc\.gradle\caches\transforms-3\fda62ea292ca95dbe070662929235f36\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:26:9-31:39
+144-->[com.google.firebase:firebase-common:20.0.0] C:\Users\ASUS\.gradle\caches\transforms-3\fda62ea292ca95dbe070662929235f36\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:26:9-31:39
 145            android:name="com.google.firebase.provider.FirebaseInitProvider"
-145-->[com.google.firebase:firebase-common:20.0.0] C:\Users\phooc\.gradle\caches\transforms-3\fda62ea292ca95dbe070662929235f36\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:27:13-77
+145-->[com.google.firebase:firebase-common:20.0.0] C:\Users\ASUS\.gradle\caches\transforms-3\fda62ea292ca95dbe070662929235f36\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:27:13-77
 146            android:authorities="com.example.flutter_auth.firebaseinitprovider"
-146-->[com.google.firebase:firebase-common:20.0.0] C:\Users\phooc\.gradle\caches\transforms-3\fda62ea292ca95dbe070662929235f36\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:28:13-72
+146-->[com.google.firebase:firebase-common:20.0.0] C:\Users\ASUS\.gradle\caches\transforms-3\fda62ea292ca95dbe070662929235f36\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:28:13-72
 147            android:directBootAware="true"
-147-->[com.google.firebase:firebase-common:20.0.0] C:\Users\phooc\.gradle\caches\transforms-3\fda62ea292ca95dbe070662929235f36\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:29:13-43
+147-->[com.google.firebase:firebase-common:20.0.0] C:\Users\ASUS\.gradle\caches\transforms-3\fda62ea292ca95dbe070662929235f36\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:29:13-43
 148            android:exported="false"
-148-->[com.google.firebase:firebase-common:20.0.0] C:\Users\phooc\.gradle\caches\transforms-3\fda62ea292ca95dbe070662929235f36\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:30:13-37
+148-->[com.google.firebase:firebase-common:20.0.0] C:\Users\ASUS\.gradle\caches\transforms-3\fda62ea292ca95dbe070662929235f36\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:30:13-37
 149            android:initOrder="100" />
-149-->[com.google.firebase:firebase-common:20.0.0] C:\Users\phooc\.gradle\caches\transforms-3\fda62ea292ca95dbe070662929235f36\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:31:13-36
+149-->[com.google.firebase:firebase-common:20.0.0] C:\Users\ASUS\.gradle\caches\transforms-3\fda62ea292ca95dbe070662929235f36\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:31:13-36
 150
 151        <activity
-151-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\phooc\.gradle\caches\transforms-3\04734857b5ed174dc0953427412d8a79\transformed\jetified-play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+151-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\ASUS\.gradle\caches\transforms-3\04734857b5ed174dc0953427412d8a79\transformed\jetified-play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
 152            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-152-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\phooc\.gradle\caches\transforms-3\04734857b5ed174dc0953427412d8a79\transformed\jetified-play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+152-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\ASUS\.gradle\caches\transforms-3\04734857b5ed174dc0953427412d8a79\transformed\jetified-play-services-base-17.1.0\AndroidManifest.xml:24:13-79
 153            android:exported="false"
-153-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\phooc\.gradle\caches\transforms-3\04734857b5ed174dc0953427412d8a79\transformed\jetified-play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+153-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\ASUS\.gradle\caches\transforms-3\04734857b5ed174dc0953427412d8a79\transformed\jetified-play-services-base-17.1.0\AndroidManifest.xml:25:13-37
 154            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-154-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\phooc\.gradle\caches\transforms-3\04734857b5ed174dc0953427412d8a79\transformed\jetified-play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+154-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\ASUS\.gradle\caches\transforms-3\04734857b5ed174dc0953427412d8a79\transformed\jetified-play-services-base-17.1.0\AndroidManifest.xml:26:13-72
 155
 156        <meta-data
-156-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\phooc\.gradle\caches\transforms-3\d62d21780e50c1cee65a5c4902f77159\transformed\jetified-play-services-basement-17.1.0\AndroidManifest.xml:23:9-25:69
+156-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\ASUS\.gradle\caches\transforms-3\d62d21780e50c1cee65a5c4902f77159\transformed\jetified-play-services-basement-17.1.0\AndroidManifest.xml:23:9-25:69
 157            android:name="com.google.android.gms.version"
-157-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\phooc\.gradle\caches\transforms-3\d62d21780e50c1cee65a5c4902f77159\transformed\jetified-play-services-basement-17.1.0\AndroidManifest.xml:24:13-58
+157-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\ASUS\.gradle\caches\transforms-3\d62d21780e50c1cee65a5c4902f77159\transformed\jetified-play-services-basement-17.1.0\AndroidManifest.xml:24:13-58
 158            android:value="@integer/google_play_services_version" />
-158-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\phooc\.gradle\caches\transforms-3\d62d21780e50c1cee65a5c4902f77159\transformed\jetified-play-services-basement-17.1.0\AndroidManifest.xml:25:13-66
+158-->[com.google.android.gms:play-services-basement:17.1.0] C:\Users\ASUS\.gradle\caches\transforms-3\d62d21780e50c1cee65a5c4902f77159\transformed\jetified-play-services-basement-17.1.0\AndroidManifest.xml:25:13-66
 159    </application>
 160
 161</manifest>
