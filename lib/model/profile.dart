@@ -3,8 +3,6 @@
 class Profile {
   String email;
   String password;
-  bool LoginWithFacebook;
-  bool LoginWithGoogle;
 
   Profile({
     this.email,

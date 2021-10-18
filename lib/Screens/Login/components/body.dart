@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_auth/Screens/Gflix/index.dart';
 import 'package:flutter_auth/Screens/Login/components/background.dart';
 import 'package:flutter_auth/Screens/Login/components/google_sign_in.dart';
+import 'package:flutter_auth/Screens/Login/login_screen.dart';
 import 'package:flutter_auth/Screens/Signup/components/or_divider.dart';
 import 'package:flutter_auth/Screens/Signup/components/social_icon.dart';
 import 'package:flutter_auth/Screens/Signup/signup_screen.dart';
@@ -123,11 +124,17 @@ class Body extends StatelessWidget {
                                   Provider.of<GoogleSignInProvider>(context,
                                       listen: false);
                               provider.googleLogin().then((value) {
-                                profile.LoginWithGoogle = true;
-                                Navigator.pushAndRemoveUntil(context,
-                                    MaterialPageRoute(builder: (context) {
-                                  return IndexScreen();
-                                }), (Route<dynamic> route) => false);
+                                if (provider.user == null) {
+                                  Navigator.pushAndRemoveUntil(context,
+                                      MaterialPageRoute(builder: (context) {
+                                    return LoginScreen();
+                                  }), (Route<dynamic> route) => false);
+                                } else {
+                                  Navigator.pushAndRemoveUntil(context,
+                                      MaterialPageRoute(builder: (context) {
+                                    return IndexScreen();
+                                  }), (Route<dynamic> route) => false);
+                                }
                               });
                             },
                           ),

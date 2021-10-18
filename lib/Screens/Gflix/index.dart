@@ -98,19 +98,28 @@ class _IndexScreenState extends State<IndexScreen> {
                         'Log Out',
                         style: TextStyle(color: Colors.white, fontSize: 15),
                       ),
-                      onPressed: () async {
-                        try {
-                          auth.signOut().then((value) {
-                            Navigator.pushReplacement(context,
+                      onPressed: () {
+                        final provider = Provider.of<GoogleSignInProvider>(
+                            context,
+                            listen: false);
+                        print(provider.user);
+                        if (provider.user != null) {
+                          provider.googleLogout().then((value) {
+                            Navigator.pop(context);
+                            Navigator.pushAndRemoveUntil(context,
                                 MaterialPageRoute(builder: (context) {
                               return WelcomeScreen();
-                            }));
+                            }), (Route<dynamic> route) => false);
                           });
-                        } catch (e) {
-                          Fluttertoast.showToast(
-                              msg: e.message, gravity: ToastGravity.CENTER);
+                        } else if (provider.user == null) {
+                          auth.signOut().then((value) {
+                            Navigator.pop(context);
+                            Navigator.pushAndRemoveUntil(context,
+                                MaterialPageRoute(builder: (context) {
+                              return WelcomeScreen();
+                            }), (Route<dynamic> route) => false);
+                          });
                         }
-                        Navigator.pop(context);
                       },
                     ),
                   ],
