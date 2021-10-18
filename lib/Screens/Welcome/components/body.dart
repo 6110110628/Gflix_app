@@ -43,7 +43,6 @@ class Body extends StatelessWidget {
             RoundedButton(
               text: "SIGN UP",
               color: Color.fromRGBO(64, 64, 64, 1),
-              //textColor: Colors.black,
               press: () {
                 Navigator.push(
                   context,
