@@ -114,10 +114,6 @@ class Body extends StatelessWidget {
                             press: () {},
                           ),
                           SocalIcon(
-                            iconSrc: "assets/icons/twitter.svg",
-                            press: () {},
-                          ),
-                          SocalIcon(
                             iconSrc: "assets/icons/google-plus.svg",
                             press: () {
                               final provider =
@@ -125,10 +121,11 @@ class Body extends StatelessWidget {
                                       listen: false);
                               provider.googleLogin().then((value) {
                                 if (provider.user == null) {
-                                  Navigator.pushAndRemoveUntil(context,
-                                      MaterialPageRoute(builder: (context) {
-                                    return LoginScreen();
-                                  }), (Route<dynamic> route) => false);
+                                  Fluttertoast.showToast(
+                                      msg: 'กรุณาเลือกบัญชีผู้ใช้',
+                                      gravity: ToastGravity.CENTER);
+                                  formkey.currentState.reset();
+                                  return LoginScreen();
                                 } else {
                                   Navigator.pushAndRemoveUntil(context,
                                       MaterialPageRoute(builder: (context) {
