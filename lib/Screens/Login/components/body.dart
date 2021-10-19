@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/Screens/Gflix/index.dart';
 import 'package:flutter_auth/Screens/Login/components/background.dart';
+import 'package:flutter_auth/Screens/Login/components/facebook_login.dart';
 import 'package:flutter_auth/Screens/Login/components/google_sign_in.dart';
 import 'package:flutter_auth/Screens/Login/login_screen.dart';
 import 'package:flutter_auth/Screens/Signup/components/or_divider.dart';
@@ -124,7 +125,6 @@ class Body extends StatelessWidget {
                                   Fluttertoast.showToast(
                                       msg: 'กรุณาเลือกบัญชีผู้ใช้',
                                       gravity: ToastGravity.CENTER);
-                                  formkey.currentState.reset();
                                   return LoginScreen();
                                 } else {
                                   Navigator.pushAndRemoveUntil(context,

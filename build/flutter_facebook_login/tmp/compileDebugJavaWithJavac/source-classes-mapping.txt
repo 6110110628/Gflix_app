@@ -1,0 +1,13 @@
+com/roughike/facebooklogin/facebooklogin/FacebookLoginPlugin.java
+ com.roughike.facebooklogin.facebooklogin.FacebookLoginPlugin
+ com.roughike.facebooklogin.facebooklogin.FacebookLoginPlugin$FacebookSignInDelegate
+com/roughike/facebooklogin/facebooklogin/FacebookLoginResults.java
+ com.roughike.facebooklogin.facebooklogin.FacebookLoginResults
+ com.roughike.facebooklogin.facebooklogin.FacebookLoginResults$1
+ com.roughike.facebooklogin.facebooklogin.FacebookLoginResults$2
+ com.roughike.facebooklogin.facebooklogin.FacebookLoginResults$3
+ com.roughike.facebooklogin.facebooklogin.FacebookLoginResults$4
+com/roughike/facebooklogin/facebooklogin/FacebookLoginResultDelegate.java
+ com.roughike.facebooklogin.facebooklogin.FacebookLoginResultDelegate
+com/roughike/facebooklogin/facebooklogin/BuildConfig.java
+ com.roughike.facebooklogin.facebooklogin.BuildConfig

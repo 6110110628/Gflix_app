@@ -170,6 +170,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_facebook_login",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_facebook_login-2.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
       "name": "flutter_inappwebview",
       "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_inappwebview-5.3.2",
       "packageUri": "lib/",
@@ -530,7 +536,7 @@
       "languageVersion": "2.1"
     }
   ],
-  "generated": "2021-10-17T08:54:41.518333Z",
+  "generated": "2021-10-18T14:51:44.169318Z",
   "generator": "pub",
   "generatorVersion": "2.15.0-116.0.dev"
 }
