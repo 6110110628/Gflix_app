@@ -49,7 +49,7 @@
     <string gender="unknown" name="com_facebook_smart_login_confirmation_cancel">To nie Ty?</string>
     <string gender="unknown" name="com_facebook_smart_login_confirmation_continue_as">Kontynuuj jako %1$s</string>
     <string gender="unknown" name="com_facebook_smart_login_confirmation_title">Potwierdź logowanie</string>
-    <string gender="unknown" name="com_facebook_tooltip_default">Zachowujesz kontrolę — wybierz informacje, które chcesz udostępniać w aplikacjach.</string>
+    <string gender="unknown" name="com_facebook_tooltip_default">Ty tu rządzisz – wybierz informacje, które chcesz udostępniać w aplikacjach.</string>
     <string msgid="8585111718777012708" name="common_google_play_services_enable_button">"Włącz"</string>
     <string msgid="7045129128108380659" name="common_google_play_services_enable_text">"Aplikacja <ns1:g id="APP_NAME">%1$s</ns1:g> nie będzie działać, jeśli nie włączysz Usług Google Play."</string>
     <string msgid="3147157405986503375" name="common_google_play_services_enable_title">"Włącz Usługi Google Play"</string>

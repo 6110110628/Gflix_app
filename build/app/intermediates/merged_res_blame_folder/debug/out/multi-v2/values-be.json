@@ -4,6 +4,23 @@
             "outputFile": "C:\\Users\\ASUS\\Desktop\\Gflix_app\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-be\\values-be.xml",
             "map": [
                 {
+                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\3a0ff543cd9af73c0d61f7a738fc4f21\\transformed\\core-1.3.2\\res\\values-be\\values-be.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "52",
+                        "startColumns": "4",
+                        "startOffsets": "6074",
+                        "endColumns": "100",
+                        "endOffsets": "6170"
+                    }
+                },
+                {
                     "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\d62d21780e50c1cee65a5c4902f77159\\transformed\\jetified-play-services-basement-17.1.0\\res\\values-be\\values.xml",
                     "from": {
                         "startLines": "4",
@@ -69,23 +86,6 @@
                         "startOffsets": "5556,5665,5773,5885",
                         "endColumns": "108,107,111,106",
                         "endOffsets": "5660,5768,5880,5987"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\182c983f68a72a41e4d0b8f9b111ed6f\\transformed\\core-1.3.0\\res\\values-be\\values-be.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "52",
-                        "startColumns": "4",
-                        "startOffsets": "6074",
-                        "endColumns": "100",
-                        "endOffsets": "6170"
                     }
                 }
             ]

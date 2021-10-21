@@ -4,23 +4,6 @@
             "outputFile": "C:\\Users\\ASUS\\Desktop\\Gflix_app\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uk\\values-uk.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\182c983f68a72a41e4d0b8f9b111ed6f\\transformed\\core-1.3.0\\res\\values-uk\\values-uk.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "52",
-                        "startColumns": "4",
-                        "startOffsets": "6071",
-                        "endColumns": "100",
-                        "endOffsets": "6167"
-                    }
-                },
-                {
                     "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\4da9844190d3ec751cb0aa88474143e1\\transformed\\browser-1.3.0\\res\\values-uk\\values-uk.xml",
                     "from": {
                         "startLines": "2,3,4,5",
@@ -35,6 +18,23 @@
                         "startOffsets": "5544,5654,5761,5881",
                         "endColumns": "109,106,119,107",
                         "endOffsets": "5649,5756,5876,5984"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\3a0ff543cd9af73c0d61f7a738fc4f21\\transformed\\core-1.3.2\\res\\values-uk\\values-uk.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "52",
+                        "startColumns": "4",
+                        "startOffsets": "6071",
+                        "endColumns": "100",
+                        "endOffsets": "6167"
                     }
                 },
                 {

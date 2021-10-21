@@ -4,10 +4,10 @@ import 'package:flutter_auth/Screens/Gflix/utils/text.dart';
 import 'package:flutter_auth/Screens/Gflix/widgets/toprated.dart';
 import 'package:flutter_auth/Screens/Gflix/widgets/trending.dart';
 import 'package:flutter_auth/Screens/Gflix/widgets/tv.dart';
+import 'package:flutter_auth/Screens/Login/components/facebook_login_controller.dart';
 import 'package:flutter_auth/Screens/Login/components/google_sign_in.dart';
 import 'package:flutter_auth/Screens/Welcome/welcome_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
 import 'package:tmdb_api/tmdb_api.dart';
 
@@ -99,19 +99,29 @@ class _IndexScreenState extends State<IndexScreen> {
                         style: TextStyle(color: Colors.white, fontSize: 15),
                       ),
                       onPressed: () {
-                        final provider = Provider.of<GoogleSignInProvider>(
-                            context,
-                            listen: false);
-                        print(provider.user);
-                        if (provider.user != null) {
-                          provider.googleLogout().then((value) {
+                        final facebookProvider =
+                            Provider.of<FacebookSignInController>(context,
+                                listen: false);
+                        final googleProvider =
+                            Provider.of<GoogleSignInProvider>(context,
+                                listen: false);
+                        if (facebookProvider.userData != null) {
+                          facebookProvider.logOut().then((value) {
                             Navigator.pop(context);
                             Navigator.pushAndRemoveUntil(context,
                                 MaterialPageRoute(builder: (context) {
                               return WelcomeScreen();
                             }), (Route<dynamic> route) => false);
                           });
-                        } else if (provider.user == null) {
+                        } else if (googleProvider.user != null) {
+                          googleProvider.googleLogout().then((value) {
+                            Navigator.pop(context);
+                            Navigator.pushAndRemoveUntil(context,
+                                MaterialPageRoute(builder: (context) {
+                              return WelcomeScreen();
+                            }), (Route<dynamic> route) => false);
+                          });
+                        } else if (googleProvider.user == null) {
                           auth.signOut().then((value) {
                             Navigator.pop(context);
                             Navigator.pushAndRemoveUntil(context,

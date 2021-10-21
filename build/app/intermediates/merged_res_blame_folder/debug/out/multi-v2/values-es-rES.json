@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\ASUS\\Desktop\\Gflix_app\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-es-rES\\values-es-rES.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\7c2ad27c35e7def9a88d7e3cb5e5853f\\transformed\\jetified-facebook-login-4.39.0\\res\\values-es-rES\\values-es-rES.xml",
+                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\c05f98ca160bad92462c5100e189f0b2\\transformed\\jetified-facebook-login-11.2.0\\res\\values-es-rES\\values-es-rES.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

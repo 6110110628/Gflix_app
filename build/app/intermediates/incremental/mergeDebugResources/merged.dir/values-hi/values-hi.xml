@@ -32,9 +32,9 @@
     <string gender="unknown" name="com_facebook_internet_permission_error_message">WebView लॉग इन के लिए इंटरनेट अनुमति आवश्यक है</string>
     <string gender="unknown" name="com_facebook_internet_permission_error_title">AndroidManifest गलती</string>
     <string gender="unknown" name="com_facebook_like_button_liked">पसंद किया</string>
-    <string gender="unknown" name="com_facebook_like_button_not_liked">पसंद करें</string>
+    <string gender="unknown" name="com_facebook_like_button_not_liked">लाइक करें</string>
     <string gender="unknown" name="com_facebook_loading">लोड हो रहा है...</string>
-    <string gender="unknown" name="com_facebook_loginview_cancel_action">रद्द करें</string>
+    <string gender="unknown" name="com_facebook_loginview_cancel_action">कैंसल करें</string>
     <string gender="unknown" name="com_facebook_loginview_log_in_button">लॉग इन</string>
     <string gender="unknown" name="com_facebook_loginview_log_in_button_continue">Facebook के साथ जारी रखें</string>
     <string gender="unknown" name="com_facebook_loginview_log_in_button_long">Facebook से लॉग इन करें</string>
@@ -43,7 +43,7 @@
     <string gender="unknown" name="com_facebook_loginview_logged_in_as">इस रूप में लॉग इन हैं: %1$s</string>
     <string gender="unknown" name="com_facebook_loginview_logged_in_using_facebook">Facebook का उपयोग करके लॉग इन किया है</string>
     <string gender="unknown" name="com_facebook_send_button_text">भेजें</string>
-    <string gender="unknown" name="com_facebook_share_button_text">साझा करें</string>
+    <string gender="unknown" name="com_facebook_share_button_text">शेयर करें</string>
     <string gender="unknown" name="com_facebook_smart_device_instructions">अपने खाते से कनेक्ट करने के लिए, अपने मोबाइल डिवाइस पर Facebook एप्लिकेशन खोलें और सूचनाएँ जाँचें.</string>
     <string gender="unknown" name="com_facebook_smart_device_instructions_or">- या -</string>
     <string gender="unknown" name="com_facebook_smart_login_confirmation_cancel">आप नहीं हैं?</string>

@@ -3,7 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/Screens/Gflix/index.dart';
 import 'package:flutter_auth/Screens/Login/components/background.dart';
-import 'package:flutter_auth/Screens/Login/components/facebook_login.dart';
+import 'package:flutter_auth/Screens/Login/components/facebook_login_controller.dart';
 import 'package:flutter_auth/Screens/Login/components/google_sign_in.dart';
 import 'package:flutter_auth/Screens/Login/login_screen.dart';
 import 'package:flutter_auth/Screens/Signup/components/or_divider.dart';
@@ -112,16 +112,27 @@ class Body extends StatelessWidget {
                         children: <Widget>[
                           SocalIcon(
                             iconSrc: "assets/icons/facebook.svg",
-                            press: () {},
+                            press: () {
+                              final facebookProvider =
+                                  Provider.of<FacebookSignInController>(context,
+                                      listen: false);
+                              facebookProvider.login().then((value) {
+                                print(facebookProvider.userData);
+                                Navigator.pushAndRemoveUntil(context,
+                                    MaterialPageRoute(builder: (context) {
+                                  return IndexScreen();
+                                }), (Route<dynamic> route) => false);
+                              });
+                            },
                           ),
                           SocalIcon(
                             iconSrc: "assets/icons/google-plus.svg",
                             press: () {
-                              final provider =
+                              final googleProvider =
                                   Provider.of<GoogleSignInProvider>(context,
                                       listen: false);
-                              provider.googleLogin().then((value) {
-                                if (provider.user == null) {
+                              googleProvider.googleLogin().then((value) {
+                                if (googleProvider.user == null) {
                                   Fluttertoast.showToast(
                                       msg: 'กรุณาเลือกบัญชีผู้ใช้',
                                       gravity: ToastGravity.CENTER);

@@ -38,8 +38,8 @@
     <string gender="unknown" name="com_facebook_loginview_log_in_button">Logg inn</string>
     <string gender="unknown" name="com_facebook_loginview_log_in_button_continue">Fortsett med Facebook</string>
     <string gender="unknown" name="com_facebook_loginview_log_in_button_long">Logg inn med Facebook</string>
-    <string gender="unknown" name="com_facebook_loginview_log_out_action">Logg av</string>
-    <string gender="unknown" name="com_facebook_loginview_log_out_button">Logg av</string>
+    <string gender="unknown" name="com_facebook_loginview_log_out_action">Logg ut</string>
+    <string gender="unknown" name="com_facebook_loginview_log_out_button">Logg ut</string>
     <string gender="unknown" name="com_facebook_loginview_logged_in_as">Logget inn som %1$s</string>
     <string gender="unknown" name="com_facebook_loginview_logged_in_using_facebook">Innlogget med Facebook</string>
     <string gender="unknown" name="com_facebook_share_button_text">Del</string>

@@ -33,7 +33,7 @@
     <string gender="unknown" name="com_facebook_internet_permission_error_title">Chyba AndroidManifest</string>
     <string gender="unknown" name="com_facebook_like_button_liked">To se mi už líbí</string>
     <string gender="unknown" name="com_facebook_like_button_not_liked">To se mi líbí</string>
-    <string gender="unknown" name="com_facebook_loading">Načítání...</string>
+    <string gender="unknown" name="com_facebook_loading">Načítání…</string>
     <string gender="unknown" name="com_facebook_loginview_cancel_action">Zrušit</string>
     <string gender="unknown" name="com_facebook_loginview_log_in_button">Přihlášení</string>
     <string gender="unknown" name="com_facebook_loginview_log_in_button_continue">Pokračovat přes Facebook</string>

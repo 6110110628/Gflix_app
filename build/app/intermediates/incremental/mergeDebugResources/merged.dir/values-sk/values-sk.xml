@@ -45,7 +45,7 @@
     <string gender="unknown" name="com_facebook_send_button_text">Poslať</string>
     <string gender="unknown" name="com_facebook_share_button_text">Zdieľať</string>
     <string gender="unknown" name="com_facebook_smart_device_instructions">Ak si chcete pripojiť účet, vo svojom mobilnom zariadení otvorte aplikáciu Facebook a pozrite si upozornenia.</string>
-    <string gender="unknown" name="com_facebook_smart_device_instructions_or">- ALEBO -</string>
+    <string gender="unknown" name="com_facebook_smart_device_instructions_or">– ALEBO –</string>
     <string gender="unknown" name="com_facebook_smart_login_confirmation_cancel">Nie ste to vy?</string>
     <string gender="unknown" name="com_facebook_smart_login_confirmation_continue_as">Pokračovať ako %1$s</string>
     <string gender="unknown" name="com_facebook_smart_login_confirmation_title">Potvrdiť prihlásenie</string>
