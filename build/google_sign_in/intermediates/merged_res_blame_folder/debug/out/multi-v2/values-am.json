@@ -1,10 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\ASUS\\Desktop\\Gflix_app\\build\\google_sign_in\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-am\\values-am.xml",
+            "outputFile": "C:\\src\\Gflix_app\\build\\google_sign_in\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-am\\values-am.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\b7e6b23e2217dc837bddc15d42545caa\\transformed\\jetified-play-services-base-16.0.1\\res\\values-am\\values.xml",
+                    "source": "C:\\Users\\phooc\\.gradle\\caches\\transforms-3\\7da339f2544b2041e3ff64c521fa7b25\\transformed\\jetified-play-services-basement-16.0.1\\res\\values-am\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "190",
+                        "endOffsets": "437"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "1188",
+                        "endColumns": "190",
+                        "endOffsets": "1374"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\phooc\\.gradle\\caches\\transforms-3\\f80446d943b6e2e510c76c3d76b12cff\\transformed\\jetified-play-services-base-16.0.1\\res\\values-am\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -21,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\3ead1d3ee83164dad2ff90fe7dfbd590\\transformed\\core-1.1.0\\res\\values-am\\values-am.xml",
+                    "source": "C:\\Users\\phooc\\.gradle\\caches\\transforms-3\\3ead1d3ee83164dad2ff90fe7dfbd590\\transformed\\core-1.1.0\\res\\values-am\\values-am.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -35,32 +52,32 @@
                         "startOffsets": "2600",
                         "endColumns": "100",
                         "endOffsets": "2696"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\e2a7f9b0c021ef6708a7b9a27f962f3b\\transformed\\jetified-play-services-basement-16.0.1\\res\\values-am\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "190",
-                        "endOffsets": "437"
-                    },
-                    "to": {
-                        "startLines": "10",
-                        "startColumns": "4",
-                        "startOffsets": "1188",
-                        "endColumns": "190",
-                        "endOffsets": "1374"
                     }
                 }
             ]
         },
         {
-            "outputFile": "C:\\Users\\ASUS\\Desktop\\Gflix_app\\build\\google_sign_in\\intermediates\\merged_res\\debug\\values-am\\values-am.xml",
+            "outputFile": "C:\\src\\Gflix_app\\build\\google_sign_in\\intermediates\\merged_res\\debug\\values-am\\values-am.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\b7e6b23e2217dc837bddc15d42545caa\\transformed\\jetified-play-services-base-16.0.1\\res\\values-am\\values.xml",
+                    "source": "C:\\Users\\phooc\\.gradle\\caches\\transforms-3\\7da339f2544b2041e3ff64c521fa7b25\\transformed\\jetified-play-services-basement-16.0.1\\res\\values-am\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "190",
+                        "endOffsets": "437"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "1188",
+                        "endColumns": "190",
+                        "endOffsets": "1374"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\phooc\\.gradle\\caches\\transforms-3\\f80446d943b6e2e510c76c3d76b12cff\\transformed\\jetified-play-services-base-16.0.1\\res\\values-am\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -77,7 +94,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\3ead1d3ee83164dad2ff90fe7dfbd590\\transformed\\core-1.1.0\\res\\values-am\\values-am.xml",
+                    "source": "C:\\Users\\phooc\\.gradle\\caches\\transforms-3\\3ead1d3ee83164dad2ff90fe7dfbd590\\transformed\\core-1.1.0\\res\\values-am\\values-am.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -91,23 +108,6 @@
                         "startOffsets": "2600",
                         "endColumns": "100",
                         "endOffsets": "2696"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\e2a7f9b0c021ef6708a7b9a27f962f3b\\transformed\\jetified-play-services-basement-16.0.1\\res\\values-am\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "190",
-                        "endOffsets": "437"
-                    },
-                    "to": {
-                        "startLines": "10",
-                        "startColumns": "4",
-                        "startOffsets": "1188",
-                        "endColumns": "190",
-                        "endOffsets": "1374"
                     }
                 }
             ]

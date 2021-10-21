@@ -1,26 +1,26 @@
 [
     {
-        "merged": "C:\\Users\\ASUS\\Desktop\\Gflix_app\\build\\google_sign_in\\intermediates\\merged_res\\debug\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png",
-        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\b7e6b23e2217dc837bddc15d42545caa\\transformed\\jetified-play-services-base-16.0.1\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
+        "merged": "C:\\src\\Gflix_app\\build\\google_sign_in\\intermediates\\merged_res\\debug\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png",
+        "source": "C:\\Users\\phooc\\.gradle\\caches\\transforms-3\\f80446d943b6e2e510c76c3d76b12cff\\transformed\\jetified-play-services-base-16.0.1\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
     },
     {
-        "merged": "C:\\Users\\ASUS\\Desktop\\Gflix_app\\build\\google_sign_in\\intermediates\\merged_res\\debug\\drawable-xxhdpi-v4\\googleg_standard_color_18.png",
-        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\b7e6b23e2217dc837bddc15d42545caa\\transformed\\jetified-play-services-base-16.0.1\\res\\drawable-xxhdpi-v4\\googleg_standard_color_18.png"
+        "merged": "C:\\src\\Gflix_app\\build\\google_sign_in\\intermediates\\merged_res\\debug\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png",
+        "source": "C:\\Users\\phooc\\.gradle\\caches\\transforms-3\\f80446d943b6e2e510c76c3d76b12cff\\transformed\\jetified-play-services-base-16.0.1\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
     },
     {
-        "merged": "C:\\Users\\ASUS\\Desktop\\Gflix_app\\build\\google_sign_in\\intermediates\\merged_res\\debug\\drawable-xxhdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png",
-        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\b7e6b23e2217dc837bddc15d42545caa\\transformed\\jetified-play-services-base-16.0.1\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png"
+        "merged": "C:\\src\\Gflix_app\\build\\google_sign_in\\intermediates\\merged_res\\debug\\drawable-xxhdpi-v4\\googleg_disabled_color_18.png",
+        "source": "C:\\Users\\phooc\\.gradle\\caches\\transforms-3\\f80446d943b6e2e510c76c3d76b12cff\\transformed\\jetified-play-services-base-16.0.1\\res\\drawable-xxhdpi-v4\\googleg_disabled_color_18.png"
     },
     {
-        "merged": "C:\\Users\\ASUS\\Desktop\\Gflix_app\\build\\google_sign_in\\intermediates\\merged_res\\debug\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png",
-        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\b7e6b23e2217dc837bddc15d42545caa\\transformed\\jetified-play-services-base-16.0.1\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
+        "merged": "C:\\src\\Gflix_app\\build\\google_sign_in\\intermediates\\merged_res\\debug\\drawable-xxhdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png",
+        "source": "C:\\Users\\phooc\\.gradle\\caches\\transforms-3\\f80446d943b6e2e510c76c3d76b12cff\\transformed\\jetified-play-services-base-16.0.1\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png"
     },
     {
-        "merged": "C:\\Users\\ASUS\\Desktop\\Gflix_app\\build\\google_sign_in\\intermediates\\merged_res\\debug\\drawable-xxhdpi-v4\\googleg_disabled_color_18.png",
-        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\b7e6b23e2217dc837bddc15d42545caa\\transformed\\jetified-play-services-base-16.0.1\\res\\drawable-xxhdpi-v4\\googleg_disabled_color_18.png"
+        "merged": "C:\\src\\Gflix_app\\build\\google_sign_in\\intermediates\\merged_res\\debug\\drawable-xxhdpi-v4\\googleg_standard_color_18.png",
+        "source": "C:\\Users\\phooc\\.gradle\\caches\\transforms-3\\f80446d943b6e2e510c76c3d76b12cff\\transformed\\jetified-play-services-base-16.0.1\\res\\drawable-xxhdpi-v4\\googleg_standard_color_18.png"
     },
     {
-        "merged": "C:\\Users\\ASUS\\Desktop\\Gflix_app\\build\\google_sign_in\\intermediates\\merged_res\\debug\\drawable-xxhdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png",
-        "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\b7e6b23e2217dc837bddc15d42545caa\\transformed\\jetified-play-services-base-16.0.1\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
+        "merged": "C:\\src\\Gflix_app\\build\\google_sign_in\\intermediates\\merged_res\\debug\\drawable-xxhdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png",
+        "source": "C:\\Users\\phooc\\.gradle\\caches\\transforms-3\\f80446d943b6e2e510c76c3d76b12cff\\transformed\\jetified-play-services-base-16.0.1\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
     }
 ]

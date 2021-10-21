@@ -40,8 +40,11 @@ class TrendingMovies extends StatelessWidget {
                                       bannerurl:
                                           'https://image.tmdb.org/t/p/w500' +
                                               trending[index]['backdrop_path'],
-                                      posterurl:
-                                          'https://image.tmdb.org/t/p/w500' +
+                                      posterurl: trending[index]
+                                                  ['poster_path'] ==
+                                              null
+                                          ? 'empty'
+                                          : 'https://image.tmdb.org/t/p/w500' +
                                               trending[index]['poster_path'],
                                       description: trending[index]['overview'],
                                       vote: trending[index]['vote_average']
@@ -68,9 +71,9 @@ class TrendingMovies extends StatelessWidget {
                                   child: Image.network(
                                     'https://image.tmdb.org/t/p/w500' +
                                         trending[index]['poster_path'],
-                                    height: 220.0,
+                                    height: 223.0,
                                     width: 150.0,
-                                    fit: BoxFit.contain,
+                                    fit: BoxFit.cover,
                                   ),
                                 ),
                                 Positioned(

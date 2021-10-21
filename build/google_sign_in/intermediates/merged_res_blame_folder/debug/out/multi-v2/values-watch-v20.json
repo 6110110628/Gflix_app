@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\ASUS\\Desktop\\Gflix_app\\build\\google_sign_in\\intermediates\\merged_res\\debug\\values-watch-v20\\values-watch-v20.xml",
+            "outputFile": "C:\\src\\Gflix_app\\build\\google_sign_in\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-watch-v20\\values-watch-v20.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\1ef7f5f17b6a6f7ed54e7749e83f385c\\transformed\\jetified-play-services-auth-16.0.1\\res\\values-watch-v20\\values.xml",
+                    "source": "C:\\Users\\phooc\\.gradle\\caches\\transforms-3\\8947ff8d955d88f7b99b636bb62799a5\\transformed\\jetified-play-services-auth-16.0.1\\res\\values-watch-v20\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11",
                         "startColumns": "0,0,0,0,0,0,0,0",
@@ -23,10 +23,10 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\ASUS\\Desktop\\Gflix_app\\build\\google_sign_in\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-watch-v20\\values-watch-v20.xml",
+            "outputFile": "C:\\src\\Gflix_app\\build\\google_sign_in\\intermediates\\merged_res\\debug\\values-watch-v20\\values-watch-v20.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-3\\1ef7f5f17b6a6f7ed54e7749e83f385c\\transformed\\jetified-play-services-auth-16.0.1\\res\\values-watch-v20\\values.xml",
+                    "source": "C:\\Users\\phooc\\.gradle\\caches\\transforms-3\\8947ff8d955d88f7b99b636bb62799a5\\transformed\\jetified-play-services-auth-16.0.1\\res\\values-watch-v20\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11",
                         "startColumns": "0,0,0,0,0,0,0,0",

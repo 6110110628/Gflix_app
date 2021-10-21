@@ -38,8 +38,10 @@ class TopRatedMovies extends StatelessWidget {
                                     bannerurl:
                                         'https://image.tmdb.org/t/p/w500' +
                                             toprated[index]['backdrop_path'],
-                                    posterurl:
-                                        'https://image.tmdb.org/t/p/w500' +
+                                    posterurl: toprated[index]['poster_path'] ==
+                                            null
+                                        ? 'empty'
+                                        : 'https://image.tmdb.org/t/p/w500' +
                                             toprated[index]['poster_path'],
                                     description: toprated[index]['overview'],
                                     vote: toprated[index]['vote_average']

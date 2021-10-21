@@ -1,7 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/Screens/Gflix/index.dart';
 import 'package:flutter_auth/Screens/Gflix/utils/text.dart';
+import 'package:flutter_auth/Screens/Gflix/widgets/cast.dart';
 import 'package:flutter_auth/Screens/Gflix/widgets/rating_dialog.dart';
 import 'package:flutter_auth/Screens/Gflix/widgets/review_tile.dart';
 import 'package:flutter_svg/svg.dart';
@@ -43,7 +45,9 @@ class _DescriptionState extends State<Description> {
       'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1ODg3MmQ2NDFlNDdiY2YwMWU4YjQ3Yzc1ZTAyMDYyMyIsInN1YiI6IjYxM2U3ZTVjOTE3NDViMDA5MWU3OGI5NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.q-bvvinn7hwRIRHRRQtfgQRWsbhITyfALcho9Y8zhJk';
   final auth = FirebaseAuth.instance;
   List reviewsResultsTMDB;
+  List casts = [];
   Map reviewsResultsGFlix;
+  Map castsResults;
   double _rating = 3.0;
   Query result;
   DateTime date;
@@ -58,6 +62,7 @@ class _DescriptionState extends State<Description> {
   void initState() {
     loadReviews();
     loadVideo();
+    loadCasts();
     result = FirebaseFirestore.instance
         .collection("reviews")
         .where("movieId", isEqualTo: widget.id);
@@ -85,6 +90,25 @@ class _DescriptionState extends State<Description> {
     } else {
       return reviewsResultsTMDB;
     }
+  }
+
+  loadCasts() async {
+    TMDB tmdbWithCustomLogs = TMDB(
+      ApiKeys(apikey, readaccesstoken),
+      logConfig: ConfigLogger(
+        showLogs: true,
+        showErrorLogs: true,
+      ),
+    );
+    if (widget.mediaType == 'tv') {
+      castsResults = await tmdbWithCustomLogs.v3.tv.getCredits(widget.id);
+    } else {
+      castsResults = await tmdbWithCustomLogs.v3.movies.getCredits(widget.id);
+    }
+
+    setState(() {
+      casts = castsResults['cast'];
+    });
   }
 
   Future<List> loadVideoResults(String language) async {
@@ -128,9 +152,22 @@ class _DescriptionState extends State<Description> {
         showFullscreenButton: true,
       ),
     );
-    return YoutubePlayerIFrame(
-      controller: _controller,
-      aspectRatio: 16 / 9,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        modified_text(
+          text: 'Trailer',
+          size: 20,
+          color: Colors.white,
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        YoutubePlayerIFrame(
+          controller: _controller,
+          aspectRatio: 16 / 9,
+        ),
+      ],
     );
   }
 
@@ -156,10 +193,43 @@ class _DescriptionState extends State<Description> {
                 floating: _floating,
                 expandedHeight: 160.0,
                 flexibleSpace: FlexibleSpaceBar(
-                  title: modified_text(
-                      text: widget.name != null ? widget.name : 'Not Loaded',
-                      size: 24,
-                      color: Colors.white),
+                  title: Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: modified_text(
+                            text: widget.name != null
+                                ? widget.name
+                                : 'Not Loaded',
+                            size: widget.name.length > 20 ? 18 : 22,
+                            color: Colors.white),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 5, right: 16),
+                        child: Container(
+                          height: 25,
+                          width: 35,
+                          child: IconButton(
+                            padding: EdgeInsets.zero,
+                            constraints: BoxConstraints(),
+                            onPressed: () {
+                              Navigator.pushAndRemoveUntil(context,
+                                  MaterialPageRoute(builder: (context) {
+                                return IndexScreen();
+                              }), (Route<dynamic> route) => false);
+                            },
+                            icon: Image.asset(
+                              'assets/images/gflix.png',
+                              height: 30.0,
+                              width: 50.0,
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                   background: DecoratedBox(
                     position: DecorationPosition.foreground,
                     decoration: BoxDecoration(
@@ -167,10 +237,12 @@ class _DescriptionState extends State<Description> {
                             begin: Alignment.bottomCenter,
                             end: Alignment.center,
                             colors: <Color>[Colors.black, Colors.transparent])),
-                    child: Image.network(
-                      widget.bannerurl,
-                      fit: BoxFit.cover,
-                    ),
+                    child: widget.bannerurl == 'empty'
+                        ? Container()
+                        : Image.network(
+                            widget.bannerurl,
+                            fit: BoxFit.cover,
+                          ),
                   ),
                 ),
               ),
@@ -181,23 +253,36 @@ class _DescriptionState extends State<Description> {
                       Container(
                           padding: EdgeInsets.only(left: 10, top: 10),
                           child: modified_text(
-                            text: 'Releasing On : ' +
-                                widget.launchOn.substring(8, 10) +
-                                '/' +
-                                widget.launchOn.substring(5, 7) +
-                                '/' +
-                                widget.launchOn.substring(0, 4),
+                            text: widget.launchOn == 'unknown'
+                                ? 'Releasing On : unknown'
+                                : 'Releasing On : ' +
+                                    widget.launchOn.substring(8, 10) +
+                                    '/' +
+                                    widget.launchOn.substring(5, 7) +
+                                    '/' +
+                                    widget.launchOn.substring(0, 4),
                             size: 14,
                             color: Colors.white,
                           )),
+                      SizedBox(
+                        height: 20,
+                      ),
                       Row(
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(left: 20),
                             child: Container(
-                              height: 200,
-                              width: 100,
-                              child: Image.network(widget.posterurl),
+                              height: 180,
+                              width: 120,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(5.0),
+                                child: widget.posterurl == 'empty'
+                                    ? Image.asset(
+                                        'assets/images/cast.png',
+                                        fit: BoxFit.contain,
+                                      )
+                                    : Image.network(widget.posterurl),
+                              ),
                             ),
                           ),
                           Flexible(
@@ -205,11 +290,14 @@ class _DescriptionState extends State<Description> {
                                 padding: EdgeInsets.all(10),
                                 child: modified_text(
                                   text: widget.description,
-                                  size: 18,
+                                  size: 15,
                                   color: Colors.white,
                                 )),
                           ),
                         ],
+                      ),
+                      SizedBox(
+                        height: 20,
                       ),
                       Padding(
                           padding: const EdgeInsets.all(10),
@@ -224,6 +312,12 @@ class _DescriptionState extends State<Description> {
                               }
                             },
                           )),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Cast(
+                        casts: casts,
+                      ),
                       Padding(
                         padding: const EdgeInsets.fromLTRB(8, 10, 8, 0),
                         child: Row(
@@ -234,7 +328,7 @@ class _DescriptionState extends State<Description> {
                               children: [
                                 modified_text(
                                     text: 'Review',
-                                    size: 17,
+                                    size: 20,
                                     color: Colors.white),
                                 modified_text(
                                   text: '⭐ Average Rating : ' + widget.vote,

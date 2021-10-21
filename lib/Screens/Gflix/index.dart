@@ -135,7 +135,13 @@ class _IndexScreenState extends State<IndexScreen> {
     return Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
-          title: modified_text(text: 'GFlix Movie App'),
+          centerTitle: true,
+          title: Image.asset(
+            'assets/images/gflix.png',
+            height: 30.0,
+            width: 60.0,
+            fit: BoxFit.contain,
+          ),
           backgroundColor: Colors.red,
         ),
         body: ListView(
