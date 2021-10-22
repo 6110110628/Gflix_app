@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_auth/Screens/Gflix/index.dart';
 import 'package:flutter_auth/Screens/Login/components/background.dart';
 import 'package:flutter_auth/Screens/Login/components/facebook_login_controller.dart';
@@ -85,10 +86,20 @@ class Body extends StatelessWidget {
                                   }), (Route<dynamic> route) => false);
                                 });
                               } on FirebaseAuthException catch (e) {
+                                print(e.code);
+                                String message;
+                                if (e.code == 'wrong-password') {
+                                  message = 'รหัสผ่านไม่ถูกต้อง';
+                                } else if (e.code == 'user-not-found') {
+                                  message =
+                                      'ไม่มีอีเมลนี้อยู่ในระบบ โปรดสมัครเพื่อใช้งาน';
+                                } else {
+                                  message = e.code;
+                                }
+
+                                print(message);
                                 Fluttertoast.showToast(
-                                    msg: e.message,
-                                    gravity: ToastGravity.CENTER);
-                                formkey.currentState.reset();
+                                    msg: message, gravity: ToastGravity.CENTER);
                               }
                             }
                           }),
@@ -112,16 +123,18 @@ class Body extends StatelessWidget {
                         children: <Widget>[
                           SocalIcon(
                             iconSrc: "assets/icons/facebook.svg",
-                            press: () {
+                            press: () async {
                               final facebookProvider =
                                   Provider.of<FacebookSignInController>(context,
                                       listen: false);
                               facebookProvider.login().then((value) {
-                                print(facebookProvider.userData);
-                                Navigator.pushAndRemoveUntil(context,
-                                    MaterialPageRoute(builder: (context) {
-                                  return IndexScreen();
-                                }), (Route<dynamic> route) => false);
+                                final auth = FirebaseAuth.instance;
+                                if (auth.currentUser != null) {
+                                  Navigator.pushAndRemoveUntil(context,
+                                      MaterialPageRoute(builder: (context) {
+                                    return IndexScreen();
+                                  }), (Route<dynamic> route) => false);
+                                }
                               });
                             },
                           ),
@@ -132,16 +145,16 @@ class Body extends StatelessWidget {
                                   Provider.of<GoogleSignInProvider>(context,
                                       listen: false);
                               googleProvider.googleLogin().then((value) {
-                                if (googleProvider.user == null) {
-                                  Fluttertoast.showToast(
-                                      msg: 'กรุณาเลือกบัญชีผู้ใช้',
-                                      gravity: ToastGravity.CENTER);
-                                  return LoginScreen();
-                                } else {
+                                final auth = FirebaseAuth.instance;
+                                if (auth.currentUser != null) {
                                   Navigator.pushAndRemoveUntil(context,
                                       MaterialPageRoute(builder: (context) {
                                     return IndexScreen();
                                   }), (Route<dynamic> route) => false);
+                                } else {
+                                  Fluttertoast.showToast(
+                                      msg: 'กรุณาเลือกบัญชีผู้ใช้ด้วยครับ',
+                                      gravity: ToastGravity.CENTER);
                                 }
                               });
                             },
