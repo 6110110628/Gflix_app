@@ -6,7 +6,6 @@ import 'package:flutter_auth/Screens/Gflix/index.dart';
 import 'package:flutter_auth/Screens/Login/components/background.dart';
 import 'package:flutter_auth/Screens/Login/components/facebook_login_controller.dart';
 import 'package:flutter_auth/Screens/Login/components/google_sign_in.dart';
-import 'package:flutter_auth/Screens/Login/login_screen.dart';
 import 'package:flutter_auth/Screens/Signup/components/or_divider.dart';
 import 'package:flutter_auth/Screens/Signup/components/social_icon.dart';
 import 'package:flutter_auth/Screens/Signup/signup_screen.dart';
@@ -140,23 +139,29 @@ class Body extends StatelessWidget {
                           ),
                           SocalIcon(
                             iconSrc: "assets/icons/google-plus.svg",
-                            press: () {
-                              final googleProvider =
-                                  Provider.of<GoogleSignInProvider>(context,
-                                      listen: false);
-                              googleProvider.googleLogin().then((value) {
-                                final auth = FirebaseAuth.instance;
-                                if (auth.currentUser != null) {
-                                  Navigator.pushAndRemoveUntil(context,
-                                      MaterialPageRoute(builder: (context) {
-                                    return IndexScreen();
-                                  }), (Route<dynamic> route) => false);
-                                } else {
-                                  Fluttertoast.showToast(
-                                      msg: 'กรุณาเลือกบัญชีผู้ใช้ด้วยครับ',
-                                      gravity: ToastGravity.CENTER);
-                                }
-                              });
+                            press: () async {
+                              try {
+                                final googleProvider =
+                                    Provider.of<GoogleSignInProvider>(context,
+                                        listen: false);
+                                googleProvider.googleLogin().then((value) {
+                                  final auth = FirebaseAuth.instance;
+                                  if (auth.currentUser != null) {
+                                    Navigator.pushAndRemoveUntil(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return IndexScreen();
+                                    }), (Route<dynamic> route) => false);
+                                  } else {
+                                    Fluttertoast.showToast(
+                                        msg: 'กรุณาเลือกบัญชีผู้ใช้ด้วยครับ',
+                                        gravity: ToastGravity.CENTER);
+                                  }
+                                });
+                              } on PlatformException catch (e) {
+                                print(e.toString());
+                              } on FirebaseAuthException catch (e) {
+                                print(e.toString());
+                              }
                             },
                           ),
                         ],
