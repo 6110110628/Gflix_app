@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/Screens/Gflix/description.dart';
+import 'package:flutter_auth/Screens/Gflix/Description/description.dart';
 import 'package:flutter_auth/Screens/Gflix/utils/text.dart';
 
 class TV extends StatelessWidget {
@@ -36,8 +36,10 @@ class TV extends StatelessWidget {
                               name: tv[index]['title'] == null
                                   ? tv[index]['name']
                                   : tv[index]['title'],
-                              bannerurl: 'https://image.tmdb.org/t/p/w500' +
-                                  tv[index]['backdrop_path'],
+                              bannerurl: tv[index]['backdrop_path'] == null
+                                  ? 'empty'
+                                  : 'https://image.tmdb.org/t/p/w500' +
+                                      tv[index]['backdrop_path'],
                               posterurl: tv[index]['poster_path'] == null
                                   ? 'empty'
                                   : 'https://image.tmdb.org/t/p/w500' +

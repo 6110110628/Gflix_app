@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/Screens/Gflix/utils/text.dart';
-import 'package:flutter_auth/Screens/Gflix/widgets/review_tile.dart';
+import 'package:flutter_auth/Screens/Gflix/Description/components/review_tile.dart';
 import 'package:flutter_auth/model/RatingReview.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';

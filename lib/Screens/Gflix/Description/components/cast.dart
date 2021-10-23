@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/Screens/Gflix/Person/person_info.dart';
 import 'package:flutter_auth/Screens/Gflix/utils/text.dart';
-import 'package:flutter_auth/Screens/Person/person_info.dart';
 
 class Cast extends StatelessWidget {
   const Cast({Key key, this.casts}) : super(key: key);

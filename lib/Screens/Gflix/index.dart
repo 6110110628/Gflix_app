@@ -4,6 +4,7 @@ import 'package:flutter_auth/Screens/Gflix/utils/text.dart';
 import 'package:flutter_auth/Screens/Gflix/widgets/toprated.dart';
 import 'package:flutter_auth/Screens/Gflix/widgets/trending.dart';
 import 'package:flutter_auth/Screens/Gflix/widgets/tv.dart';
+import 'package:flutter_auth/Screens/Gflix/widgets/upcoming.dart';
 import 'package:flutter_auth/Screens/Login/components/facebook_login_controller.dart';
 import 'package:flutter_auth/Screens/Login/components/google_sign_in.dart';
 import 'package:flutter_auth/Screens/Welcome/welcome_screen.dart';
@@ -20,9 +21,8 @@ class _IndexScreenState extends State<IndexScreen> {
   final String apikey = '58872d641e47bcf01e8b47c75e020623';
   final String readaccesstoken =
       'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1ODg3MmQ2NDFlNDdiY2YwMWU4YjQ3Yzc1ZTAyMDYyMyIsInN1YiI6IjYxM2U3ZTVjOTE3NDViMDA5MWU3OGI5NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.q-bvvinn7hwRIRHRRQtfgQRWsbhITyfALcho9Y8zhJk';
-  List trendingmovies = [];
-  List topratedmovies = [];
-  List tv = [];
+  List trendingmovies = [], topratedmovies = [], tv = [], upcoming = [];
+
   final auth = FirebaseAuth.instance;
   @override
   void initState() {
@@ -42,6 +42,7 @@ class _IndexScreenState extends State<IndexScreen> {
     Map trendingresult = await tmdbWithCustomLogs.v3.trending.getTrending();
     Map topratedresult = await tmdbWithCustomLogs.v3.movies.getTopRated();
     Map tvresult = await tmdbWithCustomLogs.v3.tv.getPouplar();
+
     print((trendingresult));
     setState(() {
       trendingmovies = trendingresult['results'];
@@ -153,6 +154,7 @@ class _IndexScreenState extends State<IndexScreen> {
             TrendingMovies(
               trending: trendingmovies,
             ),
+            Upcoming(),
             TV(tv: tv),
             TopRatedMovies(
               toprated: topratedmovies,

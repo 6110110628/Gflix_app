@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/Screens/Gflix/utils/text.dart';
 
-import '../description.dart';
+import '../Description/description.dart';
 
 class TrendingMovies extends StatelessWidget {
   final List trending;
@@ -37,8 +37,11 @@ class TrendingMovies extends StatelessWidget {
                                       name: trending[index]['title'] == null
                                           ? trending[index]['name']
                                           : trending[index]['title'],
-                                      bannerurl:
-                                          'https://image.tmdb.org/t/p/w500' +
+                                      bannerurl: trending[index]
+                                                  ['backdrop_path'] ==
+                                              null
+                                          ? 'empty'
+                                          : 'https://image.tmdb.org/t/p/w500' +
                                               trending[index]['backdrop_path'],
                                       posterurl: trending[index]
                                                   ['poster_path'] ==

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/Screens/Gflix/description.dart';
+import 'package:flutter_auth/Screens/Gflix/Description/description.dart';
 import 'package:flutter_auth/Screens/Gflix/utils/text.dart';
 
 class TopRatedMovies extends StatelessWidget {
@@ -35,8 +35,11 @@ class TopRatedMovies extends StatelessWidget {
                                     name: toprated[index]['title'] == null
                                         ? toprated[index]['name']
                                         : toprated[index]['title'],
-                                    bannerurl:
-                                        'https://image.tmdb.org/t/p/w500' +
+                                    bannerurl: toprated[index]
+                                                ['backdrop_path'] ==
+                                            null
+                                        ? 'empty'
+                                        : 'https://image.tmdb.org/t/p/w500' +
                                             toprated[index]['backdrop_path'],
                                     posterurl: toprated[index]['poster_path'] ==
                                             null

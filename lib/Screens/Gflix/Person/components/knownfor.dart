@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/Screens/Gflix/description.dart';
+import 'package:flutter_auth/Screens/Gflix/Description/description.dart';
 import 'package:flutter_auth/Screens/Gflix/utils/text.dart';
 
 class KnownFor extends StatelessWidget {

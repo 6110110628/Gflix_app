@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/Screens/Gflix/description.dart';
+import 'package:flutter_auth/Screens/Gflix/Description/description.dart';
+import 'package:flutter_auth/Screens/Gflix/Person/components/knownfor.dart';
 import 'package:flutter_auth/Screens/Gflix/index.dart';
 import 'package:flutter_auth/Screens/Gflix/utils/text.dart';
-import 'package:flutter_auth/Screens/Gflix/widgets/knownfor.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tmdb_api/tmdb_api.dart';
 import 'package:url_launcher/url_launcher.dart';
