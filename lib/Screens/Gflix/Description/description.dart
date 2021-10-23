@@ -441,6 +441,7 @@ class _DescriptionState extends State<Description> {
                                       itemBuilder:
                                           (BuildContext context, int index) {
                                         reviewsResultsGFlix = {
+                                          "source": 'gflix',
                                           "id": snapshot
                                               .data.docs[index].reference.id,
                                           "content": snapshot.data.docs[index]
@@ -449,7 +450,9 @@ class _DescriptionState extends State<Description> {
                                             "username": snapshot
                                                 .data.docs[index]["email"],
                                             "rating": snapshot.data.docs[index]
-                                                ["rating"]
+                                                ["rating"],
+                                            "avatar_path": snapshot
+                                                .data.docs[index]["photoURL"]
                                           },
                                           "created_at": snapshot
                                               .data.docs[index]["date"]

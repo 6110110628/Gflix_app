@@ -72,8 +72,16 @@ class _UpcomingState extends State<Upcoming> {
               image: DecorationImage(
                   colorFilter: new ColorFilter.mode(
                       Colors.black.withOpacity(0.3), BlendMode.dstATop),
-                  image: NetworkImage('https://image.tmdb.org/t/p/w500' +
-                      element['backdrop_path']),
+                  image: element['backdrop_path'] == null
+                      ? (element['poster_path'] == null
+                          ? Image.asset(
+                              'assets/images/cast.png',
+                              fit: BoxFit.contain,
+                            )
+                          : NetworkImage('https://image.tmdb.org/t/p/w500' +
+                              element['poster_path']))
+                      : NetworkImage('https://image.tmdb.org/t/p/w500' +
+                          element['backdrop_path']),
                   fit: BoxFit.cover)),
           alignment: Alignment.topLeft,
           padding: EdgeInsets.all(5),
@@ -88,8 +96,13 @@ class _UpcomingState extends State<Upcoming> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   image: DecorationImage(
-                      image: NetworkImage('https://image.tmdb.org/t/p/w500' +
-                          element['poster_path']),
+                      image: element['poster_path'] == null
+                          ? Image.asset(
+                              'assets/images/cast.png',
+                              fit: BoxFit.contain,
+                            )
+                          : NetworkImage('https://image.tmdb.org/t/p/w500' +
+                              element['poster_path']),
                       fit: BoxFit.cover),
                 ),
                 height: 200,
@@ -133,11 +146,11 @@ class _UpcomingState extends State<Upcoming> {
         ),
       ));
     });
+    print('Card length : ${card.length}');
   }
 
   @override
   Widget build(BuildContext context) {
-    print('Card length : ${card.length}');
     return Container(
       padding: EdgeInsets.all(10),
       child: Column(

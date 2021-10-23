@@ -288,40 +288,48 @@ class _IndexScreenState extends State<IndexScreen> {
     return Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
+          centerTitle: true,
           leading: Builder(
             builder: (BuildContext context) {
               return IconButton(
-                icon: Image.asset(
-                  'assets/images/gflix.png',
-                  height: 30.0,
-                  width: 50.0,
-                  fit: BoxFit.contain,
+                icon: Icon(
+                  Icons.person,
+                  color: Colors.white,
                 ),
                 onPressed: () {
-                  Navigator.pushAndRemoveUntil(context,
-                      MaterialPageRoute(builder: (context) {
-                    return IndexScreen();
-                  }), (Route<dynamic> route) => false);
+                  if (auth.currentUser.photoURL != null) {
+                    _showUserInfoDialog();
+                  } else {
+                    _showUserInfoNoImageDialog();
+                  }
                 },
               );
             },
           ),
-          title: modified_text(text: 'GFlix Movie App'),
+          title: IconButton(
+            iconSize: 50,
+            icon: Image.asset(
+              'assets/images/gflix.png',
+              height: 40.0,
+              width: 70.0,
+              fit: BoxFit.contain,
+            ),
+            onPressed: () {
+              Navigator.pushAndRemoveUntil(context,
+                  MaterialPageRoute(builder: (context) {
+                return IndexScreen();
+              }), (Route<dynamic> route) => false);
+            },
+          ),
           backgroundColor: Colors.red[900],
           actions: <Widget>[
             IconButton(
               icon: Icon(
-                Icons.person,
+                Icons.search,
                 color: Colors.white,
               ),
-              onPressed: () {
-                if (auth.currentUser.photoURL != null) {
-                  _showUserInfoDialog();
-                } else {
-                  _showUserInfoNoImageDialog();
-                }
-              },
-            ),
+              onPressed: () {},
+            )
           ],
         ),
         body: ListView(

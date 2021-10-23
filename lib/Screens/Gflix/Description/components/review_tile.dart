@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/Screens/Gflix/utils/text.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -13,11 +14,14 @@ class Review extends StatefulWidget {
 }
 
 class _ReviewState extends State<Review> {
+  final auth = FirebaseAuth.instance;
   String firstHalf;
   String secondHalf;
+  String photoURL;
   bool flag = true;
   CollectionReference _reviewCollection =
       FirebaseFirestore.instance.collection("reviews");
+
   @override
   void initState() {
     super.initState();
@@ -35,7 +39,6 @@ class _ReviewState extends State<Review> {
     }
     print(
         "${widget.userEmail} == ${widget.reviewResults["author_details"]["username"]}");
-    print("Docs id : ${widget.reviewResults["id"]}");
   }
 
   void _showDeleteDialog() {
@@ -120,7 +123,9 @@ class _ReviewState extends State<Review> {
       int ind = uriSplit.length - 1;
       imgName = uriSplit[ind];
     }
-    print(widget.reviewResults);
+    print(
+        '${widget.userEmail} == ${widget.reviewResults["author_details"]["username"]}');
+    print(auth.currentUser.photoURL);
     return Container(
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -150,8 +155,9 @@ class _ReviewState extends State<Review> {
                             : CachedNetworkImage(
                                 width: 50.0,
                                 height: 50.0,
-                                imageUrl:
-                                    "https://secure.gravatar.com/avatar/$imgName",
+                                imageUrl: widget.reviewResults["source"] != null
+                                    ? auth.currentUser.photoURL
+                                    : "https://secure.gravatar.com/avatar/$imgName",
                                 placeholder: (context, url) => Image.asset(
                                     'assets/images/avatar.png',
                                     height: 50.0,

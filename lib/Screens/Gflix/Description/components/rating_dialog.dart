@@ -36,6 +36,8 @@ class _MyDialogState extends State<MyDialog> {
     myReview.text = '';
     myReview.email = auth.currentUser.email;
     myReview.date = DateTime.now();
+    myReview.uid = auth.currentUser.uid;
+    myReview.photoURL = auth.currentUser.photoURL;
     super.initState();
   }
 
@@ -123,10 +125,12 @@ class _MyDialogState extends State<MyDialog> {
                       try {
                         _reviewCollection.add({
                           "movieId": myReview.movieId,
+                          "uId": myReview.uid,
                           "email": myReview.email,
                           "text": myReview.text,
                           "rating": myReview.rating,
-                          "date": myReview.date
+                          "date": myReview.date,
+                          "photoURL": myReview.photoURL
                         }).then((value) => Fluttertoast.showToast(
                             msg: "Review successfully added.",
                             gravity: ToastGravity.CENTER));
