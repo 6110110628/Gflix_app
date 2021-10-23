@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
           title: 'GFlix',
           theme: ThemeData(
             primaryColor: Colors.grey,
-            scaffoldBackgroundColor: Color.fromRGBO(64, 64, 64, 64),
+            scaffoldBackgroundColor: Colors.black,
           ),
           home: Wrapper(),
         ),

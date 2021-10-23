@@ -40,15 +40,14 @@ class Body extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Text(
-                        "SIGNUP",
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
                       SizedBox(height: size.height * 0.03),
-                      SvgPicture.asset(
-                        "assets/icons/signup.svg",
-                        height: size.height * 0.35,
+                      Image.asset(
+                        'assets/images/gflix.png',
+                        height: 60.0,
+                        width: 100.0,
+                        fit: BoxFit.contain,
                       ),
+                      SizedBox(height: size.height * 0.06),
                       RoundedInputField(
                           hintText: "Your Email",
                           onChanged: (String email) {
@@ -60,7 +59,7 @@ class Body extends StatelessWidget {
                         },
                       ),
                       RoundedButton(
-                          text: "SIGNUP",
+                          text: "SIGN UP",
                           color: Colors.orange,
                           press: () async {
                             if (formkey.currentState.validate()) {
