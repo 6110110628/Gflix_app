@@ -63,7 +63,7 @@ class Body extends StatelessWidget {
               child: Center(
                 child: RoundedButton(
                   text: "Get Started",
-                  color: Colors.red,
+                  color: Colors.red[900],
                   press: () {
                     Navigator.push(
                       context,

@@ -50,6 +50,148 @@ class _IndexScreenState extends State<IndexScreen> {
     });
   }
 
+  _showUserInfoDialog() {
+    showDialog(
+        context: context,
+        builder: (_) {
+          return AlertDialog(
+            scrollable: true,
+            content: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                modified_text(
+                  text: "User Information",
+                  size: 25,
+                  color: Colors.red[900],
+                  weight: FontWeight.w700,
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CircleAvatar(
+                      radius: 40,
+                      backgroundImage: NetworkImage(
+                        auth.currentUser.photoURL,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                modified_text(
+                    text: "Name : ${auth.currentUser.displayName}",
+                    size: 16,
+                    color: Colors.black),
+                SizedBox(
+                  height: 10,
+                ),
+                modified_text(
+                    text: "Email : ${auth.currentUser.email}",
+                    size: 16,
+                    color: Colors.black),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    MaterialButton(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0)),
+                      color: Colors.red[900],
+                      padding: EdgeInsets.only(left: 5, right: 5),
+                      child: Text(
+                        'Confirm',
+                        style: TextStyle(color: Colors.white, fontSize: 15),
+                      ),
+                      onPressed: () async {
+                        Navigator.pop(context);
+                      },
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                  ],
+                )
+              ],
+            ),
+          );
+        });
+  }
+
+  _showUserInfoNoImageDialog() {
+    showDialog(
+        context: context,
+        builder: (_) {
+          return AlertDialog(
+            scrollable: true,
+            content: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                modified_text(
+                  text: "User Information",
+                  size: 25,
+                  color: Colors.red[900],
+                  weight: FontWeight.w700,
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CircleAvatar(
+                      radius: 40,
+                      backgroundImage: AssetImage(
+                        'assets/images/avatar.png',
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                modified_text(
+                    text: "Email : ${auth.currentUser.email}",
+                    size: 16,
+                    color: Colors.black),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    MaterialButton(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0)),
+                      color: Colors.red[900],
+                      padding: EdgeInsets.only(left: 5, right: 5),
+                      child: Text(
+                        'Confirm',
+                        style: TextStyle(color: Colors.white, fontSize: 15),
+                      ),
+                      onPressed: () async {
+                        Navigator.pop(context);
+                      },
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                  ],
+                )
+              ],
+            ),
+          );
+        });
+  }
+
   _showLogoutDialog() {
     showDialog(
         context: context,
@@ -92,7 +234,7 @@ class _IndexScreenState extends State<IndexScreen> {
                     MaterialButton(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10.0)),
-                      color: Colors.red,
+                      color: Colors.red[900],
                       padding: EdgeInsets.only(left: 5, right: 5),
                       child: Text(
                         'Log Out',
@@ -145,8 +287,41 @@ class _IndexScreenState extends State<IndexScreen> {
     return Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
+          leading: Builder(
+            builder: (BuildContext context) {
+              return IconButton(
+                icon: Image.asset(
+                  'assets/images/gflix.png',
+                  height: 30.0,
+                  width: 50.0,
+                  fit: BoxFit.contain,
+                ),
+                onPressed: () {
+                  Navigator.pushAndRemoveUntil(context,
+                      MaterialPageRoute(builder: (context) {
+                    return IndexScreen();
+                  }), (Route<dynamic> route) => false);
+                },
+              );
+            },
+          ),
           title: modified_text(text: 'GFlix Movie App'),
-          backgroundColor: Colors.red,
+          backgroundColor: Colors.red[900],
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(
+                Icons.person,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                if (auth.currentUser.photoURL != null) {
+                  _showUserInfoDialog();
+                } else {
+                  _showUserInfoNoImageDialog();
+                }
+              },
+            ),
+          ],
         ),
         body: ListView(
           children: [
@@ -194,7 +369,7 @@ class _IndexScreenState extends State<IndexScreen> {
                 MaterialButton(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0)),
-                  color: Colors.red,
+                  color: Colors.red[900],
                   padding: EdgeInsets.only(left: 5, right: 5),
                   child: Text(
                     'Log Out',
