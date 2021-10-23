@@ -4,9 +4,11 @@ import 'package:form_field_validator/form_field_validator.dart';
 
 class RoundedPasswordField extends StatelessWidget {
   final ValueChanged<String> onChanged;
+  final color;
   const RoundedPasswordField({
     Key key,
     this.onChanged,
+    this.color,
   }) : super(key: key);
 
   @override
@@ -16,12 +18,13 @@ class RoundedPasswordField extends StatelessWidget {
         validator: RequiredValidator(errorText: "กรุณาป้อนรหัสผ่านด้วยครับ"),
         obscureText: true,
         onChanged: onChanged,
-        cursorColor: Color.fromRGBO(255, 0, 0, 1), //kPrimaryColor,
+        cursorColor: color, //kPrimaryColor,
         decoration: InputDecoration(
           hintText: "Password",
           icon: Icon(
             Icons.lock,
-            color: Color.fromRGBO(255, 0, 0, 1), //kPrimaryColor,
+            color: color,
+            //kPrimaryColor,
           ),
           border: InputBorder.none,
         ),

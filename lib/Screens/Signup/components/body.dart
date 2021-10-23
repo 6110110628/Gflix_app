@@ -8,7 +8,6 @@ import 'package:flutter_auth/components/rounded_button.dart';
 import 'package:flutter_auth/components/rounded_input_field.dart';
 import 'package:flutter_auth/components/rounded_password_field.dart';
 import 'package:flutter_auth/model/profile.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 // ignore: must_be_immutable
@@ -49,15 +48,17 @@ class Body extends StatelessWidget {
                       ),
                       SizedBox(height: size.height * 0.06),
                       RoundedInputField(
-                          hintText: "Your Email",
-                          onChanged: (String email) {
-                            profile.email = email;
-                          }),
-                      RoundedPasswordField(
-                        onChanged: (String password) {
-                          profile.password = password;
+                        hintText: "Your Email",
+                        onChanged: (String email) {
+                          profile.email = email;
                         },
+                        color: Colors.black,
                       ),
+                      RoundedPasswordField(
+                          onChanged: (String password) {
+                            profile.password = password;
+                          },
+                          color: Colors.black),
                       RoundedButton(
                           text: "SIGN UP",
                           color: Colors.orange,

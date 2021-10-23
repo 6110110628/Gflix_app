@@ -55,14 +55,17 @@ class Body extends StatelessWidget {
                       ),
                       SizedBox(height: size.height * 0.06),
                       RoundedInputField(
-                          hintText: "Your Email",
-                          onChanged: (String email) {
-                            profile.email = email;
-                          }),
+                        hintText: "Your Email",
+                        onChanged: (String email) {
+                          profile.email = email;
+                        },
+                        color: Colors.black,
+                      ),
                       RoundedPasswordField(
                         onChanged: (String password) {
                           profile.password = password;
                         },
+                        color: Colors.black,
                       ),
                       RoundedButton(
                           text: "LOGIN",
@@ -136,7 +139,7 @@ class Body extends StatelessWidget {
                             },
                           ),
                           SocalIcon(
-                            iconSrc: "assets/icons/google-plus.svg",
+                            iconSrc: "assets/icons/google.svg",
                             press: () async {
                               try {
                                 final googleProvider =

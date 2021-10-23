@@ -5,12 +5,14 @@ import 'package:form_field_validator/form_field_validator.dart';
 class RoundedInputField extends StatelessWidget {
   final String hintText;
   final IconData icon;
+  final color;
   final ValueChanged<String> onChanged;
   const RoundedInputField({
     Key key,
     this.hintText,
     this.icon = Icons.person,
     this.onChanged,
+    this.color,
   }) : super(key: key);
 
   @override
@@ -22,11 +24,11 @@ class RoundedInputField extends StatelessWidget {
           EmailValidator(errorText: "รูปแบบอีเมลไม่ถูกต้อง")
         ]),
         onChanged: onChanged,
-        cursorColor: Color.fromRGBO(255, 0, 0, 1), //kPrimaryColor,
+        cursorColor: color, //kPrimaryColor,
         decoration: InputDecoration(
           icon: Icon(
             icon,
-            color: Color.fromRGBO(255, 0, 0, 1), //kPrimaryColor,
+            color: color, //kPrimaryColor,
           ),
           hintText: hintText,
           border: InputBorder.none,
