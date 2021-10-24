@@ -121,7 +121,7 @@ class Body extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          SocalIcon(
+                          SocialIcon(
                             iconSrc: "assets/icons/facebook.svg",
                             press: () async {
                               final facebookProvider =
@@ -138,7 +138,7 @@ class Body extends StatelessWidget {
                               });
                             },
                           ),
-                          SocalIcon(
+                          SocialIcon(
                             iconSrc: "assets/icons/google.svg",
                             press: () async {
                               try {
