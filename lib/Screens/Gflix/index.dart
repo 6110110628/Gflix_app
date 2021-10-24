@@ -346,17 +346,32 @@ class _IndexScreenState extends State<IndexScreen> {
           ),
           backgroundColor: Colors.red[900],
           actions: <Widget>[
-            IconButton(
-              icon: Icon(
-                Icons.search,
-                color: Colors.white,
-              ),
-              onPressed: () {},
-            )
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                IconButton(
+                  icon: Icon(
+                    Icons.favorite,
+                    color: Colors.white,
+                  ),
+                  onPressed: () {},
+                ),
+                IconButton(
+                  icon: Icon(
+                    Icons.search,
+                    color: Colors.white,
+                  ),
+                  onPressed: () {},
+                )
+              ],
+            ),
           ],
         ),
         body: ListView(
           children: [
+            SizedBox(
+              height: 20,
+            ),
             TrendingMovies(
               trending: trendingmovies,
             ),
@@ -366,7 +381,7 @@ class _IndexScreenState extends State<IndexScreen> {
               toprated: topratedmovies,
             ),
             SizedBox(
-              height: 30,
+              height: 20,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

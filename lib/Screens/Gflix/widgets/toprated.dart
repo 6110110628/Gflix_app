@@ -11,11 +11,11 @@ class TopRatedMovies extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(10),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           modified_text(
             text: 'Top Rated Movies',
-            size: 26,
+            size: 25,
             color: Colors.white,
           ),
           SizedBox(height: 10),
@@ -56,11 +56,12 @@ class TopRatedMovies extends StatelessWidget {
                                     mediaType: 'movie')));
                       },
                       child: Container(
-                        width: 140,
+                        width: 160,
                         child: Column(
                           children: [
                             Container(
                               decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
                                 image: DecorationImage(
                                   image: NetworkImage(
                                       'https://image.tmdb.org/t/p/w500' +
@@ -68,6 +69,7 @@ class TopRatedMovies extends StatelessWidget {
                                 ),
                               ),
                               height: 200,
+                              width: 133,
                             ),
                             SizedBox(height: 10),
                             Container(

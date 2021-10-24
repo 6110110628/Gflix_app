@@ -13,11 +13,11 @@ class TrendingMovies extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(10),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           modified_text(
             text: 'Trending Movies',
-            size: 26,
+            size: 25,
             color: Colors.white,
           ),
           SizedBox(height: 10),
