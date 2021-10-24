@@ -119,7 +119,10 @@ class _UpcomingState extends State<Upcoming> {
                       child: Text(
                         element['title'] != null ? element['title'] : 'Loading',
                         textAlign: TextAlign.start,
-                        style: TextStyle(color: Colors.white, fontSize: 20),
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700),
                       ),
                     ),
                     SizedBox(
