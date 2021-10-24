@@ -114,7 +114,7 @@ class _MyDialogState extends State<MyDialog> {
                   MaterialButton(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.0)),
-                    color: Colors.red,
+                    color: Colors.red[900],
                     padding: EdgeInsets.only(left: 5, right: 5),
                     child: Text(
                       'Submit',

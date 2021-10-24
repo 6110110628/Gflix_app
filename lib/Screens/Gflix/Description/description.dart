@@ -187,7 +187,7 @@ class _DescriptionState extends State<Description> {
           body: CustomScrollView(
             slivers: <Widget>[
               SliverAppBar(
-                backgroundColor: Colors.red,
+                backgroundColor: Colors.red[900],
                 pinned: _pinned,
                 snap: _snap,
                 floating: _floating,
@@ -339,7 +339,7 @@ class _DescriptionState extends State<Description> {
                             MaterialButton(
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10.0)),
-                              color: Colors.red,
+                              color: Colors.red[900],
                               padding: EdgeInsets.only(left: 5, right: 5),
                               child: Text(
                                 'Rating',
@@ -361,7 +361,7 @@ class _DescriptionState extends State<Description> {
                               if (!snapshot.hasData) {
                                 return Center(
                                     child: CircularProgressIndicator(
-                                        color: Colors.red));
+                                        color: Colors.red[900]));
                               }
                               if (snapshot.data.isEmpty) {
                                 return SizedBox(
@@ -410,7 +410,7 @@ class _DescriptionState extends State<Description> {
                               if (!snapshot.hasData) {
                                 return Center(
                                     child: CircularProgressIndicator(
-                                        color: Colors.red));
+                                        color: Colors.red[900]));
                               }
                               if (snapshot.data.docs.isEmpty) {
                                 return SizedBox();
@@ -426,10 +426,12 @@ class _DescriptionState extends State<Description> {
                                         size: 15,
                                         color: Colors.white,
                                       ),
-                                      modified_text(
-                                        text: 'GFlix',
-                                        size: 25,
-                                        color: Colors.red,
+                                      Image.asset(
+                                        'assets/images/gflix.png',
+                                        height: 20.0,
+                                        width: 40.0,
+                                        fit: BoxFit.contain,
+                                        color: Colors.red[900],
                                       ),
                                     ],
                                   ),

@@ -83,7 +83,7 @@ class _ReviewState extends State<Review> {
                     MaterialButton(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10.0)),
-                      color: Colors.red,
+                      color: Colors.red[900],
                       padding: EdgeInsets.only(left: 5, right: 5),
                       child: Text(
                         'Delete',

@@ -158,7 +158,7 @@ class _PersonInfoState extends State<PersonInfo> {
               ),
             ],
           ),
-          backgroundColor: Colors.red,
+          backgroundColor: Colors.red[900],
         ),
         backgroundColor: Colors.black,
         body: ListView(padding: EdgeInsets.all(10), children: [
