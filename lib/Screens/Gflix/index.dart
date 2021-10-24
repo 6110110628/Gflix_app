@@ -56,10 +56,22 @@ class _IndexScreenState extends State<IndexScreen> {
         context: context,
         builder: (_) {
           return AlertDialog(
+            contentPadding: EdgeInsets.fromLTRB(24.0, 0.0, 0.0, 24.0),
             scrollable: true,
             content: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    IconButton(
+                        padding: EdgeInsets.all(0),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        icon: Icon(Icons.close))
+                  ],
+                ),
                 modified_text(
                   text: "User Information",
                   size: 25,
@@ -77,6 +89,9 @@ class _IndexScreenState extends State<IndexScreen> {
                       backgroundImage: NetworkImage(
                         auth.currentUser.photoURL,
                       ),
+                    ),
+                    SizedBox(
+                      width: 24,
                     ),
                   ],
                 ),
@@ -106,15 +121,13 @@ class _IndexScreenState extends State<IndexScreen> {
                       color: Colors.red[900],
                       padding: EdgeInsets.only(left: 5, right: 5),
                       child: Text(
-                        'Confirm',
+                        'Log Out',
                         style: TextStyle(color: Colors.white, fontSize: 15),
                       ),
-                      onPressed: () async {
-                        Navigator.pop(context);
-                      },
+                      onPressed: _showLogoutDialog,
                     ),
                     SizedBox(
-                      width: 10,
+                      width: 24,
                     ),
                   ],
                 )
@@ -129,10 +142,22 @@ class _IndexScreenState extends State<IndexScreen> {
         context: context,
         builder: (_) {
           return AlertDialog(
+            contentPadding: EdgeInsets.fromLTRB(24.0, 0.0, 0.0, 24.0),
             scrollable: true,
             content: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    IconButton(
+                        padding: EdgeInsets.all(0),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        icon: Icon(Icons.close))
+                  ],
+                ),
                 modified_text(
                   text: "User Information",
                   size: 25,
@@ -175,12 +200,10 @@ class _IndexScreenState extends State<IndexScreen> {
                       color: Colors.red[900],
                       padding: EdgeInsets.only(left: 5, right: 5),
                       child: Text(
-                        'Confirm',
+                        'Log Out',
                         style: TextStyle(color: Colors.white, fontSize: 15),
                       ),
-                      onPressed: () async {
-                        Navigator.pop(context);
-                      },
+                      onPressed: _showLogoutDialog,
                     ),
                     SizedBox(
                       width: 10,
@@ -367,25 +390,6 @@ class _IndexScreenState extends State<IndexScreen> {
                     size: 15,
                     color: Colors.white,
                   ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                MaterialButton(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0)),
-                  color: Colors.red[900],
-                  padding: EdgeInsets.only(left: 5, right: 5),
-                  child: Text(
-                    'Log Out',
-                    style: TextStyle(color: Colors.white, fontSize: 15),
-                  ),
-                  onPressed: _showLogoutDialog,
                 ),
               ],
             ),

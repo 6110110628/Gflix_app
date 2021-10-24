@@ -156,7 +156,8 @@ class _ReviewState extends State<Review> {
                                 width: 50.0,
                                 height: 50.0,
                                 imageUrl: widget.reviewResults["source"] != null
-                                    ? auth.currentUser.photoURL
+                                    ? widget.reviewResults["author_details"]
+                                        ["avatar_path"]
                                     : "https://secure.gravatar.com/avatar/$imgName",
                                 placeholder: (context, url) => Image.asset(
                                     'assets/images/avatar.png',
