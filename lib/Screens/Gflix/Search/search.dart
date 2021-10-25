@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/Screens/Gflix/utils/text.dart';
 import 'package:tmdb_api/tmdb_api.dart';
 import 'package:flutter_auth/Screens/Gflix/Description/description.dart';
 
@@ -133,35 +134,38 @@ class _SearchList extends State<SearchList> {
   }
 
   Widget buildAppBar(BuildContext context) {
-    return new AppBar(centerTitle: true, title: appBarTitle, actions: <Widget>[
-      new IconButton(
-        icon: icon,
-        onPressed: () {
-          setState(() {
-            if (this.icon.icon == Icons.search) {
-              this.icon = new Icon(
-                Icons.close,
+    return new AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.red[900],
+        centerTitle: true,
+        title: TextField(
+          controller: _controller,
+          style: new TextStyle(
+            color: Colors.white,
+          ),
+          decoration: new InputDecoration(
+              enabledBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: Colors.white),
+              ),
+              focusedBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: Colors.white),
+              ),
+              prefixIcon: new Icon(Icons.search, color: Colors.white),
+              hintText: "Search movie...",
+              hintStyle: new TextStyle(color: Colors.white)),
+          onChanged: searchOperation,
+        ),
+        actions: <Widget>[
+          TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: modified_text(
+                text: 'Cancel',
                 color: Colors.white,
-              );
-              this.appBarTitle = new TextField(
-                controller: _controller,
-                style: new TextStyle(
-                  color: Colors.white,
-                ),
-                decoration: new InputDecoration(
-                    prefixIcon: new Icon(Icons.search, color: Colors.white),
-                    hintText: "Search...",
-                    hintStyle: new TextStyle(color: Colors.white)),
-                onChanged: searchOperation,
-              );
-              _handleSearchStart();
-            } else {
-              _handleSearchEnd();
-            }
-          });
-        },
-      ),
-    ]);
+                size: 15,
+              ))
+        ]);
   }
 
   void _handleSearchStart() {
