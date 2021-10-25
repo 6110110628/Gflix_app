@@ -11,6 +11,7 @@ import 'package:flutter_auth/Screens/Welcome/welcome_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:tmdb_api/tmdb_api.dart';
+import 'package:flutter_auth/Screens/Gflix/search.dart';
 
 class IndexScreen extends StatefulWidget {
   @override
@@ -361,7 +362,18 @@ class _IndexScreenState extends State<IndexScreen> {
                     Icons.search,
                     color: Colors.white,
                   ),
-                  onPressed: () {},
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return SearchListExample();
+                          print("Yeet you're pressing search");
+                        },
+                      ),
+                    );
+                  }
+
                 )
               ],
             ),
