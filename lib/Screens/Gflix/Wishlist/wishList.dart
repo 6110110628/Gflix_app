@@ -1,7 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/Screens/Gflix/Wishlist/wishlist_tile.dart';
+import 'package:flutter_auth/Screens/Gflix/Wishlist/components/wishlist_tile.dart';
+import 'package:flutter_auth/Screens/Gflix/index.dart';
+import 'package:flutter_auth/Screens/Gflix/utils/text.dart';
 
 class WishList extends StatefulWidget {
   @override
@@ -25,9 +27,38 @@ class _WishListState extends State<WishList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.red,
-        title: const Text('Wish list'),
-        centerTitle: true,
+        backgroundColor: Colors.red[900],
+        title: Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text('Wish list'),
+            Padding(
+              padding: const EdgeInsets.only(left: 0, right: 0),
+              child: Container(
+                height: 25,
+                width: 35,
+                child: IconButton(
+                  padding: EdgeInsets.zero,
+                  constraints: BoxConstraints(),
+                  onPressed: () {
+                    Navigator.pushAndRemoveUntil(context,
+                        MaterialPageRoute(builder: (context) {
+                      return IndexScreen();
+                    }), (Route<dynamic> route) => false);
+                  },
+                  icon: Image.asset(
+                    'assets/images/gflix.png',
+                    height: 30.0,
+                    width: 50.0,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+        centerTitle: false,
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -39,7 +70,17 @@ class _WishListState extends State<WishList> {
                     child: CircularProgressIndicator(color: Colors.red));
               }
               if (snapshot.data.docs.isEmpty) {
-                return SizedBox();
+                return Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      modified_text(
+                        text: 'Your wishlist is empty.',
+                        color: Colors.white,
+                      )
+                    ],
+                  ),
+                );
               }
 
               return SingleChildScrollView(

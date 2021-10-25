@@ -74,9 +74,8 @@ class _UpcomingState extends State<Upcoming> {
                       Colors.black.withOpacity(0.3), BlendMode.dstATop),
                   image: element['backdrop_path'] == null
                       ? (element['poster_path'] == null
-                          ? Image.asset(
+                          ? AssetImage(
                               'assets/images/cast.png',
-                              fit: BoxFit.contain,
                             )
                           : NetworkImage('https://image.tmdb.org/t/p/w500' +
                               element['poster_path']))
@@ -97,9 +96,8 @@ class _UpcomingState extends State<Upcoming> {
                   borderRadius: BorderRadius.circular(10),
                   image: DecorationImage(
                       image: element['poster_path'] == null
-                          ? Image.asset(
+                          ? AssetImage(
                               'assets/images/cast.png',
-                              fit: BoxFit.contain,
                             )
                           : NetworkImage('https://image.tmdb.org/t/p/w500' +
                               element['poster_path']),

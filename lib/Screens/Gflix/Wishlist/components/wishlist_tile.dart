@@ -143,35 +143,53 @@ class _WishlisttileState extends State<Wishlisttile> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Image.network(
-                widget.wishlistResults['posterurl'],
-                height: 150,
+              Container(
+                width: 100,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(5.0),
+                  child: widget.wishlistResults['posterurl'] == 'empty'
+                      ? Image.asset(
+                          'assets/images/cast.png',
+                          fit: BoxFit.contain,
+                        )
+                      : Image.network(widget.wishlistResults['posterurl']),
+                ),
               ),
-              Column(
-                children: [
-                  Text(
-                    widget.wishlistResults['name'] != null
-                        ? widget.wishlistResults['name']
-                        : 'Loading',
-                    style: TextStyle(fontSize: 25, color: Colors.white),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    // widget.wishlistResults['release'] != null
-                    //     ? widget.wishlistResults['release']
-                    //     : 'Loading',
-                    "Added : " +
-                        this.today.day.toString() +
-                        " /" +
-                        this.today.month.toString() +
-                        " /" +
-                        this.today.year.toString(),
+              Flexible(
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Container(
+                    width: 200,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          widget.wishlistResults['name'] != null
+                              ? widget.wishlistResults['name']
+                              : 'Loading',
+                          style: TextStyle(fontSize: 25, color: Colors.white),
+                        ),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        Text(
+                          // widget.wishlistResults['release'] != null
+                          //     ? widget.wishlistResults['release']
+                          //     : 'Loading',
+                          "Added : " +
+                              this.today.day.toString() +
+                              " /" +
+                              this.today.month.toString() +
+                              " /" +
+                              this.today.year.toString(),
 
-                    style: TextStyle(fontSize: 15, color: Colors.grey[350]),
+                          style:
+                              TextStyle(fontSize: 15, color: Colors.grey[350]),
+                        ),
+                      ],
+                    ),
                   ),
-                ],
+                ),
               ),
               IconButton(
                 onPressed: () {
