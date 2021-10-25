@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/Screens/Gflix/Wishlist/wishList.dart';
 import 'package:flutter_auth/Screens/Gflix/utils/text.dart';
 import 'package:flutter_auth/Screens/Gflix/widgets/toprated.dart';
 import 'package:flutter_auth/Screens/Gflix/widgets/trending.dart';
@@ -351,30 +352,28 @@ class _IndexScreenState extends State<IndexScreen> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 IconButton(
-                  icon: Icon(
-                    Icons.favorite,
-                    color: Colors.white,
-                  ),
-                  onPressed: () {},
+                  onPressed: () => Navigator.push(context,
+                      MaterialPageRoute(builder: (context) {
+                    return WishList();
+                  })),
+                  icon: Icon(Icons.favorite),
                 ),
                 IconButton(
-                  icon: Icon(
-                    Icons.search,
-                    color: Colors.white,
-                  ),
-                  onPressed: (){
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return SearchListExample();
-                          print("Yeet you're pressing search");
-                        },
-                      ),
-                    );
-                  }
-
-                )
+                    icon: Icon(
+                      Icons.search,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return SearchListExample();
+                            print("Yeet you're pressing search");
+                          },
+                        ),
+                      );
+                    })
               ],
             ),
           ],

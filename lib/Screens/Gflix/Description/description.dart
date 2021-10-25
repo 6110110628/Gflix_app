@@ -1,12 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/Screens/Gflix/Wishlist/wishList.dart';
 import 'package:flutter_auth/Screens/Gflix/index.dart';
 import 'package:flutter_auth/Screens/Gflix/utils/text.dart';
 import 'package:flutter_auth/Screens/Gflix/Description/components/cast.dart';
 import 'package:flutter_auth/Screens/Gflix/Description/components/rating_dialog.dart';
 import 'package:flutter_auth/Screens/Gflix/Description/components/review_tile.dart';
+import 'package:flutter_auth/model/Favorite.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:tmdb_api/tmdb_api.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -44,6 +47,9 @@ class _DescriptionState extends State<Description> {
   final String readaccesstoken =
       'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1ODg3MmQ2NDFlNDdiY2YwMWU4YjQ3Yzc1ZTAyMDYyMyIsInN1YiI6IjYxM2U3ZTVjOTE3NDViMDA5MWU3OGI5NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.q-bvvinn7hwRIRHRRQtfgQRWsbhITyfALcho9Y8zhJk';
   final auth = FirebaseAuth.instance;
+  CollectionReference _favCollection =
+      FirebaseFirestore.instance.collection("wishlists");
+  Favorite myFav = Favorite();
   List reviewsResultsTMDB;
   List casts = [];
   Map reviewsResultsGFlix;
@@ -109,6 +115,35 @@ class _DescriptionState extends State<Description> {
     setState(() {
       casts = castsResults['cast'];
     });
+  }
+
+  void _addToFav() {
+    //change from void function
+    myFav.movieId = widget.id;
+    myFav.email = auth.currentUser.email;
+    myFav.name = widget.name;
+    myFav.posterurl = widget.posterurl;
+    myFav.bannerurl = widget.bannerurl;
+    myFav.launchOn = widget.launchOn;
+    myFav.description = widget.description;
+    myFav.vote = widget.vote;
+    myFav.mediaType = widget.mediaType;
+    try {
+      _favCollection.add({
+        "email": myFav.email,
+        "movieId": myFav.movieId,
+        "name": myFav.name,
+        "bannerurl": myFav.bannerurl,
+        "posterurl": myFav.posterurl,
+        "description": myFav.description,
+        "vote": myFav.vote,
+        "launchOn": myFav.launchOn,
+        "mediaType": myFav.mediaType
+      }).then((value) => Fluttertoast.showToast(
+          msg: "Favorite successfully added.", gravity: ToastGravity.CENTER));
+    } catch (e) {
+      Fluttertoast.showToast(msg: e.message, gravity: ToastGravity.CENTER);
+    }
   }
 
   Future<List> loadVideoResults(String language) async {
@@ -250,20 +285,46 @@ class _DescriptionState extends State<Description> {
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Container(
-                          padding: EdgeInsets.only(left: 10, top: 10),
-                          child: modified_text(
-                            text: widget.launchOn == 'unknown'
-                                ? 'Releasing On : unknown'
-                                : 'Releasing On : ' +
-                                    widget.launchOn.substring(8, 10) +
-                                    '/' +
-                                    widget.launchOn.substring(5, 7) +
-                                    '/' +
-                                    widget.launchOn.substring(0, 4),
-                            size: 14,
-                            color: Colors.white,
-                          )),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            padding: EdgeInsets.only(left: 10, top: 10),
+                            child: modified_text(
+                              text: widget.launchOn == 'unknown'
+                                  ? 'Releasing On : unknown'
+                                  : 'Releasing On : ' +
+                                      widget.launchOn.substring(8, 10) +
+                                      '/' +
+                                      widget.launchOn.substring(5, 7) +
+                                      '/' +
+                                      widget.launchOn.substring(0, 4),
+                              size: 14,
+                              color: Colors.white,
+                            ),
+                          ),
+                          MaterialButton(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10.0)),
+                              color: Colors.red,
+                              padding: EdgeInsets.only(left: 7, right: 7),
+                              child: Text(
+                                'Add to favorites',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 17),
+                              ),
+                              onPressed: () async {
+                                _addToFav();
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => WishList(),
+                                      settings:
+                                          RouteSettings(arguments: myFav)),
+                                );
+                              }),
+                        ],
+                      ),
                       SizedBox(
                         height: 20,
                       ),
