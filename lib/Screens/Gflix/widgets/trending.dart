@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/Screens/Gflix/utils/text.dart';
-
 import '../Description/description.dart';
 
 class TrendingMovies extends StatelessWidget {

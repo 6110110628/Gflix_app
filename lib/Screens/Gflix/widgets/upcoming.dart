@@ -6,8 +6,8 @@ import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:tmdb_api/tmdb_api.dart';
 
 class Upcoming extends StatefulWidget {
-  const Upcoming({Key key}) : super(key: key);
-
+  const Upcoming({Key key, this.upcoming}) : super(key: key);
+  final List upcoming;
   @override
   _UpcomingState createState() => _UpcomingState();
 }
@@ -18,31 +18,33 @@ class _UpcomingState extends State<Upcoming> {
       'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1ODg3MmQ2NDFlNDdiY2YwMWU4YjQ3Yzc1ZTAyMDYyMyIsInN1YiI6IjYxM2U3ZTVjOTE3NDViMDA5MWU3OGI5NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.q-bvvinn7hwRIRHRRQtfgQRWsbhITyfALcho9Y8zhJk';
 
   List<Widget> card = [];
-  List upcoming, backdropImage = [], posterImage = [];
+  List backdropImage = [], posterImage = [];
   @override
   void initState() {
-    loadUpcoming();
+    print('widget.upcoming.length : ${widget.upcoming.length}');
+    // loadUpcoming();
+    storeImage();
     super.initState();
   }
 
-  loadUpcoming() async {
-    TMDB tmdbWithCustomLogs = TMDB(
-      ApiKeys(apikey, readaccesstoken),
-      logConfig: ConfigLogger(
-        showLogs: true,
-        showErrorLogs: true,
-      ),
-    );
-    Map upcomingresult =
-        await tmdbWithCustomLogs.v3.movies.getUpcoming(region: 'US');
-    setState(() {
-      upcoming = upcomingresult['results'];
-    });
-    storeImage();
-  }
+  // loadUpcoming() async {
+  //   TMDB tmdbWithCustomLogs = TMDB(
+  //     ApiKeys(apikey, readaccesstoken),
+  //     logConfig: ConfigLogger(
+  //       showLogs: true,
+  //       showErrorLogs: true,
+  //     ),
+  //   );
+  //   Map upcomingresult =
+  //       await tmdbWithCustomLogs.v3.movies.getUpcoming(region: 'US');
+  //   setState(() {
+  //     upcoming = upcomingresult['results'];
+  //   });
+  //   storeImage();
+  // }
 
   storeImage() {
-    for (Map element in upcoming) {
+    for (Map element in widget.upcoming) {
       if (element['backdrop_path'] == null) {
         if (element['poster_path'] == null) {
           backdropImage.add(AssetImage(
@@ -65,18 +67,20 @@ class _UpcomingState extends State<Upcoming> {
             'https://image.tmdb.org/t/p/w500' + element['poster_path']));
       }
     }
-    if (posterImage.length == upcoming.length &&
-        backdropImage.length == upcoming.length) {
+    if (posterImage.length == widget.upcoming.length &&
+        backdropImage.length == widget.upcoming.length) {
       setState(() {
         cardWidget();
+        print('widget.upcoming.length : ${widget.upcoming.length}');
       });
     }
   }
 
   cardWidget() {
     print('cardWidget()');
-    upcoming.forEach((element) {
-      var index = upcoming.indexOf(element);
+    widget.upcoming.forEach((element) {
+      var index = widget.upcoming.indexOf(element);
+      print('Upcoming Index: $index');
       card.add(InkWell(
         onTap: () {
           Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -167,25 +171,28 @@ class _UpcomingState extends State<Upcoming> {
         ),
       ));
     });
-    print('Card length : ${card.length}');
+    if (card.length == widget.upcoming.length && card.length != 0) {
+      setState(() {
+        print('Card : ${card.length}');
+      });
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(10),
-      child: card == null || card.isEmpty
-          ? Container()
-          : Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                modified_text(
-                  text: 'Upcoming Movies',
-                  size: 25,
-                  color: Colors.white,
-                ),
-                SizedBox(height: 10),
-                ImageSlideshow(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          modified_text(
+            text: 'Upcoming Movies',
+            size: 25,
+            color: Colors.white,
+          ),
+          SizedBox(height: 10),
+          card.length != 0 && card != null
+              ? ImageSlideshow(
                   width: 400,
                   height: 230,
                   initialPage: 0,
@@ -197,12 +204,13 @@ class _UpcomingState extends State<Upcoming> {
                   },
                   autoPlayInterval: 5000,
                   isLoop: true,
-                ),
-                SizedBox(
-                  height: 20,
                 )
-              ],
-            ),
+              : Container(),
+          SizedBox(
+            height: 20,
+          )
+        ],
+      ),
     );
   }
 }

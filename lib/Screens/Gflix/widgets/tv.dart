@@ -26,61 +26,67 @@ class TV extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   itemCount: tv.length,
                   itemBuilder: (context, index) {
-                    return InkWell(
-                      onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          print("index : $index");
-                          return new Description(
-                              id: tv[index]['id'],
-                              name: tv[index]['title'] == null
-                                  ? tv[index]['name']
-                                  : tv[index]['title'],
-                              bannerurl: tv[index]['backdrop_path'] == null
-                                  ? 'empty'
-                                  : 'https://image.tmdb.org/t/p/w500' +
-                                      tv[index]['backdrop_path'],
-                              posterurl: tv[index]['poster_path'] == null
-                                  ? 'empty'
-                                  : 'https://image.tmdb.org/t/p/w500' +
-                                      tv[index]['poster_path'],
-                              description: tv[index]['overview'],
-                              vote: tv[index]['vote_average'].toString(),
-                              launchOn: tv[index]['release_date'] == null
-                                  ? tv[index]['first_air_date']
-                                  : tv[index]['release_date'],
-                              mediaType: 'tv');
-                        }));
-                      },
-                      child: Container(
-                        padding: EdgeInsets.all(5),
-                        // color: Colors.green,
-                        width: 250,
-                        child: Column(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                image: DecorationImage(
-                                    image: NetworkImage(
-                                        'https://image.tmdb.org/t/p/w500' +
-                                            tv[index]['backdrop_path']),
-                                    fit: BoxFit.cover),
-                              ),
-                              height: 140,
+                    return Row(
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              print("index : $index");
+                              return new Description(
+                                  id: tv[index]['id'],
+                                  name: tv[index]['title'] == null
+                                      ? tv[index]['name']
+                                      : tv[index]['title'],
+                                  bannerurl: tv[index]['backdrop_path'] == null
+                                      ? 'empty'
+                                      : 'https://image.tmdb.org/t/p/w500' +
+                                          tv[index]['backdrop_path'],
+                                  posterurl: tv[index]['poster_path'] == null
+                                      ? 'empty'
+                                      : 'https://image.tmdb.org/t/p/w500' +
+                                          tv[index]['poster_path'],
+                                  description: tv[index]['overview'],
+                                  vote: tv[index]['vote_average'].toString(),
+                                  launchOn: tv[index]['release_date'] == null
+                                      ? tv[index]['first_air_date']
+                                      : tv[index]['release_date'],
+                                  mediaType: 'tv');
+                            }));
+                          },
+                          child: Container(
+                            // color: Colors.green,
+                            width: 250,
+                            child: Column(
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    image: DecorationImage(
+                                        image: NetworkImage(
+                                            'https://image.tmdb.org/t/p/w500' +
+                                                tv[index]['backdrop_path']),
+                                        fit: BoxFit.cover),
+                                  ),
+                                  height: 140,
+                                ),
+                                SizedBox(height: 5),
+                                Container(
+                                    child: Text(
+                                  tv[index]['original_name'] != null
+                                      ? tv[index]['original_name']
+                                      : 'Loading',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(color: Colors.white),
+                                ))
+                              ],
                             ),
-                            SizedBox(height: 5),
-                            Container(
-                                child: Text(
-                              tv[index]['original_name'] != null
-                                  ? tv[index]['original_name']
-                                  : 'Loading',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.white),
-                            ))
-                          ],
+                          ),
                         ),
-                      ),
+                        SizedBox(
+                          width: 15,
+                        )
+                      ],
                     );
                   }))
         ],

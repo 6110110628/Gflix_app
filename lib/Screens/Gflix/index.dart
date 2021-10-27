@@ -11,6 +11,7 @@ import 'package:flutter_auth/Screens/Login/components/google_sign_in.dart';
 import 'package:flutter_auth/Screens/Welcome/welcome_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:tmdb_api/tmdb_api.dart';
 import 'package:flutter_auth/Screens/Gflix/Search/search.dart';
 
@@ -24,7 +25,7 @@ class _IndexScreenState extends State<IndexScreen> {
   final String readaccesstoken =
       'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1ODg3MmQ2NDFlNDdiY2YwMWU4YjQ3Yzc1ZTAyMDYyMyIsInN1YiI6IjYxM2U3ZTVjOTE3NDViMDA5MWU3OGI5NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.q-bvvinn7hwRIRHRRQtfgQRWsbhITyfALcho9Y8zhJk';
   List trendingmovies = [], topratedmovies = [], tv = [], upcoming = [];
-
+  bool shimmer = false;
   final auth = FirebaseAuth.instance;
   @override
   void initState() {
@@ -42,12 +43,15 @@ class _IndexScreenState extends State<IndexScreen> {
     );
 
     Map trendingresult = await tmdbWithCustomLogs.v3.trending.getTrending();
+    Map upcomingresult =
+        await tmdbWithCustomLogs.v3.movies.getUpcoming(region: 'US');
     Map topratedresult = await tmdbWithCustomLogs.v3.movies.getTopRated();
     Map tvresult = await tmdbWithCustomLogs.v3.tv.getPouplar();
 
     print((trendingresult));
     setState(() {
       trendingmovies = trendingresult['results'];
+      upcoming = upcomingresult['results'];
       topratedmovies = topratedresult['results'];
       tv = tvresult['results'];
     });
@@ -311,6 +315,15 @@ class _IndexScreenState extends State<IndexScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        // floatingActionButton: FloatingActionButton(
+        //   onPressed: () {
+        //     setState(() {
+        //       shimmer = !shimmer;
+        //     });
+        //   },
+        //   child: Icon(Icons.change_circle_outlined),
+        //   backgroundColor: Colors.pink,
+        // ),
         backgroundColor: Colors.black,
         appBar: AppBar(
           centerTitle: true,
@@ -382,14 +395,424 @@ class _IndexScreenState extends State<IndexScreen> {
             SizedBox(
               height: 20,
             ),
-            TrendingMovies(
-              trending: trendingmovies,
-            ),
-            Upcoming(),
-            TV(tv: tv),
-            TopRatedMovies(
-              toprated: topratedmovies,
-            ),
+            trendingmovies.isEmpty || trendingmovies == null || shimmer == true
+                ? Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Shimmer.fromColors(
+                        baseColor: Colors.white60,
+                        highlightColor: Colors.white,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                border: Border.all(color: Colors.transparent),
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.white60,
+                              ),
+                              height: 28,
+                              width: 200,
+                            ),
+                            SizedBox(height: 11),
+                            Container(
+                              height: 270,
+                              child: ListView(
+                                shrinkWrap: true,
+                                scrollDirection: Axis.horizontal,
+                                children: [
+                                  SizedBox(width: 20),
+                                  Column(
+                                    children: [
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                              color: Colors.transparent),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          color: Colors.white60,
+                                        ),
+                                        height: 223,
+                                        width: 150,
+                                      ),
+                                      SizedBox(
+                                        height: 5,
+                                      ),
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                              color: Colors.transparent),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          color: Colors.white60,
+                                        ),
+                                        height: 20,
+                                        width: 100,
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    width: 20,
+                                  ),
+                                  Column(
+                                    children: [
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                              color: Colors.transparent),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          color: Colors.white60,
+                                        ),
+                                        height: 223,
+                                        width: 150,
+                                      ),
+                                      SizedBox(
+                                        height: 5,
+                                      ),
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                              color: Colors.transparent),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          color: Colors.white60,
+                                        ),
+                                        height: 20,
+                                        width: 100,
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    width: 20,
+                                  ),
+                                  Column(
+                                    children: [
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                              color: Colors.transparent),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          color: Colors.white60,
+                                        ),
+                                        height: 223,
+                                        width: 150,
+                                      ),
+                                      SizedBox(
+                                        height: 5,
+                                      ),
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                              color: Colors.transparent),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          color: Colors.white60,
+                                        ),
+                                        height: 20,
+                                        width: 100,
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        )),
+                  )
+                : TrendingMovies(
+                    trending: trendingmovies,
+                  ),
+            upcoming.isEmpty || upcoming == null || shimmer == true
+                ? Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Shimmer.fromColors(
+                        baseColor: Colors.white60,
+                        highlightColor: Colors.white,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                border: Border.all(color: Colors.transparent),
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.white60,
+                              ),
+                              height: 28,
+                              width: 200,
+                            ),
+                            SizedBox(height: 11),
+                            Container(
+                              decoration: BoxDecoration(
+                                border: Border.all(color: Colors.transparent),
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.white60,
+                              ),
+                              height: 230,
+                              width: 400,
+                            ),
+                            SizedBox(
+                              height: 20,
+                            )
+                          ],
+                        )),
+                  )
+                : Upcoming(
+                    upcoming: upcoming,
+                  ),
+            tv.isEmpty || tv == null || shimmer == true
+                ? Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Shimmer.fromColors(
+                        baseColor: Colors.white60,
+                        highlightColor: Colors.white,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                border: Border.all(color: Colors.transparent),
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.white60,
+                              ),
+                              height: 29,
+                              width: 200,
+                            ),
+                            SizedBox(height: 10),
+                            Container(
+                              height: 200,
+                              child: ListView(
+                                shrinkWrap: true,
+                                scrollDirection: Axis.horizontal,
+                                children: [
+                                  Column(
+                                    children: [
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                              color: Colors.transparent),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          color: Colors.white60,
+                                        ),
+                                        height: 140,
+                                        width: 250,
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                              color: Colors.transparent),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          color: Colors.white60,
+                                        ),
+                                        height: 20,
+                                        width: 150,
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    width: 15,
+                                  ),
+                                  Column(
+                                    children: [
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                              color: Colors.transparent),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          color: Colors.white60,
+                                        ),
+                                        height: 140,
+                                        width: 250,
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                              color: Colors.transparent),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          color: Colors.white60,
+                                        ),
+                                        height: 20,
+                                        width: 150,
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    width: 15,
+                                  ),
+                                  Column(
+                                    children: [
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                              color: Colors.transparent),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          color: Colors.white60,
+                                        ),
+                                        height: 140,
+                                        width: 250,
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                              color: Colors.transparent),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          color: Colors.white60,
+                                        ),
+                                        height: 20,
+                                        width: 150,
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        )),
+                  )
+                : TV(tv: tv),
+            topratedmovies.isEmpty || topratedmovies == null || shimmer == true
+                ? Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Shimmer.fromColors(
+                        baseColor: Colors.white60,
+                        highlightColor: Colors.white,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                border: Border.all(color: Colors.transparent),
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.white60,
+                              ),
+                              height: 28,
+                              width: 200,
+                            ),
+                            SizedBox(height: 10),
+                            Container(
+                              height: 271,
+                              child: ListView(
+                                shrinkWrap: true,
+                                scrollDirection: Axis.horizontal,
+                                children: [
+                                  SizedBox(width: 14),
+                                  Column(
+                                    children: [
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                              color: Colors.transparent),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          color: Colors.white60,
+                                        ),
+                                        height: 200,
+                                        width: 133,
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                              color: Colors.transparent),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          color: Colors.white60,
+                                        ),
+                                        height: 20,
+                                        width: 100,
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    width: 25,
+                                  ),
+                                  Column(
+                                    children: [
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                              color: Colors.transparent),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          color: Colors.white60,
+                                        ),
+                                        height: 200,
+                                        width: 133,
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                              color: Colors.transparent),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          color: Colors.white60,
+                                        ),
+                                        height: 20,
+                                        width: 100,
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    width: 25,
+                                  ),
+                                  Column(
+                                    children: [
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                              color: Colors.transparent),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          color: Colors.white60,
+                                        ),
+                                        height: 200,
+                                        width: 133,
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                              color: Colors.transparent),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          color: Colors.white60,
+                                        ),
+                                        height: 20,
+                                        width: 100,
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        )),
+                  )
+                : TopRatedMovies(
+                    toprated: topratedmovies,
+                  ),
             SizedBox(
               height: 20,
             ),
