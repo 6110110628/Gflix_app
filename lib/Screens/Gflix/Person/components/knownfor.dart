@@ -11,11 +11,13 @@ class KnownFor extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          modified_text(
-            text: 'Known For',
-            size: 20,
-            color: Colors.white,
-          ),
+          knownFor == null || knownFor.isEmpty
+              ? Container()
+              : modified_text(
+                  text: 'Known For',
+                  size: 20,
+                  color: Colors.white,
+                ),
           SizedBox(height: 10),
           Container(
               height: 220,
@@ -82,8 +84,22 @@ class KnownFor extends StatelessWidget {
                             Container(
                                 child: Text(
                               knownFor[index]['title'] == null
-                                  ? knownFor[index]['name']
-                                  : knownFor[index]['title'],
+                                  ? (knownFor[index]['name'].toString().length >
+                                          45
+                                      ? knownFor[index]['name']
+                                              .toString()
+                                              .substring(0, 44) +
+                                          '...'
+                                      : knownFor[index]['name'])
+                                  : (knownFor[index]['title']
+                                              .toString()
+                                              .length >
+                                          45
+                                      ? knownFor[index]['title']
+                                              .toString()
+                                              .substring(0, 44) +
+                                          '...'
+                                      : knownFor[index]['title']),
                               textAlign: TextAlign.center,
                               style: TextStyle(color: Colors.white),
                             ))

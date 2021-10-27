@@ -12,11 +12,13 @@ class Cast extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          modified_text(
-            text: 'Cast',
-            size: 20,
-            color: Colors.white,
-          ),
+          casts == null || casts.isEmpty
+              ? Container()
+              : modified_text(
+                  text: 'Cast',
+                  size: 20,
+                  color: Colors.white,
+                ),
           SizedBox(height: 10),
           Container(
               height: 220,

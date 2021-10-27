@@ -77,6 +77,7 @@ class _DescriptionState extends State<Description> {
   }
 
   Future<List> loadReviews() async {
+    Map reviews;
     TMDB tmdbWithCustomLogs = TMDB(
       ApiKeys(apikey, readaccesstoken),
       logConfig: ConfigLogger(
@@ -84,7 +85,13 @@ class _DescriptionState extends State<Description> {
         showErrorLogs: true,
       ),
     );
-    Map reviews = await tmdbWithCustomLogs.v3.movies.getReviews(widget.id);
+    try {
+      reviews = await tmdbWithCustomLogs.v3.movies.getReviews(widget.id);
+    } catch (e) {
+      print(e);
+      reviews = null;
+    }
+
     if (reviews == null) {
       reviews = await tmdbWithCustomLogs.v3.tv.getReviews(widget.id);
     }
@@ -162,9 +169,10 @@ class _DescriptionState extends State<Description> {
             element["site"] == "YouTube" &&
             (element["type"] == "Trailer" || element["type"] == "Teaser"))
         .toList();
-    videoId = videoOfficial[0]["key"];
+    videoId = videoOfficial == null || videoOfficial.isEmpty
+        ? null
+        : videoOfficial[0]["key"];
     // String videoLink = "https://youtu.be/" + videoOfficial[0]["key"];
-    print("videoLink : https://youtu.be/" + videoId);
     return videoId;
   }
 

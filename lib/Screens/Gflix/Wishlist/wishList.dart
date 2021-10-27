@@ -67,7 +67,7 @@ class _WishListState extends State<WishList> {
             builder: (context, AsyncSnapshot snapshot) {
               if (!snapshot.hasData) {
                 return Center(
-                    child: CircularProgressIndicator(color: Colors.red));
+                    child: CircularProgressIndicator(color: Colors.red[900]));
               }
               if (snapshot.data.docs.isEmpty) {
                 return Center(

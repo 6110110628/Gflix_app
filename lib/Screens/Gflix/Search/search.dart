@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/Screens/Gflix/Person/person_info.dart';
 import 'package:flutter_auth/Screens/Gflix/utils/text.dart';
 import 'package:tmdb_api/tmdb_api.dart';
 import 'package:flutter_auth/Screens/Gflix/Description/description.dart';
@@ -10,6 +11,7 @@ class SearchList extends StatefulWidget {
 }
 
 class _SearchList extends State<SearchList> {
+  bool widgetPresent;
   Widget appBarTitle = new Text(
     "Search Example",
     style: new TextStyle(color: Colors.white),
@@ -31,25 +33,26 @@ class _SearchList extends State<SearchList> {
   final auth = FirebaseAuth.instance;
   @override
   void initState() {
+    widgetPresent = true;
     _isSearching = false;
     super.initState();
   }
 
-  _SearchListExampleState() {
-    _controller.addListener(() {
-      if (_controller.text.isEmpty) {
-        setState(() {
-          _isSearching = false;
-          _searchText = "";
-        });
-      } else {
-        setState(() {
-          _isSearching = true;
-          _searchText = _controller.text;
-        });
-      }
-    });
-  }
+  // _SearchListState() {
+  //   _controller.addListener(() {
+  //     if (_controller.text.isEmpty) {
+  //       setState(() {
+  //         _isSearching = false;
+  //         _searchText = "";
+  //       });
+  //     } else {
+  //       setState(() {
+  //         _isSearching = true;
+  //         _searchText = _controller.text;
+  //       });
+  //     }
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -61,73 +64,116 @@ class _SearchList extends State<SearchList> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              new Flexible(
-                child: searchresult != null ||
-                        searchresult.length != 0 ||
-                        _controller.text.isNotEmpty
-                    ? new ListView.builder(
+              searchresult == null &&
+                      searchresult.isEmpty &&
+                      searchresult.length == 0 &&
+                      _controller.text.isEmpty
+                  ? new Center(
+                      child: CircularProgressIndicator(color: Colors.red[900]),
+                    )
+                  : Flexible(
+                      child: ListView.builder(
                         shrinkWrap: true,
                         itemCount: searchresult.length,
                         itemBuilder: (BuildContext context, int index) {
-                          //probably the result UI idk
-                          //searchresult[index]['title'] == null ? searchresult[index]['name'] : searchresult[index]['title'],
                           String listData = searchresult[index]['title'] == null
                               ? searchresult[index]['name']
                               : searchresult[index]['title'];
                           print(searchresult[index]);
                           return new ListTile(
-                            title: new Text(
-                              listData.toString(),
-                              style: TextStyle(
-                                color: Colors.white,
-                              ),
+                            title: Row(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                searchresult[index]['media_type'] == 'movie'
+                                    ? Icon(
+                                        Icons.movie,
+                                        color: Colors.white70,
+                                      )
+                                    : (searchresult[index]['media_type'] == 'tv'
+                                        ? Icon(Icons.live_tv,
+                                            color: Colors.white70)
+                                        : Icon(Icons.person,
+                                            color: Colors.white70)),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text(
+                                  listData.toString(),
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
                             ),
                             onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => new Description(
-                                            id: searchresult[index]['id'],
-                                            name: searchresult[index]
-                                                        ['title'] ==
-                                                    null
-                                                ? searchresult[index]['name']
-                                                : searchresult[index]['title'],
-                                            bannerurl: searchresult[index]
-                                                        ['backdrop_path'] ==
-                                                    null
-                                                ? 'empty'
-                                                : 'https://image.tmdb.org/t/p/w500' +
-                                                    searchresult[index]
-                                                        ['backdrop_path'],
-                                            posterurl: searchresult[index]
-                                                        ['poster_path'] ==
-                                                    null
-                                                ? 'empty'
-                                                : 'https://image.tmdb.org/t/p/w500' +
-                                                    searchresult[index]
-                                                        ['poster_path'],
-                                            description: searchresult[index]
-                                                ['overview'],
-                                            vote: searchresult[index]
-                                                    ['vote_average']
-                                                .toString(),
-                                            launchOn: searchresult[index]
-                                                        ['release_date'] ==
-                                                    null
-                                                ? searchresult[index]
-                                                    ['first_air_date']
-                                                : searchresult[index]
-                                                    ['release_date'],
-                                            mediaType: searchresult[index]
-                                                ['media_type'],
-                                          )));
+                              searchresult[index]['media_type'] == 'movie' ||
+                                      searchresult[index]['media_type'] == 'tv'
+                                  ? Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => new Description(
+                                                id: searchresult[index]['id'],
+                                                name: searchresult[index]
+                                                            ['title'] ==
+                                                        null
+                                                    ? searchresult[index]
+                                                        ['name']
+                                                    : searchresult[index]
+                                                        ['title'],
+                                                bannerurl: searchresult[index]
+                                                            ['backdrop_path'] ==
+                                                        null
+                                                    ? 'empty'
+                                                    : 'https://image.tmdb.org/t/p/w500' +
+                                                        searchresult[index]
+                                                            ['backdrop_path'],
+                                                posterurl: searchresult[index]
+                                                            ['poster_path'] ==
+                                                        null
+                                                    ? 'empty'
+                                                    : 'https://image.tmdb.org/t/p/w500' +
+                                                        searchresult[index]
+                                                            ['poster_path'],
+                                                description: searchresult[index]
+                                                    ['overview'],
+                                                vote: searchresult[index]
+                                                        ['vote_average']
+                                                    .toString(),
+                                                launchOn: searchresult[index]
+                                                            ['release_date'] ==
+                                                        null
+                                                    ? searchresult[index]
+                                                        ['first_air_date']
+                                                    : searchresult[index]
+                                                        ['release_date'],
+                                                mediaType: searchresult[index]
+                                                    ['media_type'],
+                                              )))
+                                  : Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => new PersonInfo(
+                                                id: searchresult[index]['id'],
+                                                name: searchresult[index]
+                                                            ['title'] ==
+                                                        null
+                                                    ? searchresult[index]
+                                                        ['name']
+                                                    : searchresult[index]
+                                                        ['title'],
+                                                profilePath: searchresult[index]
+                                                            ['profile_path'] ==
+                                                        null
+                                                    ? 'empty'
+                                                    : 'https://image.tmdb.org/t/p/w500' +
+                                                        searchresult[index]
+                                                            ['profile_path'],
+                                              )));
                             },
                           );
                         },
-                      )
-                    : new CircularProgressIndicator(),
-              )
+                      ),
+                    )
             ],
           ),
         ));
@@ -139,6 +185,7 @@ class _SearchList extends State<SearchList> {
         backgroundColor: Colors.red[900],
         centerTitle: true,
         title: TextField(
+          autofocus: true,
           controller: _controller,
           style: new TextStyle(
             color: Colors.white,
@@ -158,6 +205,7 @@ class _SearchList extends State<SearchList> {
         actions: <Widget>[
           TextButton(
               onPressed: () {
+                widgetPresent = false;
                 Navigator.pop(context);
               },
               child: modified_text(
@@ -168,26 +216,26 @@ class _SearchList extends State<SearchList> {
         ]);
   }
 
-  void _handleSearchStart() {
-    setState(() {
-      _isSearching = true;
-    });
-  }
+  // void _handleSearchStart() {
+  //   setState(() {
+  //     _isSearching = true;
+  //   });
+  // }
 
-  void _handleSearchEnd() {
-    setState(() {
-      this.icon = new Icon(
-        Icons.search,
-        color: Colors.white,
-      );
-      this.appBarTitle = new Text(
-        "Search Sample",
-        style: new TextStyle(color: Colors.white),
-      );
-      _isSearching = false;
-      _controller.clear();
-    });
-  }
+  // void _handleSearchEnd() {
+  //   setState(() {
+  //     this.icon = new Icon(
+  //       Icons.search,
+  //       color: Colors.white,
+  //     );
+  //     this.appBarTitle = new Text(
+  //       "Search Sample",
+  //       style: new TextStyle(color: Colors.white),
+  //     );
+  //     _isSearching = false;
+  //     _controller.clear();
+  //   });
+  // }
 
   void searchOperation(String searchText) async {
     searchresult.clear();
@@ -198,12 +246,12 @@ class _SearchList extends State<SearchList> {
         showErrorLogs: true,
       ),
     );
-    Map searchresult1 =
-        await tmdbWithCustomLogs.v3.search.queryMovies(searchText);
-    Map searchresult2 = await tmdbWithCustomLogs.v3.search
-        .queryTvShows(searchText); // queryMulti( searchText );
-    setState(() {
-      searchresult = searchresult1['results'] + searchresult2['results'];
-    });
+    Map searchresultMap =
+        await tmdbWithCustomLogs.v3.search.queryMulti(searchText);
+    if (widgetPresent) {
+      setState(() {
+        searchresult = searchresultMap['results'] ?? [];
+      });
+    }
   }
 }
