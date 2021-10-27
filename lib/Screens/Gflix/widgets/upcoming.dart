@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/Screens/Gflix/Description/description.dart';
 import 'package:flutter_auth/Screens/Gflix/utils/text.dart';
@@ -17,7 +18,7 @@ class _UpcomingState extends State<Upcoming> {
       'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1ODg3MmQ2NDFlNDdiY2YwMWU4YjQ3Yzc1ZTAyMDYyMyIsInN1YiI6IjYxM2U3ZTVjOTE3NDViMDA5MWU3OGI5NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.q-bvvinn7hwRIRHRRQtfgQRWsbhITyfALcho9Y8zhJk';
 
   List<Widget> card = [];
-  List upcoming;
+  List upcoming, backdropImage = [], posterImage = [];
   @override
   void initState() {
     loadUpcoming();
@@ -37,12 +38,45 @@ class _UpcomingState extends State<Upcoming> {
     setState(() {
       upcoming = upcomingresult['results'];
     });
-    cardWidget();
+    storeImage();
+  }
+
+  storeImage() {
+    for (Map element in upcoming) {
+      if (element['backdrop_path'] == null) {
+        if (element['poster_path'] == null) {
+          backdropImage.add(AssetImage(
+            'assets/images/cast.png',
+          ));
+        } else {
+          backdropImage.add(CachedNetworkImageProvider(
+              'https://image.tmdb.org/t/p/w500' + element['poster_path']));
+        }
+      } else {
+        backdropImage.add(CachedNetworkImageProvider(
+            'https://image.tmdb.org/t/p/w500' + element['backdrop_path']));
+      }
+      if (element['poster_path'] == null) {
+        posterImage.add(AssetImage(
+          'assets/images/cast.png',
+        ));
+      } else {
+        posterImage.add(CachedNetworkImageProvider(
+            'https://image.tmdb.org/t/p/w500' + element['poster_path']));
+      }
+    }
+    if (posterImage.length == upcoming.length &&
+        backdropImage.length == upcoming.length) {
+      setState(() {
+        cardWidget();
+      });
+    }
   }
 
   cardWidget() {
     print('cardWidget()');
     upcoming.forEach((element) {
+      var index = upcoming.indexOf(element);
       card.add(InkWell(
         onTap: () {
           Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -72,15 +106,7 @@ class _UpcomingState extends State<Upcoming> {
               image: DecorationImage(
                   colorFilter: new ColorFilter.mode(
                       Colors.black.withOpacity(0.3), BlendMode.dstATop),
-                  image: element['backdrop_path'] == null
-                      ? (element['poster_path'] == null
-                          ? AssetImage(
-                              'assets/images/cast.png',
-                            )
-                          : NetworkImage('https://image.tmdb.org/t/p/w500' +
-                              element['poster_path']))
-                      : NetworkImage('https://image.tmdb.org/t/p/w500' +
-                          element['backdrop_path']),
+                  image: backdropImage[index],
                   fit: BoxFit.cover)),
           alignment: Alignment.topLeft,
           padding: EdgeInsets.all(5),
@@ -95,13 +121,7 @@ class _UpcomingState extends State<Upcoming> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   image: DecorationImage(
-                      image: element['poster_path'] == null
-                          ? AssetImage(
-                              'assets/images/cast.png',
-                            )
-                          : NetworkImage('https://image.tmdb.org/t/p/w500' +
-                              element['poster_path']),
-                      fit: BoxFit.cover),
+                      image: posterImage[index], fit: BoxFit.cover),
                 ),
                 height: 200,
                 width: 140,
@@ -154,18 +174,18 @@ class _UpcomingState extends State<Upcoming> {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(10),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          modified_text(
-            text: 'Upcoming Movies',
-            size: 25,
-            color: Colors.white,
-          ),
-          SizedBox(height: 10),
-          card == null || card.isEmpty
-              ? Container()
-              : ImageSlideshow(
+      child: card == null || card.isEmpty
+          ? Container()
+          : Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                modified_text(
+                  text: 'Upcoming Movies',
+                  size: 25,
+                  color: Colors.white,
+                ),
+                SizedBox(height: 10),
+                ImageSlideshow(
                   width: 400,
                   height: 230,
                   initialPage: 0,
@@ -178,11 +198,11 @@ class _UpcomingState extends State<Upcoming> {
                   autoPlayInterval: 5000,
                   isLoop: true,
                 ),
-          SizedBox(
-            height: 20,
-          )
-        ],
-      ),
+                SizedBox(
+                  height: 20,
+                )
+              ],
+            ),
     );
   }
 }
